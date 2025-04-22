@@ -1,0 +1,2 @@
+extends SpawnPoint
+class_name PlayerSpawn

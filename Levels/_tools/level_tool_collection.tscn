@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://daynw5fxpwvye"]
+
+[ext_resource type="Script" uid="uid://ulugye2fl4dx" path="res://Levels/_tools/level_to_resource_tool.gd" id="1_crfbs"]
+[ext_resource type="Script" uid="uid://bu2e7ln4pkgxk" path="res://Levels/_tools/create_new_level.gd" id="2_3ngjc"]
+
+[node name="ToolCollection" type="Node"]
+
+[node name="Scene to resource" type="Node" parent="."]
+script = ExtResource("1_crfbs")
+
+[node name="Create new level" type="Node" parent="."]
+script = ExtResource("2_3ngjc")

@@ -1,0 +1,33 @@
+[gd_scene load_steps=2 format=3 uid="uid://bi054ogsnpm52"]
+
+[ext_resource type="Script" uid="uid://58m56pxdbcn4" path="res://UI/GameLobby/lobby_player_visualizer.gd" id="1_aqoh2"]
+
+[node name="LobbyPlayerVisualizer" type="Control" node_paths=PackedStringArray("_color_rect", "_name_label")]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -608.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_aqoh2")
+_color_rect = NodePath("HBoxContainer/ColorRect")
+_name_label = NodePath("HBoxContainer/NameLabel")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="HBoxContainer"]
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+
+[node name="NameLabel" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3

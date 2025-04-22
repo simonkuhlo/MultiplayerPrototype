@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://cojglfxmfbqme"]
+
+[ext_resource type="Script" uid="uid://br16lpotthoq" path="res://Levels/_res/game_level.gd" id="1_nkfal"]
+[ext_resource type="Script" uid="uid://dsup6ebj4eccv" path="res://lib/player_spawn.gd" id="2_rvlf4"]
+
+[node name="Test 2" type="Node3D"]
+script = ExtResource("1_nkfal")
+
+[node name="PlayerSpawn" type="Marker3D" parent="."]
+script = ExtResource("2_rvlf4")
+
+[node name="GridMap" type="GridMap" parent="."]
