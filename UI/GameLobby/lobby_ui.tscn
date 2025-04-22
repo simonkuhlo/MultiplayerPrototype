@@ -48,6 +48,9 @@ level_name_label = NodePath("MapName")
 [node name="MapImage" type="TextureRect" parent="HBoxContainer/VBoxContainer2/PanelContainer2/MapPreview"]
 custom_minimum_size = Vector2(300, 300)
 layout_mode = 2
+size_flags_horizontal = 4
+expand_mode = 2
+stretch_mode = 4
 
 [node name="MapName" type="Label" parent="HBoxContainer/VBoxContainer2/PanelContainer2/MapPreview"]
 layout_mode = 2

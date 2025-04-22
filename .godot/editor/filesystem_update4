@@ -15,3 +15,7 @@ res://Ingame/ingame_player_manager.gd
 res://Ingame/ingame.gd
 res://UI/GameLobby/lobby_player_visualizer.tscn
 res://UI/GameLobby/lobby_player_visualizer.gd
+res://Levels/Work/Test 2/Test 2.tscn
+res://Levels/_tools/level_tool_collection.tscn
+res://Levels/Output/Test 2.tres
+res://Levels/Output/Test 1.tres
