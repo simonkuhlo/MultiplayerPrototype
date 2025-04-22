@@ -1,4 +1,5 @@
 extends Node
+class_name MouseModeControl
 
 var mouse_modes = [Input.MOUSE_MODE_VISIBLE, Input.MOUSE_MODE_CAPTURED]
 var current_index:int = 0:
@@ -14,3 +15,9 @@ func _unhandled_input(event):
 func next_mouse_mode():
 	current_index += 1
 	Input.mouse_mode = mouse_modes[current_index]
+
+func ingame_mode():
+	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+
+func ui_mode():
+	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE

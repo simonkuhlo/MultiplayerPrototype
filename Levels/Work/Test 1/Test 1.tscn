@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://cujrjd7l0yxi8"]
+[gd_scene load_steps=11 format=3 uid="uid://cujrjd7l0yxi8"]
 
 [ext_resource type="Script" uid="uid://br16lpotthoq" path="res://Levels/_res/game_level.gd" id="1_rnh63"]
 [ext_resource type="MeshLibrary" uid="uid://rcom667glcbx" path="res://Levels/_res/atlas.meshlib" id="2_ywxg4"]
@@ -7,9 +7,31 @@
 [ext_resource type="PackedScene" uid="uid://dytbg66vfi0r2" path="res://assets/models/Modular Retro FPS Kit/Models/other-formats/GLB/metal_barrel_fps_2.glb" id="5_7gi4c"]
 [ext_resource type="Script" uid="uid://ii34ukenfmwe" path="res://lib/spawn_point.gd" id="6_m61q3"]
 
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_vuuyl"]
+sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+ground_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+
+[sub_resource type="Sky" id="Sky_yeilg"]
+sky_material = SubResource("ProceduralSkyMaterial_vuuyl")
+
+[sub_resource type="Environment" id="Environment_jp25r"]
+background_mode = 2
+sky = SubResource("Sky_yeilg")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_vuuyl"]
+
 [node name="Test1" type="Node3D"]
 script = ExtResource("1_rnh63")
 metadata/_custom_type_script = "uid://br16lpotthoq"
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_jp25r")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+shadow_enabled = true
 
 [node name="GridMap" type="GridMap" parent="."]
 mesh_library = ExtResource("2_ywxg4")
@@ -54,3 +76,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.666667, 0, 1.33333)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 1, -1)
 script = ExtResource("6_m61q3")
 metadata/_custom_type_script = "uid://ii34ukenfmwe"
+
+[node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="."]
+_spawnable_scenes = PackedStringArray("uid://xcjrjq5cbn7y")
+spawn_path = NodePath("..")
+
+[node name="Killzone" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Killzone"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -8, 0)
+shape = SubResource("WorldBoundaryShape3D_vuuyl")

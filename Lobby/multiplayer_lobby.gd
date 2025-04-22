@@ -10,6 +10,7 @@ class_name MultiplayerLobby
 @export_group("Res")
 @export var level_manager:MultiplayerLobbyLevelManager
 @export var player_manager:MultiplayerLobbyPLayerManager
+@export var ui:LobbyUIController
 
 var enet_peer = ENetMultiplayerPeer.new()
 

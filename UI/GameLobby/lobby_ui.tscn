@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://b5mqqrasjfnic"]
+[gd_scene load_steps=8 format=3 uid="uid://b5mqqrasjfnic"]
 
 [ext_resource type="Script" uid="uid://cmj5dh7j2itef" path="res://UI/GameLobby/lobby_ui.gd" id="1_hlmkj"]
 [ext_resource type="PackedScene" uid="uid://bi054ogsnpm52" path="res://UI/GameLobby/lobby_player_visualizer.tscn" id="2_xjwml"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://8vva8aglfryl" path="res://UI/GameLobby/map_preview.gd" id="4_1x6wr"]
 [ext_resource type="Script" uid="uid://dynwt3ht3unqr" path="res://UI/GameLobby/level_browser.gd" id="4_u7fur"]
 [ext_resource type="PackedScene" uid="uid://d0o8tr6yt6n1m" path="res://UI/GameLobby/level_selector_button.tscn" id="5_vrqac"]
+[ext_resource type="Script" uid="uid://cwj3ethtkralo" path="res://UI/GameLobby/start_button.gd" id="7_tfi07"]
 
 [node name="LobbyUI" type="Control"]
 layout_mode = 3
@@ -83,5 +84,6 @@ level_selector_button = ExtResource("5_vrqac")
 [node name="StartButton" type="Button" parent="HBoxContainer/VBoxContainer"]
 layout_mode = 2
 text = "Start"
+script = ExtResource("7_tfi07")
 
 [connection signal="pressed" from="HBoxContainer/VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]

@@ -1,8 +1,9 @@
 extends Node
 
 @export var lobby:MultiplayerLobby
-@export var lobby_ui:LobbyUIController
-@export var level_loader:LevelLoader
+@export var ingame:IngameLogic
+@export var meta:GameMetaScripts
+
 
 func _ready() -> void:
-	lobby_ui.to_main_menu()
+	lobby.ui.to_main_menu()

@@ -19,3 +19,14 @@ res://Levels/_res/level_collection.gd
 res://Lobby/multiplayer_lobby.gd
 res://Lobby/player_manager.gd
 res://Lobby/level_manager.gd
+res://main.gd
+res://UI/lobby_selector.gd
+res://UI/main_menu_ui.gd
+res://UI/GameLobby/start_button.gd
+res://Ingame/game_logic.gd
+res://Ingame/level_loader.gd
+res://Ingame/ingame.gd
+res://Levels/Work/Test 1/Test 1.tscn
+res://world.tscn
+res://meta_scripts.gd
+res://lib/mouse_capture.gd
