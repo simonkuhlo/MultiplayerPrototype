@@ -14,7 +14,7 @@ func _ready() -> void:
 func spawn_object(object_to_spawn:Node, parent:Node = get_tree().root) -> void:
 	if active:
 		object_to_spawn.global_transform = self.global_transform
-		parent.add_child(object_to_spawn)
+		Env.add_child(object_to_spawn)
 		if spawn_cooldown:
 			active = false
 			timer.start(spawn_cooldown)

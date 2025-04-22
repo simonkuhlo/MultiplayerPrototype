@@ -12,4 +12,4 @@ func _ready() -> void:
 		add_child(selector)
 
 func _on_level_selected(level:LevelResource):
-	Env.lobby.level_manager.server_select_level(level)
+	Env.lobby.level_manager.select_level(level)

@@ -1,8 +1,11 @@
+ProgressBar
+CanvasLayer
+MultiplayerSpawner
+MultiplayerSynchronizer
+Node
 Area3D
 StaticBody3D
 CollisionShape3D
-MultiplayerSpawner
-Node
 VBoxContainer
 Label
 Button
@@ -10,6 +13,3 @@ PanelContainer
 Panel
 HSeparator
 HBoxContainer
-Container
-ScrollContainer
-ColorPickerButton

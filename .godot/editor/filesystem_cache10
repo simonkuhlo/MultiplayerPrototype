@@ -1,19 +1,21 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1745313576
+::res://::1745336107
 environment.tscn::PackedScene/PackedScene::6618274380330821371::1745251835::0::1::::<><><>0<>0<><>::uid://ckf3250w8jpro::::res://assets/models/Environment.glb<>uid://bugwfwhpqfp1n::::res://addons/kenney_prototype_textures/dark/texture_09.png<>uid://1opha1cxcimy::::res://addons/kenney_prototype_textures/orange/texture_10.png
 export_presets.cfg::TextFile/TextFile::-1::1745012617::0::1::::<><><>0<>0<><>::
 icon.svg::CompressedTexture2D/CompressedTexture2D::3834951400861193108::1744993178::1745231743::1::::<><><>0<>0<>54b9ed20b5fd24f0c406d94a8b1517a4<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
-main.gd::GDScript::645834820901862605::1745313813::0::1::::<>Node<><>0<>0<><>::
-main.tscn::PackedScene::2985255702222969581::1745313813::0::1::::<><><>0<>0<><>::uid://c4ssrt3bs6qjq::::res://lib/mouse_capture.gd<>uid://jg32m0lbwojd::::res://main.gd<>uid://dejd6iloo8fhy::::res://Lobby/multiplayer_lobby.gd<>uid://ccqiawq0hsfry::::res://Ingame/level_loader.gd<>uid://dkiyuw74hedbx::::res://Levels/Output/StandardCollection.tres<>uid://w7n4825ekv1j::::res://UI/lobby_ui_controller.gd<>uid://bw371ho6ingvo::::res://UI/main_menu_ui.gd<>uid://boul2yb7qkglk::::res://Lobby/player_manager.gd<>uid://t30t86v8ciy8::::res://UI/lobby_selector.gd<>uid://bqbexh2ut2yrr::::res://Lobby/level_manager.gd<>uid://b5mqqrasjfnic::::res://UI/GameLobby/lobby_ui.tscn<>uid://c5ymhdoisq3th::::res://Ingame/game_logic.gd
+main.gd::GDScript/GDScript::645834820901862605::1745314630::0::1::::<>Node<><>0<>0<><>::
+main.tscn::PackedScene::2985255702222969581::1745336006::0::1::::<><><>0<>0<><>::uid://c4ssrt3bs6qjq::::res://lib/mouse_capture.gd<>uid://jg32m0lbwojd::::res://main.gd<>uid://dejd6iloo8fhy::::res://Lobby/multiplayer_lobby.gd<>uid://lhwjer81btit::::res://meta_scripts.gd<>uid://ccqiawq0hsfry::::res://Ingame/level_loader.gd<>uid://dkiyuw74hedbx::::res://Levels/Output/StandardCollection.tres<>uid://w7n4825ekv1j::::res://UI/lobby_ui_controller.gd<>uid://bw371ho6ingvo::::res://UI/main_menu_ui.gd<>uid://boul2yb7qkglk::::res://Lobby/player_manager.gd<>uid://t30t86v8ciy8::::res://UI/lobby_selector.gd<>uid://bqbexh2ut2yrr::::res://Lobby/level_manager.gd<>uid://b5mqqrasjfnic::::res://UI/GameLobby/lobby_ui.tscn<>uid://c5ymhdoisq3th::::res://Ingame/game_logic.gd<>uid://ciqobvwy82nue::::res://Ingame/ingame.gd<>uid://xcjrjq5cbn7y::::res://player.tscn<>uid://d3nwu6l1sdcle::::res://Ingame/ingame_player_manager.gd
+meta_scripts.gd::GDScript/GDScript::787880008172031863::1745314595::0::1::::GameMetaScripts<>Node<><>0<>0<><>::
 name_label.gd::GDScript/GDScript::4310606807102565143::1745011775::0::1::::<>Label3D<><>0<>0<><>::
-Player.gd::GDScript/GDScript::8239525201525196352::1745011564::0::1::::<>CharacterBody3D<><>0<>0<><>::
-player.tscn::PackedScene/PackedScene::1619049469406958580::1745265960::0::1::::<><><>0<>0<><>::uid://dpnj1nmdn8vbs::::res://Player.gd<>uid://cf1dcxwv6bvl3::::res://assets/models/Pistol.glb<>uid://ugaby2xt7fo1::::res://assets/models/shotgun_1.glb<>uid://b2odcgmin1krn::::res://name_label.gd<>uid://vwob30tkwej4::::res://addons/kenney_particle_pack/star_06.png
+Player.gd::GDScript::8239525201525196352::1745335119::0::1::::PlayerCharacter<>CharacterBody3D<><>0<>0<><>::
+player.tscn::PackedScene::1619049469406958580::1745336006::0::1::::<><><>0<>0<><>::uid://dpnj1nmdn8vbs::::res://Player.gd<>uid://cf1dcxwv6bvl3::::res://assets/models/Pistol.glb<>uid://ugaby2xt7fo1::::res://assets/models/shotgun_1.glb<>uid://b2odcgmin1krn::::res://name_label.gd<>uid://vwob30tkwej4::::res://addons/kenney_particle_pack/star_06.png
 pre_main.gd::GDScript/GDScript::6981996672272447520::1745270064::0::1::::<>Node<><>0<>0<><>::
 pre_main.tscn::PackedScene/PackedScene::535795437408977034::1745270064::0::1::::<><><>0<>0<><>::uid://c6qep2wxbdwjo::::res://pre_main.gd
 README.md::TextFile/TextFile::-1::1744993178::0::1::::<><><>0<>0<><>::
-ingame.gd::GDScript::5368235122359729352::1745313822::0::1::::<>Node<><>0<>0<><>::
+player_hud.gd::GDScript::7587295021218905933::1745336164::0::1::::PlayerHUD<>CanvasLayer<><>0<>0<><>::
+player_hud.tscn::PackedScene::4613829225843332636::1745336265::0::1::::<><><>0<>0<><>::uid://dgdlv1nq5erjx::::res://player_hud.gd
 world.gd::GDScript/GDScript::8217835549633515874::1745258251::0::1::::<>Node<><>0<>0<><>::
-world.tscn::PackedScene/PackedScene::7118987691217281615::1745266310::0::1::::<><><>0<>0<><>::uid://dpc1sy2cjjovi::::res://world.gd<>uid://8ka2ui7sq36p::::res://addons/kenney_particle_pack/circle_05.png<>uid://cujrjd7l0yxi8::::res://Levels/Work/Test 1/Test 1.tscn
+world.tscn::PackedScene::7118987691217281615::1745336006::0::1::::<><><>0<>0<><>::uid://dpc1sy2cjjovi::::res://world.gd<>uid://8ka2ui7sq36p::::res://addons/kenney_particle_pack/circle_05.png<>uid://cujrjd7l0yxi8::::res://Levels/Work/Test 1/Test 1.tscn
 ::res://addons/::1744993178
 ::res://addons/kenney_particle_pack/::1745231744
 circle_01.png::CompressedTexture2D/CompressedTexture2D::5792837905305388373::1744993181::1745231744::1::::<><><>0<>0<>b6f707b661294dc5335fbb0a1552e873<>res://.godot/imported/circle_01.png-9bd5821faa9f6be7ab25beb08e8a7dfb.ctex::
@@ -503,9 +505,11 @@ wall_6.png::CompressedTexture2D/CompressedTexture2D::5712074994485600417::174499
 wall_7.png::CompressedTexture2D/CompressedTexture2D::3211367104243418481::1744995826::1745251835::1::::<><><>0<>0<>128ca65d569934d1d5216728919181f6<>res://.godot/imported/wall_7.png-7b33c282d42bea958d5faf877bedd4c8.s3tc.ctex::
 wall_8.png::CompressedTexture2D/CompressedTexture2D::4224697402415429750::1744995826::1745251835::1::::<><><>0<>0<>66e205762605de16774ee10623230662<>res://.godot/imported/wall_8.png-7808bbeb868d09b5e5021d20b04ba761.s3tc.ctex::
 ::res://Export/::1745012694
-::res://Ingame/::1745313576
-game_logic.gd::GDScript::6928793026680651677::1745313783::0::1::::<>Node<><>0<>0<><>::
-level_loader.gd::GDScript::4946736016045882638::1745313794::0::1::::LevelLoader<>Node<><>0<>0<><>::
+::res://Ingame/::1745335106
+game_logic.gd::GDScript::6928793026680651677::1745335106::0::1::::BasicGameLogic<>Node<><>0<>0<><>::
+ingame.gd::GDScript::5368235122359729352::1745325446::0::1::::IngameLogic<>Node<><>0<>0<><>::
+ingame_player_manager.gd::GDScript::9152759719888145850::1745326603::0::1::::IngamePlayerManager<>Node<><>0<>0<><>::
+level_loader.gd::GDScript::4946736016045882638::1745334398::0::1::::LevelLoader<>Node<><>0<>0<><>::
 ::res://Levels/::1745251006
 ::res://Levels/_res/::1745309876
 atlas.meshlib::MeshLibrary/MeshLibrary::1198212242355436985::1745009536::0::1::::<><><>0<>0<><>::uid://4bc0bc854rb1::::res://models/Modular Retro FPS Kit/Models/other-formats/GLB/platform_2_1_ceiling_1.png<>uid://c784l61yt5xx3::::res://models/Modular Retro FPS Kit/Models/other-formats/GLB/platform_2_floor_1.png<>uid://c6bq23f35m5dm::::res://models/Modular Retro FPS Kit/Models/other-formats/GLB/platform_2_ceiling_1.png<>uid://dxhsxd7npqagb::::res://models/Modular Retro FPS Kit/Models/other-formats/GLB/stairs_1_stairs_1.png<>uid://cd8hbfbv78fu4::::res://models/Modular Retro FPS Kit/Models/other-formats/GLB/stairs_2_stairs_2.png<>uid://bf5k6swwb8s2x::::res://models/Modular Retro FPS Kit/Models/other-formats/GLB/vent_fps_1_wall_7.png<>uid://qk5ndbssfquv::::res://models/Modular Retro FPS Kit/Models/other-formats/GLB/vent_fps_1_vent_1.png<>uid://cevn1x77lisqx::::res://models/Modular Retro FPS Kit/Models/other-formats/GLB/column_1_wall_5.png<>uid://f5vwnl01ssdl::::res://models/Modular Retro FPS Kit/Models/other-formats/GLB/column_2_wall_5.png<>uid://cxl36qo2tncjn::::res://models/Modular Retro FPS Kit/Models/other-formats/GLB/column_3_wall_3.png<>uid://dayc5wp0jkfre::::res://models/Modular Retro FPS Kit/Models/other-formats/GLB/column_4_wall_8.png<>uid://bgas5j4inp0qd::::res://models/Modular Retro FPS Kit/Models/other-formats/GLB/column_6_wall_6.png<>uid://cegmbt8db2sf0::::res://models/Modular Retro FPS Kit/Models/other-formats/GLB/crate_1_crate_1.png<>uid://2lb1bnv8byw2::::res://models/Modular Retro FPS Kit/Models/other-formats/GLB/tunnel_1_wall_5.png<>uid://d0rdcxhcm0y06::::res://models/Modular Retro FPS Kit/Models/other-formats/GLB/tunnel_1_cross_tee_wall_5.png<>uid://bljyhhdh3avg3::::res://models/Modular Retro FPS Kit/Models/other-formats/GLB/tunnel_1_elbow_wall_5.png<>uid://dlvja0spoh6qa::::res://models/Modular Retro FPS Kit/Models/other-formats/GLB/tunnel_1_end_wall_5.png<>uid://bd0goowmp8gdt::::res://models/Modular Retro FPS Kit/Models/other-formats/GLB/tunnel_1_equal_tee_wall_5.png<>uid://8xlyr7ybky8p::::res://models/Modular Retro FPS Kit/Models/other-formats/GLB/wall_2_wall_8.png<>uid://ga6p1e6835nl::::res://models/Modular Retro FPS Kit/Models/other-formats/GLB/wall_2_wall_7.png<>uid://ty6gg86tah43::::res://models/Modular Retro FPS Kit/Models/other-formats/GLB/wall_3_wall_3.png<>uid://baqglw6giu6q5::::res://models/Modular Retro FPS Kit/Models/other-formats/GLB/wall_4_wall_8.png<>uid://6llvyf22141a::::res://models/Modular Retro FPS Kit/Models/other-formats/GLB/wall_4_a_wall_8.png<>uid://blpmpwffd4850::::res://models/Modular Retro FPS Kit/Models/other-formats/GLB/wall_4_b_wall_5.png<>uid://bqbq6r8uvyei1::::res://models/Modular Retro FPS Kit/Models/other-formats/GLB/wall_5_wall_5.png<>uid://cee7lag3l0cmd::::res://models/Modular Retro FPS Kit/Models/other-formats/GLB/wall_6_wall_6.png<>uid://dg7jx88psgyrc::::res://models/Modular Retro FPS Kit/Models/other-formats/GLB/wall_7_wall_7.png<>uid://dwpuk7tna5q7e::::res://models/Modular Retro FPS Kit/Models/other-formats/GLB/wall_8_wall_7.png<>uid://coq0h3mbcxufr::::res://models/Modular Retro FPS Kit/Models/other-formats/GLB/wall_small_1_ceiling_1.png<>uid://vt1rkf14hygw::::res://models/Modular Retro FPS Kit/Models/other-formats/GLB/wall_small_1_wall_8.png<>uid://8v3lduglsvcq::::res://models/Modular Retro FPS Kit/Models/other-formats/GLB/wall_small_1_1_ceiling_1.png<>uid://c7kgyg1pbawi3::::res://models/Modular Retro FPS Kit/Models/other-formats/GLB/wall_small_1_1_wall_5.png<>uid://cdegeqosxblb6::::res://models/Modular Retro FPS Kit/Models/other-formats/GLB/floor_1_half_floor_1.png<>uid://cgycap4oh5x6n::::res://models/Modular Retro FPS Kit/Models/other-formats/GLB/floor_1_half_ceiling_1.png<>uid://c5kaf11d5ovsn::::res://models/Modular Retro FPS Kit/Models/other-formats/GLB/floor_1_1_half_ceiling_1.png<>uid://dlapvccgj1mta::::res://models/Modular Retro FPS Kit/Models/other-formats/GLB/floor_1_floor_1.png<>uid://dig287p8jubgb::::res://models/Modular Retro FPS Kit/Models/other-formats/GLB/floor_1_ceiling_1.png<>uid://gbb3q2qnni4s::::res://models/Modular Retro FPS Kit/Models/other-formats/GLB/floor_2_floor_2.png<>uid://sg5xhh4u1e8n::::res://models/Modular Retro FPS Kit/Models/other-formats/GLB/floor_2_ceiling_1.png<>uid://kj1uxwopw1dt::::res://models/Modular Retro FPS Kit/Models/other-formats/GLB/floor_3_ceiling_1.png
@@ -517,37 +521,37 @@ level_resource.gd::GDScript/GDScript::5738511248621355994::1745251634::0::1::::L
 create_new_level.gd::GDScript/GDScript::3846236368366767312::1745249397::0::1::::<>Node<><>0<>1<><>::
 level_tool_collection.tscn::PackedScene/PackedScene::7209637310039085512::1745251634::0::1::::<><><>0<>0<><>::uid://ulugye2fl4dx::::res://Levels/_tools/level_to_resource_tool.gd<>uid://bu2e7ln4pkgxk::::res://Levels/_tools/create_new_level.gd
 level_to_resource_tool.gd::GDScript/GDScript::1427711350647589113::1745248122::0::1::::<>Node<><>0<>1<><>::
-::res://Levels/Output/::1745313387
-StandardCollection.tres::Resource/LevelCollection::7879159639471185141::1745313387::0::1::::<><><>0<>0<><>::uid://cn01pa11q3qwo::::res://Levels/_res/level_resource.gd<>uid://dh23hh1tt58mk::::res://Levels/_res/level_collection.gd<>uid://b1nx2ldmlmwh::::res://Levels/Output/Test 1.tres
+::res://Levels/Output/::1745321244
+StandardCollection.tres::Resource/LevelCollection::7879159639471185141::1745321244::0::1::::<><><>0<>0<><>::uid://cn01pa11q3qwo::::res://Levels/_res/level_resource.gd<>uid://dh23hh1tt58mk::::res://Levels/_res/level_collection.gd<>uid://b1nx2ldmlmwh::::res://Levels/Output/Test 1.tres
 Test 1.tres::Resource/LevelResource::124694494685454939::1745309517::0::1::::<><><>0<>0<><>::uid://cujrjd7l0yxi8::::res://Levels/Work/Test 1/Test 1.tscn<>uid://cn01pa11q3qwo::::res://Levels/_res/level_resource.gd<>uid://buvxdbhao4n7y::::res://icon.svg
 ::res://Levels/Work/::1745249423
-::res://Levels/Work/Test 1/::1745252500
-Test 1.tscn::PackedScene/PackedScene::6196246108493521725::1745252500::0::1::::<><><>0<>0<><>::uid://br16lpotthoq::::res://Levels/_res/game_level.gd<>uid://rcom667glcbx::::res://Levels/_res/atlas.meshlib<>uid://bxry04rignco8::::res://assets/models/Modular Retro FPS Kit/Models/other-formats/GLB/crate_1.glb<>uid://bbesenl605opk::::res://assets/models/Modular Retro FPS Kit/Models/other-formats/GLB/metal_barrel_fps_1.glb<>uid://dytbg66vfi0r2::::res://assets/models/Modular Retro FPS Kit/Models/other-formats/GLB/metal_barrel_fps_2.glb<>uid://ii34ukenfmwe::::res://lib/spawn_point.gd
+::res://Levels/Work/Test 1/::1745336006
+Test 1.tscn::PackedScene::6196246108493521725::1745336006::0::1::::<><><>0<>0<><>::uid://br16lpotthoq::::res://Levels/_res/game_level.gd<>uid://rcom667glcbx::::res://Levels/_res/atlas.meshlib<>uid://bxry04rignco8::::res://assets/models/Modular Retro FPS Kit/Models/other-formats/GLB/crate_1.glb<>uid://bbesenl605opk::::res://assets/models/Modular Retro FPS Kit/Models/other-formats/GLB/metal_barrel_fps_1.glb<>uid://dytbg66vfi0r2::::res://assets/models/Modular Retro FPS Kit/Models/other-formats/GLB/metal_barrel_fps_2.glb<>uid://ii34ukenfmwe::::res://lib/spawn_point.gd
 ::res://Levels/Work/Test 2/::1745252500
 Test 2.tscn::PackedScene/PackedScene::5774448822493963380::1745252500::0::1::::<><><>0<>0<><>::uid://br16lpotthoq::::res://Levels/_res/game_level.gd<>uid://dsup6ebj4eccv::::res://lib/player_spawn.gd
-::res://lib/::1745252500
-mouse_capture.gd::GDScript/GDScript::6846600938097299898::1745238054::0::1::::<>Node<><>0<>0<><>::
+::res://lib/::1745332459
+mouse_capture.gd::GDScript/GDScript::6846600938097299898::1745314564::0::1::::MouseModeControl<>Node<><>0<>0<><>::
 player_spawn.gd::GDScript/GDScript::8464915118233667505::1745248298::0::1::::PlayerSpawn<>SpawnPoint<><>0<>0<><>::
-spawn_point.gd::GDScript/GDScript::579778701071812504::1745010940::0::1::::SpawnPoint<>Marker3D<><>0<>0<><>::
+spawn_point.gd::GDScript::579778701071812504::1745332459::0::1::::SpawnPoint<>Marker3D<><>0<>0<><>::
 ::res://lib/network_player/::1745270415
 network_player.gd::GDScript/GDScript::8126303342353976240::1745270415::0::1::::NetworkPlayer<>Resource<><>0<>0<><>::
-::res://Lobby/::1745312961
-level_manager.gd::GDScript/GDScript::3511790911194916091::1745312097::0::1::::MultiplayerLobbyLevelManager<>Node<><>0<>0<><>::
+::res://Lobby/::1745334427
+level_manager.gd::GDScript::3511790911194916091::1745334427::0::1::::MultiplayerLobbyLevelManager<>Node<><>0<>0<><>::
 multiplayer_lobby.gd::GDScript/GDScript::7458834773843079298::1745312961::0::1::::MultiplayerLobby<>Node<><>0<>0<><>::
-player_manager.gd::GDScript/GDScript::3411069416643536424::1745311560::0::1::::MultiplayerLobbyPLayerManager<>Node<><>0<>0<><>::
+player_manager.gd::GDScript::3411069416643536424::1745331650::0::1::::MultiplayerLobbyPLayerManager<>Node<><>0<>0<><>::
 ::res://UI/::1745312990
 lobby_selector.gd::GDScript/GDScript::1392944243297466993::1745312173::0::1::::<>Control<><>0<>0<><>::
 lobby_ui_controller.gd::GDScript/GDScript::1611057533444931553::1745271325::0::1::::LobbyUIController<>Node<><>0<>0<><>::
 main_menu_ui.gd::GDScript/GDScript::3990367585963961656::1745312188::0::1::::<>Control<><>0<>0<><>::
-::res://UI/GameLobby/::1745313187
+::res://UI/GameLobby/::1745336006
 connected_players.gd::GDScript/GDScript::5926738398048911680::1745311515::0::1::::<>VBoxContainer<><>0<>0<><>::
-level_browser.gd::GDScript/GDScript::8872002395488839781::1745312948::0::1::::<>VBoxContainer<><>0<>0<><>::
+level_browser.gd::GDScript::8872002395488839781::1745322323::0::1::::<>VBoxContainer<><>0<>0<><>::
 level_selector_button.gd::GDScript/GDScript::5075495974298136754::1745308956::0::1::::LevelSelectorButton<>Button<><>0<>0<><>::
 level_selector_button.tscn::PackedScene/PackedScene::8944922963335400220::1745309799::0::1::::<><><>0<>0<><>::uid://cekuxa1841fgs::::res://UI/GameLobby/level_selector_button.gd
 lobby_player_visualizer.gd::GDScript/GDScript::2174573605200275127::1745307163::0::1::::LobbyPlayerVisualizer<>Control<><>0<>0<><>::
 lobby_player_visualizer.tscn::PackedScene/PackedScene::3001414919886633423::1745309799::0::1::::<><><>0<>0<><>::uid://58m56pxdbcn4::::res://UI/GameLobby/lobby_player_visualizer.gd
-lobby_ui.gd::GDScript/GDScript::5635514175536366057::1745312204::0::1::::<>Control<><>0<>0<><>::
-lobby_ui.tscn::PackedScene/PackedScene::4517859464196560574::1745313187::0::1::::<><><>0<>0<><>::uid://cmj5dh7j2itef::::res://UI/GameLobby/lobby_ui.gd<>uid://bi054ogsnpm52::::res://UI/GameLobby/lobby_player_visualizer.tscn<>uid://cqo7rr6svqweq::::res://UI/GameLobby/connected_players.gd<>uid://8vva8aglfryl::::res://UI/GameLobby/map_preview.gd<>uid://dynwt3ht3unqr::::res://UI/GameLobby/level_browser.gd<>uid://d0o8tr6yt6n1m::::res://UI/GameLobby/level_selector_button.tscn<>uid://cwj3ethtkralo::::res://UI/GameLobby/start_button.gd
-map_preview.gd::GDScript/GDScript::2360860563296503703::1745310851::0::1::::<>VBoxContainer<><>0<>0<><>::
-start_button.gd::GDScript/GDScript::6337283555817121740::1745312389::0::1::::<>Button<><>0<>0<><>::
+lobby_ui.gd::GDScript::5635514175536366057::1745329054::0::1::::<>Control<><>0<>0<><>::
+lobby_ui.tscn::PackedScene::4517859464196560574::1745336006::0::1::::<><><>0<>0<><>::uid://cmj5dh7j2itef::::res://UI/GameLobby/lobby_ui.gd<>uid://bi054ogsnpm52::::res://UI/GameLobby/lobby_player_visualizer.tscn<>uid://cqo7rr6svqweq::::res://UI/GameLobby/connected_players.gd<>uid://8vva8aglfryl::::res://UI/GameLobby/map_preview.gd<>uid://dynwt3ht3unqr::::res://UI/GameLobby/level_browser.gd<>uid://d0o8tr6yt6n1m::::res://UI/GameLobby/level_selector_button.tscn
+map_preview.gd::GDScript::2360860563296503703::1745321606::0::1::::<>VBoxContainer<><>0<>0<><>::
 ::res://UI/PlayerEditor/::1745312990
+::res://UI/PlayerHUD/::0

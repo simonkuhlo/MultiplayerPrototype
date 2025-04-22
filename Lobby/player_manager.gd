@@ -14,7 +14,7 @@ func _on_connected_as_client():
 
 func _on_connected_as_server():
 	multiplayer.peer_disconnected.connect(disconnect_player)
-	connect_player(own_info.class_to_dict())
+	connect_player.rpc_id(1, own_info.class_to_dict())
 
 @rpc("any_peer", "call_local", "reliable")
 func connect_player(player_info:Dictionary):
@@ -32,7 +32,7 @@ func remote_player_connected(peer_id:int, player_info:Dictionary):
 	connected_players[peer_id] = NetworkPlayer.class_from_dict(player_info)
 	player_connected.emit(peer_id)
 
-@rpc("authority", "call_remote", "reliable")
+@rpc("authority", "call_local", "reliable")
 func sync_connected_players(player_dict:Dictionary):
 	connected_players = {}
 	for player in player_dict.keys():

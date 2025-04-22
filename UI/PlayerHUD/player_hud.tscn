@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3 uid="uid://b6y8df2rx47kq"]
+
+[ext_resource type="Script" uid="uid://dgdlv1nq5erjx" path="res://UI/PlayerHUD/player_hud.gd" id="1_tvw2b"]
+
+[node name="PlayerHUD" type="CanvasLayer"]
+script = ExtResource("1_tvw2b")
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -160.5
+offset_top = -27.0
+offset_right = 160.5
+grow_horizontal = 2
+grow_vertical = 0

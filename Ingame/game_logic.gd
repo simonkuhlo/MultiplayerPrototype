@@ -3,12 +3,14 @@ class_name BasicGameLogic
 
 @export var Player:PackedScene
 
-func server_start_game():
+func start_game(): 
 	if multiplayer.is_server():
-		add_player(1)
+		for player in Env.ingame.player_manager.connected_peers:
+			spawn_player(player)
 
-func add_player(peer_id):
-	var player = Player.instantiate()
+func spawn_player(peer_id):
+	var player:PlayerCharacter = Player.instantiate()
+	player.controlling_peer = peer_id
 	player.name = str(peer_id)
 	var player_spawn = Env.ingame.level_loader.loaded_level.get_player_spawns()[0]
 	player_spawn.spawn_object(player, self)

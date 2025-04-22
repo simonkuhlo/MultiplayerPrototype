@@ -77,10 +77,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 1, -1)
 script = ExtResource("6_m61q3")
 metadata/_custom_type_script = "uid://ii34ukenfmwe"
 
-[node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="."]
-_spawnable_scenes = PackedStringArray("uid://xcjrjq5cbn7y")
-spawn_path = NodePath("..")
-
 [node name="Killzone" type="Area3D" parent="."]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Killzone"]

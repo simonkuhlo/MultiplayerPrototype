@@ -1,11 +1,15 @@
 extends CharacterBody3D
+class_name PlayerCharacter
 
 signal health_changed(health_value)
+
+@export var controlling_peer:int
 
 @onready var camera = $Camera3D
 @onready var anim_player = $AnimationPlayer
 @export var muzzle_flash:GPUParticles3D
 @onready var raycast = $Camera3D/RayCast3D
+@export var visual_mesh:MeshInstance3D
 
 var health = 3
 
@@ -16,10 +20,14 @@ const JUMP_VELOCITY = 10.0
 var gravity = 20.0
 
 func _enter_tree():
-	set_multiplayer_authority(str(name).to_int())
+	set_multiplayer_authority(controlling_peer)
 
 func _ready():
 	if not is_multiplayer_authority(): return
+	var material = visual_mesh.get_active_material(0).duplicate()
+	print(Env.lobby.player_manager.connected_players[controlling_peer].custom_color)
+	material.albedo_color = Color(Env.lobby.player_manager.connected_players[controlling_peer].custom_color)
+	visual_mesh.set_surface_override_material(0, material)
 	camera.current = true
 
 func _unhandled_input(event):
