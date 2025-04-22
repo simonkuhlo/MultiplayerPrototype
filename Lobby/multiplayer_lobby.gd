@@ -18,6 +18,7 @@ func create_server() -> void:
 	enet_peer.create_server(port, max_players)
 	multiplayer.multiplayer_peer = enet_peer
 	player_manager._on_connected_as_server()
+	Env.lobby.level_manager.select_level(Env.lobby.level_manager.level_pool.levels[0])
 
 func create_client(remote_adress:String = "localhost") -> void:
 	enet_peer.create_client(remote_adress, port)

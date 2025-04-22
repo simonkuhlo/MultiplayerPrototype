@@ -2,8 +2,9 @@
 
 [ext_resource type="Script" uid="uid://dgdlv1nq5erjx" path="res://UI/PlayerHUD/player_hud.gd" id="1_tvw2b"]
 
-[node name="PlayerHUD" type="CanvasLayer"]
+[node name="PlayerHUD" type="CanvasLayer" node_paths=PackedStringArray("hp_bar")]
 script = ExtResource("1_tvw2b")
+hp_bar = NodePath("ProgressBar")
 
 [node name="ProgressBar" type="ProgressBar" parent="."]
 anchors_preset = 7

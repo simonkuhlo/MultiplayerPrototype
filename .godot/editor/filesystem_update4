@@ -1,20 +1,17 @@
-res://Levels/Work/Test 1/Test 1.tscn
-res://Levels/Output/StandardCollection.tres
-res://world.tscn
-res://main.tscn
 res://player.tscn
-res://Lobby/level_manager.gd
-res://UI/GameLobby/map_preview.gd
+res://Levels/Output/StandardCollection.tres
+res://Player.gd
+res://Levels/Work/Test 1/Test 1.tscn
+res://world.tscn
 res://UI/GameLobby/lobby_ui.tscn
-res://UI/GameLobby/lobby_ui.gd
-res://UI/GameLobby/level_browser.gd
-res://Ingame/ingame_player_manager.gd
-res://Ingame/ingame.gd
+res://main.tscn
+res://UI/PlayerHUD/player_hud.tscn
+res://UI/PlayerHUD/player_hud.gd
 res://Ingame/level_loader.gd
 res://Ingame/game_logic.gd
-res://Lobby/player_manager.gd
-res://lib/spawn_point.gd
-res://Player.gd
-res://player_hud.gd
-res://player_hud.tscn
-res://UI/PlayerHUD/player_hud.tscn
+res://Lobby/level_manager.gd
+res://Lobby/multiplayer_lobby.gd
+res://Ingame/ingame_player_manager.gd
+res://Ingame/ingame.gd
+res://UI/GameLobby/lobby_player_visualizer.tscn
+res://UI/GameLobby/lobby_player_visualizer.gd
