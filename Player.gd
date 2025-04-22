@@ -13,7 +13,10 @@ var controlling_peer:int
 
 
 @export var max_health = 5
-@onready var health = max_health
+@onready var health = max_health:
+	set(new):
+		health = clamp(new, 0, max_health)
+		health_changed.emit(health)
 
 const SPEED = 10.0
 const JUMP_VELOCITY = 10.0
