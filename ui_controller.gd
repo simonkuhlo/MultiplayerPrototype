@@ -22,11 +22,9 @@ func lobby_screen() -> void:
 	_lobby_screen.show()
 
 func settings() -> void:
-	_clear()
 	_settings.show()
 
 func customizer() -> void:
-	_clear()
 	_cutomizer.show()
 
 func _clear() -> void:
