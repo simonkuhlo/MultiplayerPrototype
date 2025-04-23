@@ -1,2 +1,0 @@
-LevelCollection
-LevelResource
