@@ -207,7 +207,7 @@ script = ExtResource("3_h2yge")
 replication_config = SubResource("SceneReplicationConfig_2cqfq")
 
 [node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="."]
-_spawnable_scenes = PackedStringArray("uid://xcjrjq5cbn7y")
+_spawnable_scenes = PackedStringArray("uid://xcjrjq5cbn7y", "uid://casjx7g7wkmp6")
 spawn_path = NodePath("..")
 
 [connection signal="pressed" from="Lobby/LobbyUIController/LobbySelector/VBoxContainer/ConnectButton" to="Lobby/LobbyUIController/LobbySelector" method="_on_connect_button_pressed"]

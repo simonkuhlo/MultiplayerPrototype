@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://cojglfxmfbqme"]
+[gd_scene load_steps=8 format=3 uid="uid://cojglfxmfbqme"]
 
 [ext_resource type="Script" uid="uid://br16lpotthoq" path="res://Levels/_res/game_level.gd" id="1_nkfal"]
 [ext_resource type="MeshLibrary" uid="uid://rcom667glcbx" path="res://Levels/_res/atlas.meshlib" id="2_oix7o"]
 [ext_resource type="Script" uid="uid://dsup6ebj4eccv" path="res://lib/player_spawn.gd" id="2_rvlf4"]
+[ext_resource type="PackedScene" uid="uid://casjx7g7wkmp6" path="res://collectable_object.tscn" id="4_oix7o"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_rvlf4"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
@@ -39,3 +40,9 @@ metadata/_editor_floor_ = Vector3(0, 0, 0)
 [node name="PlayerSpawn" type="Marker3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.6676, 4.77541, -12.4472)
 script = ExtResource("2_rvlf4")
+
+[node name="CollectableObject" parent="." instance=ExtResource("4_oix7o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.47292, 0.0200005, 1.1678)
+
+[node name="CollectableObject2" parent="." instance=ExtResource("4_oix7o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.24766, 0.0200004, -13.1596)
