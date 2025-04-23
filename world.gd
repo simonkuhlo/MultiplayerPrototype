@@ -11,13 +11,6 @@ const Player = preload("res://player.tscn")
 const PORT = 6969
 var enet_peer = ENetMultiplayerPeer.new()
 
-func _unhandled_input(event):
-	if Input.is_action_just_pressed("quit"):
-		if Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
-			Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
-		else:
-			Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
-
 func _on_host_button_pressed():
 	main_menu.hide()
 	hud.show()

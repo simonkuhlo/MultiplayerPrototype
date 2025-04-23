@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://d0o8tr6yt6n1m"]
+
+[ext_resource type="Script" uid="uid://cekuxa1841fgs" path="res://UI/GameLobby/level_selector_button.gd" id="1_oej4d"]
+
+[node name="MapSelector" type="Button"]
+custom_minimum_size = Vector2(0, 40)
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 8.0
+grow_horizontal = 2
+script = ExtResource("1_oej4d")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

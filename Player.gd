@@ -1,13 +1,19 @@
 extends CharacterBody3D
+class_name PlayerCharacter
 
 signal health_changed(health_value)
+
+var controlling_peer:int
 
 @onready var camera = $Camera3D
 @onready var anim_player = $AnimationPlayer
 @export var muzzle_flash:GPUParticles3D
 @onready var raycast = $Camera3D/RayCast3D
+@export var visual_mesh:MeshInstance3D
 
-var health = 3
+
+@export var max_health = 5
+@onready var health = max_health
 
 const SPEED = 10.0
 const JUMP_VELOCITY = 10.0
@@ -16,7 +22,7 @@ const JUMP_VELOCITY = 10.0
 var gravity = 20.0
 
 func _enter_tree():
-	set_multiplayer_authority(str(name).to_int())
+	set_multiplayer_authority(int(name))
 
 func _ready():
 	if not is_multiplayer_authority(): return
@@ -79,7 +85,7 @@ func play_shoot_effects():
 func receive_damage():
 	health -= 1
 	if health <= 0:
-		health = 3
+		health = max_health
 		position = Vector3.ZERO
 	health_changed.emit(health)
 
