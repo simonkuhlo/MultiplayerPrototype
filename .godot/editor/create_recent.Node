@@ -1,3 +1,5 @@
+MultiplayerSynchronizer
+TextureRect
 Timer
 Node3D
 MeshInstance3D
@@ -6,10 +8,7 @@ Area3D
 ProgressBar
 CanvasLayer
 MultiplayerSpawner
-MultiplayerSynchronizer
 Node
 StaticBody3D
 VBoxContainer
 Label
-Button
-PanelContainer

@@ -1,10 +1,6 @@
-res://Levels/Output/StandardCollection.tres
 res://collectable_object.tscn
-res://collectable_object.gd
-res://Levels/Work/Test 2/Test 2.tscn
-res://main.tscn
-res://Levels/_tools/level_tool_collection.tscn
-res://Levels/Work/Test 1/Test 1.tscn
-res://UI/GameLobby/lobby_ui.tscn
+res://Levels/Output/StandardCollection.tres
 res://player.tscn
-res://Player.gd
+res://main.tscn
+res://UI/PlayerHUD/player_hud.tscn
+res://world.tscn
