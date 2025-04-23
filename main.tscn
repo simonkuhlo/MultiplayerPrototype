@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://biscywn1115d6"]
+[gd_scene load_steps=21 format=3 uid="uid://biscywn1115d6"]
 
 [ext_resource type="Script" uid="uid://c4ssrt3bs6qjq" path="res://lib/mouse_capture.gd" id="1_0xm2m"]
 [ext_resource type="Script" uid="uid://jg32m0lbwojd" path="res://main.gd" id="1_272bh"]
@@ -13,6 +13,7 @@
 [ext_resource type="Script" uid="uid://t30t86v8ciy8" path="res://UI/lobby_selector.gd" id="7_kek77"]
 [ext_resource type="Script" uid="uid://bqbexh2ut2yrr" path="res://Lobby/level_manager.gd" id="7_ycdy4"]
 [ext_resource type="PackedScene" uid="uid://b5mqqrasjfnic" path="res://UI/GameLobby/lobby_ui.tscn" id="8_efxa6"]
+[ext_resource type="PackedScene" uid="uid://dxsepwxhufar6" path="res://peer_info.tscn" id="9_cegan"]
 [ext_resource type="Script" uid="uid://c5ymhdoisq3th" path="res://Ingame/game_logic.gd" id="11_dg77c"]
 [ext_resource type="Script" uid="uid://ciqobvwy82nue" path="res://Ingame/ingame.gd" id="11_ycdy4"]
 [ext_resource type="PackedScene" uid="uid://xcjrjq5cbn7y" path="res://player.tscn" id="13_w48qg"]
@@ -147,6 +148,13 @@ replication_config = SubResource("SceneReplicationConfig_2cqfq")
 
 [node name="PlayerManager" type="Node" parent="Lobby"]
 script = ExtResource("7_dg77c")
+peer_info_scene = ExtResource("9_cegan")
+
+[node name="ConnectedPlayers" type="Node" parent="Lobby/PlayerManager"]
+
+[node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="Lobby/PlayerManager"]
+_spawnable_scenes = PackedStringArray("uid://dxsepwxhufar6")
+spawn_path = NodePath("..")
 
 [node name="Ingame" type="Node" parent="." node_paths=PackedStringArray("game_logic", "level_loader", "controlled_player")]
 script = ExtResource("11_ycdy4")
@@ -175,4 +183,5 @@ spawn_path = NodePath("..")
 [connection signal="pressed" from="UIController/LobbySelector/VBoxContainer/ConnectButton" to="UIController/LobbySelector" method="_on_connect_button_pressed"]
 [connection signal="pressed" from="UIController/MainMenu/VBoxContainer/HostButton" to="UIController/MainMenu" method="_on_host_button_pressed"]
 [connection signal="pressed" from="UIController/MainMenu/VBoxContainer/JoinButton" to="UIController/MainMenu" method="_on_join_button_pressed"]
+[connection signal="spawned" from="Lobby/PlayerManager/MultiplayerSpawner" to="Ingame/GameLogic" method="_on_multiplayer_spawner_spawned"]
 [connection signal="spawned" from="MultiplayerSpawner" to="Ingame/GameLogic" method="_on_multiplayer_spawner_spawned"]

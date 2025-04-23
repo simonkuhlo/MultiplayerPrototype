@@ -6,6 +6,7 @@ signal player_list_reset()
 signal player_disconnected(id:int)
 
 @export var own_info:NetworkPlayer = NetworkPlayer.new()
+@export var peer_info_scene:PackedScene
 
 var connected_players:Dictionary[int, NetworkPlayer] = {}
 
@@ -20,6 +21,11 @@ func _on_connected_as_server():
 func connect_player(player_info:Dictionary):
 	var peer_id = multiplayer.get_remote_sender_id()
 	connected_players[peer_id] = NetworkPlayer.class_from_dict(player_info)
+	var instance:PeerInfo = peer_info_scene.instantiate()
+	instance.name = str(peer_id)
+	instance.player_name = connected_players[peer_id].player_name
+	instance.custom_color = connected_players[peer_id].custom_color
+	add_child(instance)
 	remote_player_connected.rpc(peer_id, player_info)
 	var player_dict = {}
 	for player in connected_players.keys():
