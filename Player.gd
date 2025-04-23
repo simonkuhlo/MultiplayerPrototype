@@ -85,7 +85,7 @@ func play_shoot_effects():
 func receive_damage():
 	health -= 1
 	if health <= 0:
-		health = 3
+		health = max_health
 		position = Vector3.ZERO
 	health_changed.emit(health)
 

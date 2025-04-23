@@ -6,6 +6,7 @@ res://world.tscn
 res://UI/GameLobby/lobby_ui.tscn
 res://main.tscn
 res://UI/PlayerHUD/player_hud.tscn
+<<<<<<< Updated upstream
 res://UI/PlayerHUD/player_hud.gd
 res://Ingame/level_loader.gd
 res://Ingame/game_logic.gd
@@ -19,3 +20,7 @@ res://Levels/Work/Test 2/Test 2.tscn
 res://Levels/_tools/level_tool_collection.tscn
 res://Levels/Output/Test 2.tres
 res://Levels/Output/Test 1.tres
+=======
+res://world.tscn
+res://Player.gd
+>>>>>>> Stashed changes
