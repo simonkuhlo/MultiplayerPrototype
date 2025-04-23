@@ -1,8 +1,9 @@
-[gd_scene load_steps=19 format=3 uid="uid://biscywn1115d6"]
+[gd_scene load_steps=20 format=3 uid="uid://biscywn1115d6"]
 
 [ext_resource type="Script" uid="uid://c4ssrt3bs6qjq" path="res://lib/mouse_capture.gd" id="1_0xm2m"]
 [ext_resource type="Script" uid="uid://jg32m0lbwojd" path="res://main.gd" id="1_272bh"]
 [ext_resource type="Script" uid="uid://dejd6iloo8fhy" path="res://Lobby/multiplayer_lobby.gd" id="1_ig7tw"]
+[ext_resource type="Script" uid="uid://c30akwclnjhl6" path="res://ui_controller.gd" id="2_074og"]
 [ext_resource type="Script" uid="uid://lhwjer81btit" path="res://meta_scripts.gd" id="2_vivmo"]
 [ext_resource type="Script" uid="uid://ccqiawq0hsfry" path="res://Ingame/level_loader.gd" id="3_h2yge"]
 [ext_resource type="Resource" uid="uid://dkiyuw74hedbx" path="res://Levels/Output/StandardCollection.tres" id="4_7mycd"]
@@ -28,6 +29,9 @@ script = ExtResource("1_272bh")
 lobby = NodePath("Lobby")
 ingame = NodePath("Ingame")
 meta = NodePath("MetaScripts")
+
+[node name="UIController" type="Node" parent="."]
+script = ExtResource("2_074og")
 
 [node name="MetaScripts" type="Node" parent="." node_paths=PackedStringArray("mouse_mode_control")]
 script = ExtResource("2_vivmo")
@@ -187,27 +191,28 @@ layout_mode = 2
 size_flags_horizontal = 3
 text = "Exit"
 
-[node name="Ingame" type="Node" parent="." node_paths=PackedStringArray("game_logic", "level_loader", "player_manager", "hud")]
+[node name="Ingame" type="Node" parent="." node_paths=PackedStringArray("game_logic", "level_loader", "controlled_player")]
 script = ExtResource("11_ycdy4")
 game_logic = NodePath("GameLogic")
 level_loader = NodePath("Level")
-player_manager = NodePath("IngamePlayerManager")
-hud = NodePath("PlayerHUD")
+controlled_player = NodePath("ControlledPlayer")
 
 [node name="GameLogic" type="Node" parent="Ingame"]
 script = ExtResource("11_dg77c")
 Player = ExtResource("13_w48qg")
 
-[node name="IngamePlayerManager" type="Node" parent="Ingame"]
+[node name="ControlledPlayer" type="Node" parent="Ingame" node_paths=PackedStringArray("ingame_hud_scene")]
 script = ExtResource("15_2cqfq")
+ingame_hud_scene = NodePath("PlayerHUD")
 
-[node name="PlayerHUD" parent="Ingame" instance=ExtResource("17_yaehf")]
+[node name="PlayerHUD" parent="Ingame/ControlledPlayer" instance=ExtResource("17_yaehf")]
+visible = false
 
 [node name="Level" type="Node" parent="Ingame"]
 script = ExtResource("3_h2yge")
 
 [node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="."]
-_spawnable_scenes = PackedStringArray("uid://xcjrjq5cbn7y", "uid://casjx7g7wkmp6")
+_spawnable_scenes = PackedStringArray("uid://xcjrjq5cbn7y")
 spawn_path = NodePath("..")
 
 [connection signal="pressed" from="Lobby/LobbyUIController/LobbySelector/VBoxContainer/ConnectButton" to="Lobby/LobbyUIController/LobbySelector" method="_on_connect_button_pressed"]

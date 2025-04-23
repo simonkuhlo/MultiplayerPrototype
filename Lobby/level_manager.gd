@@ -56,7 +56,7 @@ func player_loaded():
 	if !multiplayer.is_server():
 		return
 	var peer_id = multiplayer.get_remote_sender_id()
-	Env.ingame.player_manager.connected_peers.append(peer_id)
+	Env.ingame.game_logic.connected_peers.append(peer_id)
 	awaited_peers.erase(peer_id)
 	if awaited_peers == []:
 		Env.ingame.game_logic.start_game()
