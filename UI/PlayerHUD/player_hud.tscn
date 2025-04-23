@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://b6y8df2rx47kq"]
+[gd_scene load_steps=3 format=3 uid="uid://b6y8df2rx47kq"]
 
 [ext_resource type="Script" uid="uid://dgdlv1nq5erjx" path="res://UI/PlayerHUD/player_hud.gd" id="1_tvw2b"]
+[ext_resource type="Texture2D" uid="uid://ds06440lhiews" path="res://addons/kenney_particle_pack/circle_03.png" id="2_pkcmm"]
 
 [node name="PlayerHUD" type="CanvasLayer" node_paths=PackedStringArray("hp_bar")]
 script = ExtResource("1_tvw2b")
@@ -17,3 +18,19 @@ offset_top = -27.0
 offset_right = 160.5
 grow_horizontal = 2
 grow_vertical = 0
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -15.5
+offset_top = -15.5
+offset_right = 15.5
+offset_bottom = 15.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_pkcmm")
+expand_mode = 2
+stretch_mode = 4
