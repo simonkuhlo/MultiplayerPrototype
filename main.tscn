@@ -19,7 +19,7 @@
 [ext_resource type="PackedScene" uid="uid://b6y8df2rx47kq" path="res://UI/PlayerHUD/player_hud.tscn" id="17_yaehf"]
 
 [sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_2cqfq"]
-properties/0/path = NodePath("Lobby/LevelManager:selected_level_serialized")
+properties/0/path = NodePath(".:selected_level_serialized")
 properties/0/spawn = true
 properties/0/replication_mode = 2
 
@@ -45,6 +45,9 @@ ui = NodePath("LobbyUIController")
 [node name="LevelManager" type="Node" parent="Lobby"]
 script = ExtResource("7_ycdy4")
 level_pool = ExtResource("4_7mycd")
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="Lobby/LevelManager"]
+replication_config = SubResource("SceneReplicationConfig_2cqfq")
 
 [node name="PlayerManager" type="Node" parent="Lobby"]
 script = ExtResource("7_dg77c")
@@ -202,9 +205,6 @@ script = ExtResource("15_2cqfq")
 
 [node name="Level" type="Node" parent="Ingame"]
 script = ExtResource("3_h2yge")
-
-[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
-replication_config = SubResource("SceneReplicationConfig_2cqfq")
 
 [node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="."]
 _spawnable_scenes = PackedStringArray("uid://xcjrjq5cbn7y", "uid://casjx7g7wkmp6")
