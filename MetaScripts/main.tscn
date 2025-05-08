@@ -1,22 +1,22 @@
 [gd_scene load_steps=21 format=3 uid="uid://biscywn1115d6"]
 
-[ext_resource type="Script" uid="uid://c4ssrt3bs6qjq" path="res://lib/mouse_capture.gd" id="1_0xm2m"]
-[ext_resource type="Script" uid="uid://jg32m0lbwojd" path="res://main.gd" id="1_272bh"]
+[ext_resource type="Script" uid="uid://c4ssrt3bs6qjq" path="res://addons/lib/mouse_capture.gd" id="1_0xm2m"]
+[ext_resource type="Script" uid="uid://jg32m0lbwojd" path="res://MetaScripts/main.gd" id="1_272bh"]
 [ext_resource type="Script" uid="uid://dejd6iloo8fhy" path="res://Lobby/multiplayer_lobby.gd" id="1_ig7tw"]
-[ext_resource type="Script" uid="uid://c30akwclnjhl6" path="res://ui_controller.gd" id="2_074og"]
-[ext_resource type="Script" uid="uid://lhwjer81btit" path="res://meta_scripts.gd" id="2_vivmo"]
+[ext_resource type="Script" uid="uid://c30akwclnjhl6" path="res://UI/ui_controller.gd" id="2_074og"]
+[ext_resource type="Script" uid="uid://lhwjer81btit" path="res://MetaScripts/meta_scripts.gd" id="2_vivmo"]
 [ext_resource type="Script" uid="uid://ccqiawq0hsfry" path="res://Ingame/level_loader.gd" id="3_h2yge"]
 [ext_resource type="Resource" uid="uid://dkiyuw74hedbx" path="res://Levels/Output/StandardCollection.tres" id="4_7mycd"]
-[ext_resource type="PackedScene" uid="uid://cp0tsrrtelbg8" path="res://customize.tscn" id="6_074og"]
+[ext_resource type="PackedScene" uid="uid://cp0tsrrtelbg8" path="res://UI/customize.tscn" id="6_074og"]
 [ext_resource type="Script" uid="uid://bw371ho6ingvo" path="res://UI/main_menu_ui.gd" id="7_5vw27"]
 [ext_resource type="Script" uid="uid://boul2yb7qkglk" path="res://Lobby/player_manager.gd" id="7_dg77c"]
 [ext_resource type="Script" uid="uid://t30t86v8ciy8" path="res://UI/lobby_selector.gd" id="7_kek77"]
 [ext_resource type="Script" uid="uid://bqbexh2ut2yrr" path="res://Lobby/level_manager.gd" id="7_ycdy4"]
 [ext_resource type="PackedScene" uid="uid://b5mqqrasjfnic" path="res://UI/GameLobby/lobby_ui.tscn" id="8_efxa6"]
-[ext_resource type="PackedScene" uid="uid://dxsepwxhufar6" path="res://peer_info.tscn" id="9_cegan"]
+[ext_resource type="PackedScene" uid="uid://dxsepwxhufar6" path="res://Lobby/peer_info.tscn" id="9_cegan"]
 [ext_resource type="Script" uid="uid://c5ymhdoisq3th" path="res://Ingame/game_logic.gd" id="11_dg77c"]
 [ext_resource type="Script" uid="uid://ciqobvwy82nue" path="res://Ingame/ingame.gd" id="11_ycdy4"]
-[ext_resource type="PackedScene" uid="uid://xcjrjq5cbn7y" path="res://player.tscn" id="13_w48qg"]
+[ext_resource type="PackedScene" uid="uid://xcjrjq5cbn7y" path="res://Ingame/player.tscn" id="13_w48qg"]
 [ext_resource type="Script" uid="uid://d3nwu6l1sdcle" path="res://Ingame/ingame_player_manager.gd" id="15_2cqfq"]
 [ext_resource type="PackedScene" uid="uid://b6y8df2rx47kq" path="res://UI/PlayerHUD/player_hud.tscn" id="17_yaehf"]
 
@@ -149,8 +149,6 @@ replication_config = SubResource("SceneReplicationConfig_2cqfq")
 [node name="PlayerManager" type="Node" parent="Lobby"]
 script = ExtResource("7_dg77c")
 peer_info_scene = ExtResource("9_cegan")
-
-[node name="ConnectedPlayers" type="Node" parent="Lobby/PlayerManager"]
 
 [node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="Lobby/PlayerManager"]
 _spawnable_scenes = PackedStringArray("uid://dxsepwxhufar6")

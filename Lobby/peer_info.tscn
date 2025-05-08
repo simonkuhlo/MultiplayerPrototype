@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://dxsepwxhufar6"]
 
-[ext_resource type="Script" uid="uid://16d17eipocqy" path="res://peer_info.gd" id="1_ew0ih"]
+[ext_resource type="Script" uid="uid://16d17eipocqy" path="res://Lobby/peer_info.gd" id="1_ew0ih"]
 
 [sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_ew0ih"]
 properties/0/path = NodePath(".:player_name")

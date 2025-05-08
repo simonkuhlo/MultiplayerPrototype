@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://cp0tsrrtelbg8"]
 
-[ext_resource type="Script" uid="uid://8d24hs4bxace" path="res://customize.gd" id="1_vau1m"]
+[ext_resource type="Script" uid="uid://8d24hs4bxace" path="res://UI/customize.gd" id="1_vau1m"]
 
 [node name="Customize" type="Control" node_paths=PackedStringArray("name_line", "color_select")]
 layout_mode = 3

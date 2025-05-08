@@ -1,10 +1,11 @@
 [gd_scene load_steps=20 format=3 uid="uid://xcjrjq5cbn7y"]
 
-[ext_resource type="Script" uid="uid://dpnj1nmdn8vbs" path="res://Player.gd" id="1_2v3wm"]
-[ext_resource type="PackedScene" uid="uid://ugaby2xt7fo1" path="res://assets/models/shotgun_1.glb" id="2_hqtel"]
-[ext_resource type="Script" uid="uid://b2odcgmin1krn" path="res://name_label.gd" id="2_sweqy"]
+[ext_resource type="Script" uid="uid://dpnj1nmdn8vbs" path="res://Ingame/Player.gd" id="1_2v3wm"]
+[ext_resource type="PackedScene" uid="uid://ugaby2xt7fo1" path="res://addons/assets/models/shotgun_1.glb" id="2_hqtel"]
+[ext_resource type="Script" uid="uid://b2odcgmin1krn" path="res://Ingame/name_label.gd" id="2_sweqy"]
 [ext_resource type="Texture2D" uid="uid://vwob30tkwej4" path="res://addons/kenney_particle_pack/star_06.png" id="3_27dhu"]
-[ext_resource type="Script" uid="uid://punagjc0vi3t" path="res://gun.gd" id="3_sweqy"]
+[ext_resource type="Script" uid="uid://punagjc0vi3t" path="res://Ingame/gun.gd" id="3_sweqy"]
+
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sweqy"]
 
