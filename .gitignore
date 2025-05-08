@@ -3,3 +3,4 @@
 .import
 /.godot/*
 /.godot/imported
+\.godot\
