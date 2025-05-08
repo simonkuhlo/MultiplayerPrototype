@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://biscywn1115d6"]
+[gd_scene load_steps=20 format=3 uid="uid://biscywn1115d6"]
 
 [ext_resource type="Script" uid="uid://jg32m0lbwojd" path="res://MetaScripts/main.gd" id="1_272bh"]
 [ext_resource type="Script" uid="uid://dejd6iloo8fhy" path="res://Lobby/multiplayer_lobby.gd" id="1_ig7tw"]
@@ -7,11 +7,10 @@
 [ext_resource type="PackedScene" uid="uid://cgllbdmtsdq68" path="res://main_menu_button.tscn" id="5_2pxrw"]
 [ext_resource type="PackedScene" uid="uid://cp0tsrrtelbg8" path="res://UI/customize.tscn" id="6_074og"]
 [ext_resource type="Script" uid="uid://bw371ho6ingvo" path="res://UI/main_menu_ui.gd" id="7_5vw27"]
-[ext_resource type="Script" uid="uid://boul2yb7qkglk" path="res://Lobby/player_manager.gd" id="7_dg77c"]
 [ext_resource type="Script" uid="uid://t30t86v8ciy8" path="res://UI/lobby_selector.gd" id="7_kek77"]
 [ext_resource type="Script" uid="uid://bqbexh2ut2yrr" path="res://Lobby/level_manager.gd" id="7_ycdy4"]
 [ext_resource type="PackedScene" uid="uid://b5mqqrasjfnic" path="res://UI/GameLobby/lobby_ui.tscn" id="8_efxa6"]
-[ext_resource type="PackedScene" uid="uid://dxsepwxhufar6" path="res://Lobby/peer_info.tscn" id="9_cegan"]
+[ext_resource type="PackedScene" uid="uid://yxfdwopi515r" path="res://Player Manager/player_manager.tscn" id="11_c0ic4"]
 [ext_resource type="Script" uid="uid://c5ymhdoisq3th" path="res://Ingame/game_logic.gd" id="11_dg77c"]
 [ext_resource type="Script" uid="uid://ciqobvwy82nue" path="res://Ingame/ingame.gd" id="11_ycdy4"]
 [ext_resource type="PackedScene" uid="uid://xcjrjq5cbn7y" path="res://Ingame/player.tscn" id="13_w48qg"]
@@ -136,7 +135,7 @@ grow_vertical = 2
 [node name="Lobby" type="Node" parent="." node_paths=PackedStringArray("level_manager", "player_manager")]
 script = ExtResource("1_ig7tw")
 level_manager = NodePath("LevelManager")
-player_manager = NodePath("PlayerManager")
+player_manager = NodePath("../PlayerManager")
 
 [node name="LevelManager" type="Node" parent="Lobby"]
 script = ExtResource("7_ycdy4")
@@ -145,13 +144,7 @@ level_pool = ExtResource("4_7mycd")
 [node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="Lobby/LevelManager"]
 replication_config = SubResource("SceneReplicationConfig_2cqfq")
 
-[node name="PlayerManager" type="Node" parent="Lobby"]
-script = ExtResource("7_dg77c")
-peer_info_scene = ExtResource("9_cegan")
-
-[node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="Lobby/PlayerManager"]
-_spawnable_scenes = PackedStringArray("uid://dxsepwxhufar6")
-spawn_path = NodePath("..")
+[node name="PlayerManager" parent="." instance=ExtResource("11_c0ic4")]
 
 [node name="Ingame" type="Node" parent="." node_paths=PackedStringArray("game_logic", "controlled_player", "level_node")]
 process_mode = 4
@@ -185,5 +178,4 @@ spawn_path = NodePath("..")
 [connection signal="pressed" from="UIController/LobbySelector/VBoxContainer/ConnectButton" to="UIController/LobbySelector" method="_on_connect_button_pressed"]
 [connection signal="pressed" from="UIController/MainMenu/VBoxContainer/HostButton" to="UIController/MainMenu" method="_on_host_button_pressed"]
 [connection signal="pressed" from="UIController/MainMenu/VBoxContainer/JoinButton" to="UIController/MainMenu" method="_on_join_button_pressed"]
-[connection signal="spawned" from="Lobby/PlayerManager/MultiplayerSpawner" to="Ingame/GameLogic" method="_on_multiplayer_spawner_spawned"]
 [connection signal="spawned" from="MultiplayerSpawner" to="Ingame/GameLogic" method="_on_multiplayer_spawner_spawned"]
