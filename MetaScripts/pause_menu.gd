@@ -8,6 +8,10 @@ var _paused:bool = false:
 			pause()
 		else:
 			resume()
+		_paused = new
+
+func _ready() -> void:
+	ui.hide()
 
 func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("pause"):

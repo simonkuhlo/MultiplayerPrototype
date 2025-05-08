@@ -1,9 +1,8 @@
-[gd_scene load_steps=22 format=3 uid="uid://biscywn1115d6"]
+[gd_scene load_steps=21 format=3 uid="uid://biscywn1115d6"]
 
 [ext_resource type="Script" uid="uid://jg32m0lbwojd" path="res://MetaScripts/main.gd" id="1_272bh"]
 [ext_resource type="Script" uid="uid://dejd6iloo8fhy" path="res://Lobby/multiplayer_lobby.gd" id="1_ig7tw"]
 [ext_resource type="Script" uid="uid://c30akwclnjhl6" path="res://UI/ui_controller.gd" id="2_074og"]
-[ext_resource type="Script" uid="uid://ccqiawq0hsfry" path="res://Ingame/level_loader.gd" id="3_h2yge"]
 [ext_resource type="Resource" uid="uid://dkiyuw74hedbx" path="res://Levels/Output/StandardCollection.tres" id="4_7mycd"]
 [ext_resource type="PackedScene" uid="uid://cgllbdmtsdq68" path="res://main_menu_button.tscn" id="5_2pxrw"]
 [ext_resource type="PackedScene" uid="uid://cp0tsrrtelbg8" path="res://UI/customize.tscn" id="6_074og"]
@@ -154,15 +153,17 @@ peer_info_scene = ExtResource("9_cegan")
 _spawnable_scenes = PackedStringArray("uid://dxsepwxhufar6")
 spawn_path = NodePath("..")
 
-[node name="Ingame" type="Node" parent="." node_paths=PackedStringArray("game_logic", "level_loader", "controlled_player", "pause_menu")]
+[node name="Ingame" type="Node" parent="." node_paths=PackedStringArray("game_logic", "controlled_player", "level_node")]
+process_mode = 4
 script = ExtResource("11_ycdy4")
 game_logic = NodePath("GameLogic")
-level_loader = NodePath("Level")
 controlled_player = NodePath("ControlledPlayer")
-pause_menu = NodePath("PauseMenu")
+level_node = NodePath("Level")
 
 [node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="Ingame"]
 replication_config = SubResource("SceneReplicationConfig_2pxrw")
+
+[node name="PauseMenu" parent="Ingame" instance=ExtResource("18_y6bep")]
 
 [node name="GameLogic" type="Node" parent="Ingame"]
 script = ExtResource("11_dg77c")
@@ -176,9 +177,6 @@ ingame_hud_scene = NodePath("PlayerHUD")
 visible = false
 
 [node name="Level" type="Node" parent="Ingame"]
-script = ExtResource("3_h2yge")
-
-[node name="PauseMenu" parent="Ingame" instance=ExtResource("18_y6bep")]
 
 [node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="."]
 _spawnable_scenes = PackedStringArray("uid://xcjrjq5cbn7y")

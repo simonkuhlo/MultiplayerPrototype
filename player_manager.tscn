@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://yxfdwopi515r"]
+
+[ext_resource type="Script" uid="uid://boul2yb7qkglk" path="res://Lobby/player_manager.gd" id="1_ahlmt"]
+[ext_resource type="PackedScene" uid="uid://dxsepwxhufar6" path="res://Lobby/peer_info.tscn" id="2_wm554"]
+
+[node name="PlayerManager" type="Node"]
+script = ExtResource("1_ahlmt")
+peer_info_scene = ExtResource("2_wm554")
+
+[node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="."]
+_spawnable_scenes = PackedStringArray("uid://dxsepwxhufar6")
+spawn_path = NodePath("..")

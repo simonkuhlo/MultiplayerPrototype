@@ -13,7 +13,7 @@ func spawn_player(peer_id):
 	var player:PlayerCharacter = Player.instantiate()
 	player.controlling_peer = peer_id
 	player.name = str(peer_id)
-	var player_spawn = Env.ingame.level_loader.loaded_level.get_player_spawns()[0]
+	var player_spawn = Env.ingame.loaded_level.get_player_spawns()[0]
 	player_spawn.spawn_object(player, self)
 	if player.is_multiplayer_authority():
 		Env.ingame.controlled_player.object = player

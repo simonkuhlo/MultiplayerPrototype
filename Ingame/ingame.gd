@@ -1,11 +1,13 @@
 extends Node
 class_name IngameLogic
 
+signal activated()
+signal deactivated()
+
 @export var game_logic:BasicGameLogic
-@export var level_loader:LevelLoader
 @export var controlled_player:IngamePlayerManager
 
-@export var pause_menu:Node
+@export var level_node:Node
 
 @export var is_ingame:bool:
 	set(new):
@@ -15,12 +17,22 @@ class_name IngameLogic
 			deactivate()
 		is_ingame = new
 
+var loaded_level:GameLevel
+
 func activate() -> void:
-	pause_menu.process_mode = Node.PROCESS_MODE_INHERIT
+	process_mode = Node.PROCESS_MODE_INHERIT
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
-	controlled_player.ingame_hud_scene.show()
+	activated.emit()
 
 func deactivate() -> void:
-	pause_menu.process_mode = Node.PROCESS_MODE_DISABLED
+	deactivated.emit()
+	process_mode = Node.PROCESS_MODE_DISABLED
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
-	controlled_player.ingame_hud_scene.hide()
+
+func load_level(new_level:GameLevel) -> void:
+	for child in level_node.get_children():
+		child.queue_free()
+	level_node.add_child(new_level)
+	loaded_level = new_level
+	Env.ui._clear()
+	Env.lobby.level_manager.player_loaded.rpc_id(1)

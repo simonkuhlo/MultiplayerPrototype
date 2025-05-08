@@ -49,7 +49,7 @@ func load_level():
 	if !selected_level:
 		push_error("Local level pool does not caontain this level")
 		return
-	Env.ingame.level_loader.load_level(selected_level.level_scene.instantiate())
+	Env.ingame.load_level(selected_level.level_scene.instantiate())
 
 @rpc("any_peer", "call_local", "reliable")
 func player_loaded():
