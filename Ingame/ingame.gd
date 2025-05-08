@@ -7,16 +7,20 @@ class_name IngameLogic
 
 @export var pause_menu:Node
 
-var is_ingame:bool = false
+@export var is_ingame:bool:
+	set(new):
+		if new:
+			activate()
+		else:
+			deactivate()
+		is_ingame = new
 
 func activate() -> void:
 	pause_menu.process_mode = Node.PROCESS_MODE_INHERIT
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	controlled_player.ingame_hud_scene.show()
-	is_ingame = true
 
 func deactivate() -> void:
 	pause_menu.process_mode = Node.PROCESS_MODE_DISABLED
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	controlled_player.ingame_hud_scene.hide()
-	is_ingame = false

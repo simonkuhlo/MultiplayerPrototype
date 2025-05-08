@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://biscywn1115d6"]
+[gd_scene load_steps=22 format=3 uid="uid://biscywn1115d6"]
 
 [ext_resource type="Script" uid="uid://jg32m0lbwojd" path="res://MetaScripts/main.gd" id="1_272bh"]
 [ext_resource type="Script" uid="uid://dejd6iloo8fhy" path="res://Lobby/multiplayer_lobby.gd" id="1_ig7tw"]
@@ -24,6 +24,11 @@
 properties/0/path = NodePath(".:selected_level_serialized")
 properties/0/spawn = true
 properties/0/replication_mode = 2
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_2pxrw"]
+properties/0/path = NodePath(".:is_ingame")
+properties/0/spawn = true
+properties/0/replication_mode = 1
 
 [node name="Main" type="Node" node_paths=PackedStringArray("lobby", "ingame", "ui")]
 script = ExtResource("1_272bh")
@@ -155,6 +160,9 @@ game_logic = NodePath("GameLogic")
 level_loader = NodePath("Level")
 controlled_player = NodePath("ControlledPlayer")
 pause_menu = NodePath("PauseMenu")
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="Ingame"]
+replication_config = SubResource("SceneReplicationConfig_2pxrw")
 
 [node name="GameLogic" type="Node" parent="Ingame"]
 script = ExtResource("11_dg77c")
