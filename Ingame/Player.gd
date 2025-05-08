@@ -13,7 +13,7 @@ var controlling_peer:int
 
 
 @export var max_health = 5
-@onready var health = max_health:
+@onready var health = 3:
 	set(new):
 		health = clamp(new, 0, max_health)
 		health_changed.emit(health)

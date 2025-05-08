@@ -59,4 +59,5 @@ func player_loaded():
 	Env.ingame.game_logic.connected_peers.append(peer_id)
 	awaited_peers.erase(peer_id)
 	if awaited_peers == []:
+		Env.ingame.activate()
 		Env.ingame.game_logic.start_game()

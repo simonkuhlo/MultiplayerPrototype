@@ -5,7 +5,6 @@
 [ext_resource type="Script" uid="uid://dsup6ebj4eccv" path="res://addons/lib/player_spawn.gd" id="2_rvlf4"]
 [ext_resource type="PackedScene" uid="uid://casjx7g7wkmp6" path="res://Ingame/collectable_object.tscn" id="4_oix7o"]
 
-
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_rvlf4"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
 ground_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)

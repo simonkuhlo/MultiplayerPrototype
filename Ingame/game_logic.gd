@@ -23,7 +23,9 @@ func remove_player(peer_id):
 	if player:
 		player.queue_free()
 
-
 func _on_multiplayer_spawner_spawned(node):
 	if node.is_multiplayer_authority():
 		Env.ingame.controlled_player.object = node
+
+func _pause():
+	Env.ui._pause_menu

@@ -12,7 +12,6 @@ func load_level(new_level:GameLevel) -> void:
 	add_child(new_level)
 	loaded_level = new_level
 	Env.ui._clear()
-	Env.meta.mouse_mode_control.ingame_mode()
 	_on_level_loaded()
 
 func _on_level_loaded() -> void:

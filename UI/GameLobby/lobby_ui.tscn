@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://b5mqqrasjfnic"]
+[gd_scene load_steps=8 format=3 uid="uid://b5mqqrasjfnic"]
 
 [ext_resource type="Script" uid="uid://cmj5dh7j2itef" path="res://UI/GameLobby/lobby_ui.gd" id="1_hlmkj"]
 [ext_resource type="PackedScene" uid="uid://bi054ogsnpm52" path="res://UI/GameLobby/lobby_player_visualizer.tscn" id="2_xjwml"]
 [ext_resource type="Script" uid="uid://cqo7rr6svqweq" path="res://UI/GameLobby/connected_players.gd" id="3_83fv8"]
 [ext_resource type="Script" uid="uid://8vva8aglfryl" path="res://UI/GameLobby/map_preview.gd" id="4_1x6wr"]
 [ext_resource type="Script" uid="uid://dynwt3ht3unqr" path="res://UI/GameLobby/level_browser.gd" id="4_u7fur"]
+[ext_resource type="PackedScene" uid="uid://cgllbdmtsdq68" path="res://main_menu_button.tscn" id="5_tfi07"]
 [ext_resource type="PackedScene" uid="uid://d0o8tr6yt6n1m" path="res://UI/GameLobby/level_selector_button.tscn" id="5_vrqac"]
 
 [node name="LobbyUI" type="Control"]
@@ -78,12 +79,11 @@ text = "Customize"
 [node name="SettingsButton" type="Button" parent="MarginContainer/HBoxContainer/MarginContainer/VBoxContainer2"]
 layout_mode = 2
 size_flags_vertical = 8
+disabled = true
 text = "Settings"
 
-[node name="MainMenuButton" type="Button" parent="MarginContainer/HBoxContainer/MarginContainer/VBoxContainer2"]
+[node name="MainMenuButton" parent="MarginContainer/HBoxContainer/MarginContainer/VBoxContainer2" instance=ExtResource("5_tfi07")]
 layout_mode = 2
-size_flags_vertical = 8
-text = "Main menu"
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
 layout_mode = 2

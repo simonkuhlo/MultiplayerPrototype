@@ -6,12 +6,12 @@ class_name CollectableObject
 @export var timer:Timer
 
 @export var factor:float = 0.7
-@export var max:float = 0.3
+@export var max_travel_distance:float = 0.3
 
 func _physics_process(delta: float) -> void:
 	visuals.rotate_y(2 * delta)
-	visuals.position.y += clampf(factor * delta, -max, max)
-	if abs(visuals.position.y) >= abs(max):
+	visuals.position.y += clampf(factor * delta, -max_travel_distance, max_travel_distance)
+	if abs(visuals.position.y) >= abs(max_travel_distance):
 		factor *= -1
 
 
