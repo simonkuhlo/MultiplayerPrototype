@@ -1,6 +1,6 @@
 /Export/
 .godot/
-.import
+*.import
 /.godot/*
 /.godot/imported
 .godot\
