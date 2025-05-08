@@ -41,7 +41,9 @@ func server_load_level():
 	if !selected_level:
 		push_error("Local level pool does not caontain this level")
 		return
-	awaited_peers = Env.lobby.player_manager.connected_players.keys()
+	awaited_peers = []
+	for player in Env.lobby.player_manager.connected_players.list:
+		awaited_peers.append(player.name)
 	load_level.rpc()
 
 @rpc("authority", "call_local", "reliable")
