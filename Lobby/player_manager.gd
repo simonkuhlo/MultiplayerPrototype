@@ -8,8 +8,6 @@ func connect_player(id:int):
 	if !multiplayer.is_server():
 		return
 	var instance:NetworkPlayer = player_scene.instantiate()
-	instance.player_name = "Stranger"
-	instance.unique_id = id
 	instance.name = str(id)
 	connected_players.add_child(instance)
 

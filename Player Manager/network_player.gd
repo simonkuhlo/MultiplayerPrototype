@@ -18,3 +18,6 @@ signal player_updated()
 
 func _enter_tree() -> void:
 	set_multiplayer_authority(int(name))
+	if is_multiplayer_authority():
+		player_name = "Stranger"
+		unique_id = int(name)
