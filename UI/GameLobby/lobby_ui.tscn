@@ -79,7 +79,6 @@ text = "Customize"
 [node name="SettingsButton" type="Button" parent="MarginContainer/HBoxContainer/MarginContainer/VBoxContainer2"]
 layout_mode = 2
 size_flags_vertical = 8
-disabled = true
 text = "Settings"
 
 [node name="MainMenuButton" parent="MarginContainer/HBoxContainer/MarginContainer/VBoxContainer2" instance=ExtResource("5_tfi07")]
@@ -117,4 +116,5 @@ layout_mode = 2
 text = "Start"
 
 [connection signal="pressed" from="MarginContainer/HBoxContainer/MarginContainer/VBoxContainer2/CustomizeButton" to="." method="_on_customize_button_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/MarginContainer/VBoxContainer2/SettingsButton" to="." method="_on_settings_button_pressed"]
 [connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]

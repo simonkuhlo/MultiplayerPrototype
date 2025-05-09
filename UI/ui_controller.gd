@@ -6,7 +6,7 @@ class_name UIController
 @export var _lobby_select:Control
 @export var _lobby_screen:Control
 @export var _cutomizer:Control
-@export var _settings:Control
+@export var _settings:Window
 
 func main_menu() -> void:
 	_clear()

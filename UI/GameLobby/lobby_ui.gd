@@ -6,3 +6,6 @@ func _on_start_button_pressed() -> void:
 
 func _on_customize_button_pressed() -> void:
 	Env.ui.customizer()
+
+func _on_settings_button_pressed() -> void:
+	Env.ui.settings()

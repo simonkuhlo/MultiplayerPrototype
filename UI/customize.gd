@@ -12,6 +12,6 @@ func _on_exit_pressed() -> void:
 func _on_visibility_changed() -> void:
 	if !visible:
 		return
-	name_line.text = Env.lobby.player_manager.connected_players.own_player.player_name
-	color_select.color = Env.lobby.player_manager.connected_players.own_player.custom_color
-	
+	if Env.lobby.player_manager.connected_players.own_player:
+		name_line.text = Env.lobby.player_manager.connected_players.own_player.player_name
+		color_select.color = Env.lobby.player_manager.connected_players.own_player.custom_color

@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://biscywn1115d6"]
+[gd_scene load_steps=21 format=3 uid="uid://biscywn1115d6"]
 
 [ext_resource type="Script" uid="uid://jg32m0lbwojd" path="res://MetaScripts/main.gd" id="1_272bh"]
 [ext_resource type="Script" uid="uid://dejd6iloo8fhy" path="res://Lobby/multiplayer_lobby.gd" id="1_ig7tw"]
@@ -10,6 +10,7 @@
 [ext_resource type="Script" uid="uid://t30t86v8ciy8" path="res://UI/lobby_selector.gd" id="7_kek77"]
 [ext_resource type="Script" uid="uid://bqbexh2ut2yrr" path="res://Lobby/level_manager.gd" id="7_ycdy4"]
 [ext_resource type="PackedScene" uid="uid://b5mqqrasjfnic" path="res://UI/GameLobby/lobby_ui.tscn" id="8_efxa6"]
+[ext_resource type="PackedScene" uid="uid://djgau2pcb36jh" path="res://SettingsUI/settings.tscn" id="8_y6bep"]
 [ext_resource type="PackedScene" uid="uid://yxfdwopi515r" path="res://Player Manager/player_manager.tscn" id="11_c0ic4"]
 [ext_resource type="Script" uid="uid://c5ymhdoisq3th" path="res://Ingame/game_logic.gd" id="11_dg77c"]
 [ext_resource type="Script" uid="uid://ciqobvwy82nue" path="res://Ingame/ingame.gd" id="11_ycdy4"]
@@ -34,12 +35,13 @@ lobby = NodePath("Lobby")
 ingame = NodePath("Ingame")
 ui = NodePath("UIController")
 
-[node name="UIController" type="Node" parent="." node_paths=PackedStringArray("_main_menu", "_lobby_select", "_lobby_screen", "_cutomizer")]
+[node name="UIController" type="Node" parent="." node_paths=PackedStringArray("_main_menu", "_lobby_select", "_lobby_screen", "_cutomizer", "_settings")]
 script = ExtResource("2_074og")
 _main_menu = NodePath("MainMenu")
 _lobby_select = NodePath("LobbySelector")
 _lobby_screen = NodePath("LobbyUI")
 _cutomizer = NodePath("Customize")
+_settings = NodePath("Settings")
 
 [node name="LobbyUI" parent="UIController" instance=ExtResource("8_efxa6")]
 visible = false
@@ -123,14 +125,8 @@ text = "Join"
 [node name="Customize" parent="UIController" instance=ExtResource("6_074og")]
 visible = false
 
-[node name="Settings" type="Control" parent="UIController"]
+[node name="Settings" parent="UIController" instance=ExtResource("8_y6bep")]
 visible = false
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
 
 [node name="Lobby" type="Node" parent="." node_paths=PackedStringArray("level_manager", "player_manager")]
 script = ExtResource("1_ig7tw")
