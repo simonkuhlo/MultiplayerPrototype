@@ -1,4 +1,4 @@
-extends Control
+extends Window
 
 @export var name_line:LineEdit
 @export var color_select:ColorPickerButton

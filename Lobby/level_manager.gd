@@ -43,7 +43,7 @@ func server_load_level():
 		return
 	awaited_peers = []
 	for player in Env.lobby.player_manager.connected_players.list:
-		awaited_peers.append(player.name)
+		awaited_peers.append(int(player.name))
 	load_level.rpc()
 
 @rpc("authority", "call_local", "reliable")

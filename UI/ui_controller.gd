@@ -5,7 +5,7 @@ class_name UIController
 @export var _main_menu:Control
 @export var _lobby_select:Control
 @export var _lobby_screen:Control
-@export var _cutomizer:Control
+@export var _cutomizer:Window
 @export var _settings:Window
 
 func main_menu() -> void:

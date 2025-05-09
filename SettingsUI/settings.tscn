@@ -1,12 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://djgau2pcb36jh"]
+[gd_scene load_steps=2 format=3 uid="uid://djgau2pcb36jh"]
 
 [ext_resource type="Script" uid="uid://c5jjsqwqd60b5" path="res://SettingsUI/settings.gd" id="1_h8v81"]
-[ext_resource type="Script" uid="uid://8d24hs4bxace" path="res://UI/customize.gd" id="1_x2hje"]
 
 [node name="Settings" type="Window"]
 title = "Settings"
 initial_position = 1
-size = Vector2i(500, 300)
+size = Vector2i(600, 400)
 script = ExtResource("1_h8v81")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
@@ -19,14 +18,32 @@ grow_vertical = 2
 [node name="TabContainer" type="TabContainer" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-current_tab = 0
+current_tab = 1
 
-[node name="Customize Player" type="Control" parent="VBoxContainer/TabContainer" node_paths=PackedStringArray("name_line", "color_select")]
+[node name="General" type="Control" parent="VBoxContainer/TabContainer"]
+visible = false
 layout_mode = 2
-script = ExtResource("1_x2hje")
-name_line = NodePath("MarginContainer/VBoxContainer/HBoxContainer/LineEdit")
-color_select = NodePath("MarginContainer/VBoxContainer/HBoxContainer2/ColorPickerButton")
 metadata/_tab_index = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/TabContainer/General"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="Label" type="Label" parent="VBoxContainer/TabContainer/General/MarginContainer"]
+layout_mode = 2
+text = "No exposed general settings."
+
+[node name="Customize Player" type="Control" parent="VBoxContainer/TabContainer"]
+layout_mode = 2
+metadata/_tab_index = 1
 
 [node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/TabContainer/Customize Player"]
 layout_mode = 0
@@ -40,6 +57,11 @@ theme_override_constants/margin_bottom = 10
 [node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/TabContainer/Customize Player/MarginContainer"]
 custom_minimum_size = Vector2(400, 0)
 layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/TabContainer/Customize Player/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Warning: These settings don't apply yet. 
+Use the \"customize\" option in the Lobby."
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/TabContainer/Customize Player/MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -63,15 +85,68 @@ text = "Color"
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="General" type="Control" parent="VBoxContainer/TabContainer"]
-visible = false
-layout_mode = 2
-metadata/_tab_index = 1
-
 [node name="Input" type="Control" parent="VBoxContainer/TabContainer"]
 visible = false
 layout_mode = 2
 metadata/_tab_index = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/TabContainer/Input"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="Label" type="Label" parent="VBoxContainer/TabContainer/Input/MarginContainer"]
+layout_mode = 2
+text = "No exposed input settings."
+
+[node name="Gameplay" type="Control" parent="VBoxContainer/TabContainer"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/TabContainer/Gameplay"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="Label" type="Label" parent="VBoxContainer/TabContainer/Gameplay/MarginContainer"]
+layout_mode = 2
+text = "No exposed game settings."
+
+[node name="Network" type="Control" parent="VBoxContainer/TabContainer"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 4
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/TabContainer/Network"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="Label" type="Label" parent="VBoxContainer/TabContainer/Network/MarginContainer"]
+layout_mode = 2
+text = "No exposed network settings."
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
 layout_mode = 2
@@ -82,13 +157,14 @@ size_flags_horizontal = 3
 alignment = 2
 
 [node name="SaveButton" type="Button" parent="VBoxContainer/HBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(60, 0)
 layout_mode = 2
 text = "Apply"
 
 [node name="ExitButton" type="Button" parent="VBoxContainer/HBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(60, 0)
 layout_mode = 2
 text = "Exit"
 
 [connection signal="close_requested" from="." to="." method="_on_close_requested"]
-[connection signal="visibility_changed" from="VBoxContainer/TabContainer/Customize Player" to="VBoxContainer/TabContainer/Customize Player" method="_on_visibility_changed"]
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/HBoxContainer/ExitButton" to="." method="_on_close_requested"]
