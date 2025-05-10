@@ -18,6 +18,7 @@ script = ExtResource("1_hdmo1")
 ui = NodePath("PauseMenuUI")
 
 [node name="PauseMenuUI" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="PauseMenu" type="Control" parent="PauseMenuUI"]
 layout_mode = 3
