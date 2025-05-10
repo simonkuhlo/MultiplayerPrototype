@@ -6,9 +6,12 @@
 [ext_resource type="PackedScene" uid="uid://ccxfngg62yn7m" path="res://addons/assets/models/Modular Retro FPS Kit/Models/other-formats/GLB/metal_barrel_fps_1.glb" id="4_02yma"]
 [ext_resource type="PackedScene" uid="uid://dpi352n54ki6n" path="res://addons/assets/models/Modular Retro FPS Kit/Models/other-formats/GLB/metal_barrel_fps_2.glb" id="5_7gi4c"]
 [ext_resource type="Script" uid="uid://ii34ukenfmwe" path="res://addons/lib/spawn_point.gd" id="6_m61q3"]
+[ext_resource type="PackedScene" uid="uid://xwxpghrgaj7t" path="res://Levels/_res/killzone.tscn" id="7_yeilg"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_vuuyl"]
-sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+sky_top_color = Color(0.499839, 0.608359, 0.885465, 1)
+sky_horizon_color = Color(0.700543, 0.612651, 0.911011, 1)
+ground_bottom_color = Color(0.196485, 0.156939, 0.220417, 1)
 ground_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
 
 [sub_resource type="Sky" id="Sky_yeilg"]
@@ -19,8 +22,6 @@ background_mode = 2
 sky = SubResource("Sky_yeilg")
 tonemap_mode = 2
 glow_enabled = true
-
-[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_vuuyl"]
 
 [node name="Test1" type="Node3D"]
 script = ExtResource("1_rnh63")
@@ -86,11 +87,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 1, -1)
 script = ExtResource("6_m61q3")
 metadata/_custom_type_script = "uid://ii34ukenfmwe"
 
-[node name="Killzone" type="Area3D" parent="."]
+[node name="Killzone" parent="." instance=ExtResource("7_yeilg")]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Killzone"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -8, 0)
-shape = SubResource("WorldBoundaryShape3D_vuuyl")
+[node name="Killzone2" parent="." instance=ExtResource("7_yeilg")]
 
 [node name="metal_barrel_fps_12" parent="." instance=ExtResource("4_02yma")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.47747, 0.02, -4.57603)
