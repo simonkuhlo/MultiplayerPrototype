@@ -5,7 +5,6 @@
 [ext_resource type="Script" uid="uid://da5ajw5nrf61g" path="res://UI/PlayerHUD/timed_progress_bar.gd" id="3_70xbo"]
 
 [node name="PlayerHUD" type="CanvasLayer" node_paths=PackedStringArray("hp_bar", "current_ammo_label", "max_ammo_label", "weapon_icon", "_name_label", "_reload_progress_bar", "_shoot_progress_bar")]
-visible = false
 script = ExtResource("1_tvw2b")
 hp_bar = NodePath("ProgressBar")
 current_ammo_label = NodePath("PanelContainer/VBoxContainer/HBoxContainer/CurrentAmmoLabel")
@@ -27,7 +26,7 @@ offset_right = 160.5
 grow_horizontal = 2
 grow_vertical = 0
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="Crosshair" type="TextureRect" parent="."]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
