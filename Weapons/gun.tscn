@@ -1,0 +1,116 @@
+[gd_scene load_steps=14 format=3 uid="uid://p0hiu3viqfu0"]
+
+[ext_resource type="Script" uid="uid://punagjc0vi3t" path="res://Ingame/gun.gd" id="1_kw0bs"]
+[ext_resource type="Texture2D" uid="uid://cobqpd4rddtf5" path="res://Weapons/bumm2.png" id="2_2iahy"]
+[ext_resource type="PackedScene" uid="uid://bgjsvk5n8qh8w" path="res://addons/assets/models/shotgun_1.glb" id="2_8iju2"]
+[ext_resource type="Texture2D" uid="uid://b3hamyjysait7" path="res://addons/kenney_particle_pack/star_06.png" id="3_7vd5q"]
+
+[sub_resource type="Gradient" id="Gradient_cfnn0"]
+offsets = PackedFloat32Array(0, 0.141221, 1)
+colors = PackedColorArray(0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_is51c"]
+gradient = SubResource("Gradient_cfnn0")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_uu53b"]
+angle_min = 45.0
+angle_max = 45.0
+gravity = Vector3(0, 0, 0)
+color_ramp = SubResource("GradientTexture1D_is51c")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4smqo"]
+transparency = 1
+shading_mode = 0
+vertex_color_use_as_albedo = true
+albedo_color = Color(1, 0.960784, 0.670588, 1)
+albedo_texture = ExtResource("3_7vd5q")
+billboard_mode = 3
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_b2g4i"]
+material = SubResource("StandardMaterial3D_4smqo")
+size = Vector2(0.5, 0.5)
+orientation = 2
+
+[sub_resource type="Animation" id="Animation_2iahy"]
+resource_name = "reload"
+
+[sub_resource type="Animation" id="Animation_4reym"]
+resource_name = "shoot"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(0.5, 1),
+"update": 0,
+"values": [Vector3(0.207694, 0, 0), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_3e1ni"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_2iahy"]
+_data = {
+&"RESET": SubResource("Animation_3e1ni"),
+&"reload": SubResource("Animation_2iahy"),
+&"shoot": SubResource("Animation_4reym")
+}
+
+[node name="Gun" type="Node3D" node_paths=PackedStringArray("_reload_timer", "_cooldown_timer", "_animation_player", "_muzzle_flash")]
+script = ExtResource("1_kw0bs")
+reload_time = 0.3
+weapon_icon = ExtResource("2_2iahy")
+_reload_timer = NodePath("ReloadTimer")
+_cooldown_timer = NodePath("CooldownTimer")
+_animation_player = NodePath("AnimationPlayer")
+_muzzle_flash = NodePath("VisualMesh/shotgun_12/MuzzleFlash")
+
+[node name="VisualMesh" type="Node3D" parent="."]
+
+[node name="shotgun_12" parent="VisualMesh" instance=ExtResource("2_8iju2")]
+transform = Transform3D(0.0775717, 0.963015, -0.258039, 3.90806e-08, -0.258819, -0.965926, -0.996987, 0.0749285, -0.0200771, 0, -0.1, 0)
+
+[node name="MuzzleFlash" type="GPUParticles3D" parent="VisualMesh/shotgun_12"]
+transform = Transform3D(0.0775715, 0.121433, -0.989563, 0.963015, -0.266018, 0.0428465, -0.258039, -0.956288, -0.137577, 0.704206, 0.0275495, -0.119241)
+emitting = false
+amount = 5
+lifetime = 0.1
+one_shot = true
+explosiveness = 0.2
+randomness = 0.44
+local_coords = true
+process_material = SubResource("ParticleProcessMaterial_uu53b")
+draw_pass_1 = SubResource("PlaneMesh_b2g4i")
+
+[node name="ReloadTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="CooldownTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_2iahy")
+}
+
+[connection signal="timeout" from="ReloadTimer" to="." method="_on_reload_timer_timeout"]
+[connection signal="timeout" from="CooldownTimer" to="." method="_on_cooldown_timer_timeout"]
