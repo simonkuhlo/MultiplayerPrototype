@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://cgllbdmtsdq68"]
+
+[node name="MainMenuButton" type="Button"]
+size_flags_vertical = 8
+disabled = true
+text = "Main menu"

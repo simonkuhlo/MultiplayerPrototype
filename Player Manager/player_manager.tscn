@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://yxfdwopi515r"]
+
+[ext_resource type="Script" uid="uid://boul2yb7qkglk" path="res://Lobby/player_manager.gd" id="1_c4b2c"]
+[ext_resource type="PackedScene" uid="uid://br5n4qhqkhw7v" path="res://Player Manager/network_player.tscn" id="2_c4b2c"]
+[ext_resource type="Script" uid="uid://cyfwjdof1sh0e" path="res://Player Manager/connected_players.gd" id="3_j2lyr"]
+
+[node name="PlayerManager" type="Node" node_paths=PackedStringArray("connected_players")]
+script = ExtResource("1_c4b2c")
+player_scene = ExtResource("2_c4b2c")
+connected_players = NodePath("ConnectedPlayers")
+
+[node name="ConnectedPlayers" type="Node" parent="."]
+script = ExtResource("3_j2lyr")
+
+[node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="."]
+_spawnable_scenes = PackedStringArray("uid://br5n4qhqkhw7v")
+spawn_path = NodePath("../ConnectedPlayers")
+
+[connection signal="child_entered_tree" from="ConnectedPlayers" to="ConnectedPlayers" method="_on_child_entered_tree"]
+[connection signal="child_exiting_tree" from="ConnectedPlayers" to="ConnectedPlayers" method="_on_child_exiting_tree"]

@@ -1,8 +1,15 @@
 extends Node
 class_name IngamePlayerManager
 
-@export var connected_peers:Array[int] = []
-var own_player:PlayerCharacter:
+
+@export var ingame_hud_scene:PlayerHUD
+
+var object:PlayerCharacter:
 	set(new):
-		own_player = new
-		Env.ingame.hud.controlled_entity = own_player
+		if new:
+			ingame_hud_scene.controlled_player = new
+		object = new
+
+func _ready() -> void:
+	Env.ingame.activated.connect(ingame_hud_scene.show)
+	Env.ingame.deactivated.connect(ingame_hud_scene.hide)

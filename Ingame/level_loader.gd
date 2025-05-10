@@ -11,8 +11,7 @@ func load_level(new_level:GameLevel) -> void:
 		child.queue_free()
 	add_child(new_level)
 	loaded_level = new_level
-	Env.lobby.ui.hide_all()
-	Env.meta.mouse_mode_control.ingame_mode()
+	Env.ui._clear()
 	_on_level_loaded()
 
 func _on_level_loaded() -> void:

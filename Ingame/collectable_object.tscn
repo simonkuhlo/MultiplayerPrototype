@@ -1,0 +1,40 @@
+[gd_scene load_steps=5 format=3 uid="uid://casjx7g7wkmp6"]
+
+[ext_resource type="Script" uid="uid://dt1uejegqdsnx" path="res://Ingame/collectable_object.gd" id="1_l17je"]
+[ext_resource type="PackedScene" uid="uid://0d1fv2dmxkxr" path="res://addons/assets/models/first_aid_kit_hr_1.glb" id="2_jpbub"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_6tu07"]
+height = 1.5
+radius = 2.0
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_jpbub"]
+properties/0/path = NodePath(".:visible")
+properties/0/spawn = true
+properties/0/replication_mode = 1
+
+[node name="CollectableObject" type="Node3D" node_paths=PackedStringArray("visuals", "timer")]
+script = ExtResource("1_l17je")
+visuals = NodePath("Visuals")
+timer = NodePath("Timer")
+
+[node name="Visuals" type="Node3D" parent="."]
+
+[node name="first_aid_kit_hr_12" parent="Visuals" instance=ExtResource("2_jpbub")]
+transform = Transform3D(-3, 1.14641e-14, -2.62268e-07, 2.62268e-07, 1.31134e-07, -3, 0, -3, -1.31134e-07, 0, 0.8, 0.1)
+
+[node name="Area3D" type="Area3D" parent="."]
+collision_mask = 3
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.75, 0)
+shape = SubResource("CylinderShape3D_6tu07")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
+replication_config = SubResource("SceneReplicationConfig_jpbub")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

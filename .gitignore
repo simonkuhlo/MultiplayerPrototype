@@ -1,2 +1,6 @@
 /Export/
-/.godot/editor
+.godot/
+*.import
+/.godot/*
+/.godot/imported
+.godot\

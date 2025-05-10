@@ -1,11 +1,11 @@
 [gd_scene load_steps=11 format=3 uid="uid://cujrjd7l0yxi8"]
 
 [ext_resource type="Script" uid="uid://br16lpotthoq" path="res://Levels/_res/game_level.gd" id="1_rnh63"]
-[ext_resource type="MeshLibrary" uid="uid://rcom667glcbx" path="res://Levels/_res/atlas.meshlib" id="2_ywxg4"]
-[ext_resource type="PackedScene" uid="uid://bxry04rignco8" path="res://assets/models/Modular Retro FPS Kit/Models/other-formats/GLB/crate_1.glb" id="3_e8dq8"]
-[ext_resource type="PackedScene" uid="uid://bbesenl605opk" path="res://assets/models/Modular Retro FPS Kit/Models/other-formats/GLB/metal_barrel_fps_1.glb" id="4_02yma"]
-[ext_resource type="PackedScene" uid="uid://dytbg66vfi0r2" path="res://assets/models/Modular Retro FPS Kit/Models/other-formats/GLB/metal_barrel_fps_2.glb" id="5_7gi4c"]
-[ext_resource type="Script" uid="uid://ii34ukenfmwe" path="res://lib/spawn_point.gd" id="6_m61q3"]
+[ext_resource type="MeshLibrary" uid="uid://bqp2wgxt5w7kg" path="res://Levels/_res/atlas2.meshlib" id="2_vuuyl"]
+[ext_resource type="PackedScene" uid="uid://ce7f1tt7coohs" path="res://addons/assets/models/Modular Retro FPS Kit/Models/other-formats/GLB/crate_1.glb" id="3_e8dq8"]
+[ext_resource type="PackedScene" uid="uid://ccxfngg62yn7m" path="res://addons/assets/models/Modular Retro FPS Kit/Models/other-formats/GLB/metal_barrel_fps_1.glb" id="4_02yma"]
+[ext_resource type="PackedScene" uid="uid://dpi352n54ki6n" path="res://addons/assets/models/Modular Retro FPS Kit/Models/other-formats/GLB/metal_barrel_fps_2.glb" id="5_7gi4c"]
+[ext_resource type="Script" uid="uid://ii34ukenfmwe" path="res://addons/lib/spawn_point.gd" id="6_m61q3"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_vuuyl"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
@@ -34,43 +34,52 @@ transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -
 shadow_enabled = true
 
 [node name="GridMap" type="GridMap" parent="."]
-mesh_library = ExtResource("2_ywxg4")
+mesh_library = ExtResource("2_vuuyl")
 cell_size = Vector3(4, 4, 4)
 cell_center_y = false
 data = {
-"cells": PackedInt32Array(0, 65535, 29, 65535, 65535, 29, 0, 0, 29, 65535, 0, 29, 1, 1, 30, 1, 0, 30, 1, 65535, 30, 1, 65534, 30, 0, 65534, 30, 65535, 65534, 30, 65534, 65534, 30, 65534, 65535, 30, 65534, 0, 30, 65534, 1, 30, 65535, 1, 30, 0, 1, 30, 1, 2, 31, 2, 2, 31, 3, 2, 31, 3, 1, 31, 3, 0, 31, 3, 65535, 31, 3, 65534, 31, 2, 65534, 31, 2, 65533, 31, 3, 65533, 31, 2, 65535, 31, 2, 0, 31, 2, 1, 31, 3, 3, 31, 2, 3, 31, 1, 3, 31, 0, 3, 31, 65535, 3, 31, 65534, 3, 31, 65533, 3, 31, 65532, 3, 31, 65532, 2, 31, 65532, 1, 31, 65532, 0, 31, 65532, 65535, 31, 65532, 65534, 31, 65532, 65533, 31, 65533, 65533, 31, 65534, 65533, 31, 65535, 65533, 31, 0, 65533, 31, 1, 65533, 31, 3, 65532, 31, 2, 65532, 31, 1, 65532, 31, 0, 65532, 31, 65535, 65532, 31, 65534, 65532, 31, 65533, 65532, 31, 65532, 65532, 31, 65533, 65534, 31, 65533, 65535, 31, 65533, 0, 31, 65533, 1, 31, 65533, 2, 31, 65534, 2, 31, 65535, 2, 31, 0, 2, 31, 65531, 4, 31, 65532, 4, 31, 65533, 4, 31, 65534, 4, 31, 65535, 4, 31, 0, 4, 31, 1, 4, 31, 2, 4, 31, 3, 4, 31, 4, 4, 31, 4, 3, 31, 4, 2, 31, 4, 1, 31, 4, 0, 31, 4, 65535, 31, 4, 65534, 31, 4, 65533, 31, 4, 65532, 31, 4, 65531, 31, 3, 65531, 31, 2, 65531, 31, 1, 65531, 31, 0, 65531, 31, 65535, 65531, 31, 65534, 65531, 31, 65533, 65531, 31, 65532, 65531, 31, 65531, 65531, 31, 65531, 65532, 31, 65531, 65533, 31, 65531, 2, 31, 65531, 3, 31, 65531, 1, 31, 65531, 0, 31, 65531, 65535, 31, 65531, 65534, 31, 65530, 5, 31, 65531, 5, 31, 65532, 5, 31, 65533, 5, 31, 65534, 5, 31, 65535, 5, 31, 0, 5, 31, 1, 5, 31, 2, 5, 31, 3, 5, 31, 4, 5, 31, 5, 5, 31, 5, 4, 31, 5, 3, 31, 5, 2, 31, 5, 1, 31, 5, 65533, 31, 5, 65532, 31, 5, 65531, 31, 5, 65534, 31, 5, 65535, 31, 5, 0, 31, 5, 65530, 31, 4, 65530, 31, 3, 65530, 31, 2, 65530, 31, 1, 65530, 31, 0, 65530, 31, 65535, 65530, 31, 65532, 65530, 31, 65531, 65530, 31, 65533, 65530, 31, 65534, 65530, 31, 65530, 65530, 31, 65530, 65531, 31, 65530, 65532, 31, 65530, 65534, 31, 65530, 65533, 31, 65530, 65535, 31, 65530, 0, 31, 65530, 1, 31, 65530, 2, 31, 65530, 3, 31, 65530, 4, 31, 131070, 1, 524297, 131070, 65534, 524297, 65537, 65534, 524297, 65537, 1, 524297)
+"cells": PackedInt32Array(0, 65535, 29, 65535, 65535, 29, 0, 0, 29, 65535, 0, 29, 1, 1, 30, 1, 0, 30, 1, 65535, 30, 1, 65534, 30, 0, 65534, 30, 65535, 65534, 30, 65534, 65534, 30, 65534, 65535, 30, 65534, 0, 30, 65534, 1, 30, 65535, 1, 30, 0, 1, 30, 1, 2, 31, 2, 2, 31, 3, 2, 31, 3, 1, 31, 3, 0, 31, 3, 65535, 31, 3, 65534, 31, 2, 65534, 31, 2, 65533, 31, 3, 65533, 31, 2, 65535, 31, 2, 0, 31, 2, 1, 31, 3, 3, 31, 2, 3, 31, 1, 3, 31, 0, 3, 31, 65535, 3, 31, 65534, 3, 31, 65533, 3, 31, 65532, 3, 31, 65532, 2, 31, 65532, 1, 31, 65532, 0, 31, 65532, 65535, 31, 65532, 65534, 31, 65532, 65533, 31, 65533, 65533, 31, 65534, 65533, 31, 65535, 65533, 31, 0, 65533, 31, 1, 65533, 31, 3, 65532, 31, 2, 65532, 31, 1, 65532, 31, 0, 65532, 31, 65535, 65532, 31, 65534, 65532, 31, 65533, 65532, 31, 65532, 65532, 31, 65533, 65534, 31, 65533, 65535, 31, 65533, 0, 31, 65533, 1, 31, 65533, 2, 31, 65534, 2, 31, 65535, 2, 31, 0, 2, 31, 65531, 4, 31, 65532, 4, 31, 65533, 4, 31, 65534, 4, 31, 65535, 4, 31, 0, 4, 31, 1, 4, 31, 2, 4, 31, 3, 4, 31, 4, 4, 31, 4, 3, 31, 4, 2, 31, 4, 1, 31, 4, 0, 31, 4, 65535, 31, 4, 65534, 31, 4, 65533, 31, 4, 65532, 31, 4, 65531, 31, 3, 65531, 31, 2, 65531, 31, 1, 65531, 31, 0, 65531, 31, 65535, 65531, 31, 65534, 65531, 31, 65533, 65531, 31, 65532, 65531, 31, 65531, 65531, 31, 65531, 65532, 31, 65531, 65533, 31, 65531, 2, 31, 65531, 3, 31, 65531, 1, 31, 65531, 0, 31, 65531, 65535, 31, 65531, 65534, 31, 65530, 5, 31, 65531, 5, 31, 65532, 5, 31, 65533, 5, 31, 65534, 5, 31, 65535, 5, 31, 0, 5, 31, 1, 5, 31, 2, 5, 31, 3, 5, 31, 4, 5, 31, 5, 5, 31, 5, 4, 31, 5, 3, 31, 5, 2, 31, 5, 1, 31, 5, 65533, 31, 5, 65532, 31, 5, 65531, 31, 5, 65534, 31, 5, 65535, 31, 5, 0, 31, 5, 65530, 31, 4, 65530, 31, 3, 65530, 31, 2, 65530, 31, 1, 65530, 31, 0, 65530, 31, 65535, 65530, 31, 65532, 65530, 31, 65531, 65530, 31, 65533, 65530, 31, 65534, 65530, 31, 65530, 65530, 31, 65530, 65531, 31, 65530, 65532, 31, 65530, 65534, 31, 65530, 65533, 31, 65530, 65535, 31, 65530, 0, 31, 65530, 1, 31, 65530, 2, 31, 65530, 3, 31, 65530, 4, 31, 131070, 1, 524297, 131070, 65534, 524297, 65537, 65534, 524297, 65537, 1, 524297, -65349, 65397, 8)
 }
-metadata/_editor_floor_ = Vector3(0, 1, 0)
+metadata/_editor_floor_ = Vector3(0, -1, 0)
 
 [node name="Objects" type="Node3D" parent="GridMap"]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
 
 [node name="crate_1" parent="GridMap/Objects" instance=ExtResource("3_e8dq8")]
 transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, -9.44313, 0.0200005, -5.70311)
-skeleton = NodePath("../../..")
 
 [node name="crate_2" parent="GridMap/Objects" instance=ExtResource("3_e8dq8")]
 transform = Transform3D(0.965926, 0, -0.258819, 0, 1, 0, 0.258819, 0, 0.965926, -10.1311, 0.0199996, -6.81776)
-skeleton = NodePath("../../..")
 
 [node name="crate_3" parent="GridMap/Objects" instance=ExtResource("3_e8dq8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.70065, 1.01649, -6.19979)
-skeleton = NodePath("../../..")
 
 [node name="crate_4" parent="GridMap/Objects" instance=ExtResource("3_e8dq8")]
 transform = Transform3D(0.866026, 0, 0.499999, 0, 1, 0, -0.499999, 0, 0.866026, 7.146, 0, 7.623)
-skeleton = NodePath("../../..")
 
 [node name="metal_barrel_fps_1" parent="GridMap/Objects" instance=ExtResource("4_02yma")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.92085, -1.90735e-06, 10.8926)
-skeleton = NodePath("../..")
 
 [node name="metal_barrel_fps_2" parent="GridMap/Objects" instance=ExtResource("5_7gi4c")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.92085, -1.90735e-06, 9.89264)
-skeleton = NodePath("../..")
 
 [node name="crate_5" parent="GridMap/Objects" instance=ExtResource("3_e8dq8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.666667, 0, 1.33333)
+
+[node name="crate_12" parent="GridMap/Objects" instance=ExtResource("3_e8dq8")]
+transform = Transform3D(0.666667, 0, 0, 0, 0.666667, 0, 0, 0, 0.666667, -4.63767, 0.0133333, -4.07278)
+
+[node name="crate_13" parent="GridMap/Objects" instance=ExtResource("3_e8dq8")]
+transform = Transform3D(0.666667, 0, 0, 0, 0.666667, 0, 0, 0, 0.666667, -5.33204, 0.013333, -3.76482)
+
+[node name="crate_14" parent="GridMap/Objects" instance=ExtResource("3_e8dq8")]
+transform = Transform3D(0.666667, 0, 0, 0, 0.666667, 0, 0, 0, 0.666667, -4.51684, 0.688398, -3.92333)
+
+[node name="crate_15" parent="GridMap/Objects" instance=ExtResource("3_e8dq8")]
+transform = Transform3D(0.666667, 0, 0, 0, 0.666657, -0.00359536, 0, 0.00359536, 0.666657, -4.69318, 0.0133337, -7.65566)
+
+[node name="crate_16" parent="GridMap/Objects" instance=ExtResource("3_e8dq8")]
+transform = Transform3D(0.666667, 0, 0, 0, 0.666667, 0, 0, 0, 0.666667, -4.55847, 1.35506, -4.21297)
 
 [node name="SpawnPoint" type="Marker3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 1, -1)
@@ -82,3 +91,6 @@ metadata/_custom_type_script = "uid://ii34ukenfmwe"
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Killzone"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -8, 0)
 shape = SubResource("WorldBoundaryShape3D_vuuyl")
+
+[node name="metal_barrel_fps_12" parent="." instance=ExtResource("4_02yma")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.47747, 0.02, -4.57603)

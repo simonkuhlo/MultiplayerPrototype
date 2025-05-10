@@ -41,7 +41,9 @@ func server_load_level():
 	if !selected_level:
 		push_error("Local level pool does not caontain this level")
 		return
-	awaited_peers = Env.lobby.player_manager.connected_players.keys()
+	awaited_peers = []
+	for player in Env.lobby.player_manager.connected_players.list:
+		awaited_peers.append(int(player.name))
 	load_level.rpc()
 
 @rpc("authority", "call_local", "reliable")
@@ -49,14 +51,15 @@ func load_level():
 	if !selected_level:
 		push_error("Local level pool does not caontain this level")
 		return
-	Env.ingame.level_loader.load_level(selected_level.level_scene.instantiate())
+	Env.ingame.load_level(selected_level.level_scene.instantiate())
 
 @rpc("any_peer", "call_local", "reliable")
 func player_loaded():
 	if !multiplayer.is_server():
 		return
 	var peer_id = multiplayer.get_remote_sender_id()
-	Env.ingame.player_manager.connected_peers.append(peer_id)
+	Env.ingame.game_logic.connected_peers.append(peer_id)
 	awaited_peers.erase(peer_id)
 	if awaited_peers == []:
+		Env.ingame.is_ingame = true
 		Env.ingame.game_logic.start_game()
