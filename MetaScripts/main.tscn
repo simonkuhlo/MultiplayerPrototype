@@ -163,7 +163,6 @@ script = ExtResource("15_2cqfq")
 ingame_hud_scene = NodePath("PlayerHUD")
 
 [node name="PlayerHUD" parent="Ingame/ControlledPlayer" instance=ExtResource("17_yaehf")]
-visible = false
 
 [node name="Level" type="Node" parent="Ingame"]
 

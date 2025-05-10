@@ -1,11 +1,18 @@
-[gd_scene load_steps=3 format=3 uid="uid://b6y8df2rx47kq"]
+[gd_scene load_steps=4 format=3 uid="uid://b6y8df2rx47kq"]
 
 [ext_resource type="Script" uid="uid://dgdlv1nq5erjx" path="res://UI/PlayerHUD/player_hud.gd" id="1_tvw2b"]
-[ext_resource type="Texture2D" uid="uid://ds06440lhiews" path="res://addons/kenney_particle_pack/circle_03.png" id="2_pkcmm"]
+[ext_resource type="Texture2D" uid="uid://b6obu8txy6c8" path="res://addons/kenney_particle_pack/circle_03.png" id="2_pkcmm"]
+[ext_resource type="Script" uid="uid://da5ajw5nrf61g" path="res://UI/PlayerHUD/timed_progress_bar.gd" id="3_70xbo"]
 
-[node name="PlayerHUD" type="CanvasLayer" node_paths=PackedStringArray("hp_bar")]
+[node name="PlayerHUD" type="CanvasLayer" node_paths=PackedStringArray("hp_bar", "current_ammo_label", "max_ammo_label", "weapon_icon", "_name_label", "_reload_progress_bar", "_shoot_progress_bar")]
 script = ExtResource("1_tvw2b")
 hp_bar = NodePath("ProgressBar")
+current_ammo_label = NodePath("PanelContainer/VBoxContainer/HBoxContainer/CurrentAmmoLabel")
+max_ammo_label = NodePath("PanelContainer/VBoxContainer/HBoxContainer/MaxAmmoLabel")
+weapon_icon = NodePath("PanelContainer/VBoxContainer/TextureRect")
+_name_label = NodePath("PanelContainer/VBoxContainer/NameLabel")
+_reload_progress_bar = NodePath("PanelContainer/VBoxContainer/HBoxContainer/ReloadProgressBar")
+_shoot_progress_bar = NodePath("PanelContainer/VBoxContainer/HBoxContainer/CooldownProgressBar")
 
 [node name="ProgressBar" type="ProgressBar" parent="."]
 anchors_preset = 7
@@ -19,7 +26,7 @@ offset_right = 160.5
 grow_horizontal = 2
 grow_vertical = 0
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="Crosshair" type="TextureRect" parent="."]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -34,3 +41,57 @@ grow_vertical = 2
 texture = ExtResource("2_pkcmm")
 expand_mode = 2
 stretch_mode = 4
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -258.0
+offset_top = -126.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer"]
+layout_mode = 2
+
+[node name="NameLabel" type="Label" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+text = "Weapon 1"
+
+[node name="TextureRect" type="TextureRect" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+expand_mode = 2
+stretch_mode = 5
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="CurrentAmmoLabel" type="Label" parent="PanelContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "0"
+
+[node name="CooldownProgressBar" type="ProgressBar" parent="PanelContainer/VBoxContainer/HBoxContainer"]
+visible = false
+layout_mode = 2
+size_flags_vertical = 1
+value = 30.0
+fill_mode = 3
+show_percentage = false
+script = ExtResource("3_70xbo")
+
+[node name="ReloadProgressBar" type="ProgressBar" parent="PanelContainer/VBoxContainer/HBoxContainer"]
+visible = false
+layout_mode = 2
+size_flags_vertical = 1
+value = 30.0
+fill_mode = 2
+show_percentage = false
+script = ExtResource("3_70xbo")
+
+[node name="MaxAmmoLabel" type="Label" parent="PanelContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "0"
