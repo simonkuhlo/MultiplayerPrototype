@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://cjhgwlc4ug46m"]
 
 [ext_resource type="Script" uid="uid://bcwpbtb6fyfuy" path="res://MetaScripts/pause_menu.gd" id="1_hdmo1"]
-[ext_resource type="PackedScene" uid="uid://oivj5fl13nly" path="res://exit_button.tscn" id="2_nwcfo"]
+[ext_resource type="PackedScene" uid="uid://oivj5fl13nly" path="res://UI/exit_button.tscn" id="2_nwcfo"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nwcfo"]
 bg_color = Color(0.796078, 0.486275, 0.647059, 0.752941)

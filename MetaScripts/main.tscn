@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://dejd6iloo8fhy" path="res://Lobby/multiplayer_lobby.gd" id="1_ig7tw"]
 [ext_resource type="Script" uid="uid://c30akwclnjhl6" path="res://UI/ui_controller.gd" id="2_074og"]
 [ext_resource type="Resource" uid="uid://dkiyuw74hedbx" path="res://Levels/Output/StandardCollection.tres" id="4_7mycd"]
-[ext_resource type="PackedScene" uid="uid://cgllbdmtsdq68" path="res://main_menu_button.tscn" id="5_2pxrw"]
+[ext_resource type="PackedScene" uid="uid://cgllbdmtsdq68" path="res://UI/main_menu_button.tscn" id="5_2pxrw"]
 [ext_resource type="PackedScene" uid="uid://cp0tsrrtelbg8" path="res://UI/customize.tscn" id="6_074og"]
 [ext_resource type="Script" uid="uid://bw371ho6ingvo" path="res://UI/main_menu_ui.gd" id="7_5vw27"]
 [ext_resource type="Script" uid="uid://t30t86v8ciy8" path="res://UI/lobby_selector.gd" id="7_kek77"]
@@ -17,7 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://xcjrjq5cbn7y" path="res://Ingame/player.tscn" id="13_w48qg"]
 [ext_resource type="Script" uid="uid://d3nwu6l1sdcle" path="res://Ingame/ingame_player_manager.gd" id="15_2cqfq"]
 [ext_resource type="PackedScene" uid="uid://b6y8df2rx47kq" path="res://UI/PlayerHUD/player_hud.tscn" id="17_yaehf"]
-[ext_resource type="PackedScene" uid="uid://cjhgwlc4ug46m" path="res://pause_menu.tscn" id="18_y6bep"]
+[ext_resource type="PackedScene" uid="uid://cjhgwlc4ug46m" path="res://UI/pause_menu.tscn" id="18_y6bep"]
 
 [sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_2cqfq"]
 properties/0/path = NodePath(".:selected_level_serialized")

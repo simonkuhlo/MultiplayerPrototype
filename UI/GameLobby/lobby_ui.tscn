@@ -5,7 +5,7 @@
 [ext_resource type="Script" uid="uid://cqo7rr6svqweq" path="res://UI/GameLobby/connected_players.gd" id="3_83fv8"]
 [ext_resource type="Script" uid="uid://8vva8aglfryl" path="res://UI/GameLobby/map_preview.gd" id="4_1x6wr"]
 [ext_resource type="Script" uid="uid://dynwt3ht3unqr" path="res://UI/GameLobby/level_browser.gd" id="4_u7fur"]
-[ext_resource type="PackedScene" uid="uid://cgllbdmtsdq68" path="res://main_menu_button.tscn" id="5_tfi07"]
+[ext_resource type="PackedScene" uid="uid://cgllbdmtsdq68" path="res://UI/main_menu_button.tscn" id="5_tfi07"]
 [ext_resource type="PackedScene" uid="uid://d0o8tr6yt6n1m" path="res://UI/GameLobby/level_selector_button.tscn" id="5_vrqac"]
 
 [node name="LobbyUI" type="Control"]
