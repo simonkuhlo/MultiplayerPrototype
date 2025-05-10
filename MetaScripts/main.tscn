@@ -131,7 +131,7 @@ visible = false
 [node name="Lobby" type="Node" parent="." node_paths=PackedStringArray("level_manager", "player_manager")]
 script = ExtResource("1_ig7tw")
 level_manager = NodePath("LevelManager")
-player_manager = NodePath("../PlayerManager")
+player_manager = NodePath("PlayerManager")
 
 [node name="LevelManager" type="Node" parent="Lobby"]
 script = ExtResource("7_ycdy4")
@@ -140,7 +140,7 @@ level_pool = ExtResource("4_7mycd")
 [node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="Lobby/LevelManager"]
 replication_config = SubResource("SceneReplicationConfig_2cqfq")
 
-[node name="PlayerManager" parent="." instance=ExtResource("11_c0ic4")]
+[node name="PlayerManager" parent="Lobby" instance=ExtResource("11_c0ic4")]
 
 [node name="Ingame" type="Node" parent="." node_paths=PackedStringArray("game_logic", "controlled_player", "level_node")]
 process_mode = 4
