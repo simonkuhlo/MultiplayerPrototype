@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://cjhgwlc4ug46m"]
+[gd_scene load_steps=6 format=3 uid="uid://cjhgwlc4ug46m"]
 
 [ext_resource type="Script" uid="uid://bcwpbtb6fyfuy" path="res://MetaScripts/pause_menu.gd" id="1_hdmo1"]
+[ext_resource type="Script" uid="uid://lwsvqx8bbpy4" path="res://UI/settings_button.gd" id="2_03fe5"]
 [ext_resource type="PackedScene" uid="uid://oivj5fl13nly" path="res://UI/exit_button.tscn" id="2_nwcfo"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nwcfo"]
@@ -65,8 +66,8 @@ text = "Resume"
 
 [node name="SettingsButton" type="Button" parent="PauseMenuUI/PauseMenu/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
-disabled = true
 text = "Settings"
+script = ExtResource("2_03fe5")
 
 [node name="LobbyButton" type="Button" parent="PauseMenuUI/PauseMenu/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2

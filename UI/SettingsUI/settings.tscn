@@ -1,6 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://djgau2pcb36jh"]
 
-[ext_resource type="Script" uid="uid://c5jjsqwqd60b5" path="res://SettingsUI/settings.gd" id="1_h8v81"]
+[ext_resource type="Script" uid="uid://c5jjsqwqd60b5" path="res://UI/SettingsUI/settings.gd" id="1_h8v81"]
+
 
 [node name="Settings" type="Window"]
 title = "Settings"

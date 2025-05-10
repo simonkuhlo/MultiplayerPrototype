@@ -76,14 +76,12 @@ func reload():
 		reloading.emit()
 		_weapon_state = WeaponState.RELOADING
 		_reload_timer.start(reload_time)
-		
 
 func _on_cooldown_timer_timeout():
 	_weapon_state = WeaponState.READY
 	if _queued_state == WeaponState.RELOADING:
 		_queued_state = WeaponState.READY
 		reload()
-	
 
 @rpc("call_local")
 func play_reload_effects():

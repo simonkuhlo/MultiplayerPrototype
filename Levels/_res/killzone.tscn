@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://xwxpghrgaj7t"]
+
+[ext_resource type="Script" uid="uid://besrsbsmy4m4u" path="res://Levels/_res/killzone.gd" id="1_3brf5"]
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_vuuyl"]
+
+[node name="Killzone" type="Area3D"]
+collision_mask = 7
+script = ExtResource("1_3brf5")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -50, 0)
+shape = SubResource("WorldBoundaryShape3D_vuuyl")
