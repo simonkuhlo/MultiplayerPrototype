@@ -17,4 +17,7 @@ func _ready() -> void:
 func update() -> void:
 	if player_to_visualise:
 		_color_rect.color = player_to_visualise.custom_color
-		_name_label.text = player_to_visualise.player_name
+		var prefix:String = ""
+		if player_to_visualise.unique_id == 1:
+			prefix = "[HOST] "
+		_name_label.text = prefix + player_to_visualise.player_name
