@@ -1,9 +1,10 @@
 [gd_scene load_steps=14 format=3 uid="uid://p0hiu3viqfu0"]
 
 [ext_resource type="Script" uid="uid://punagjc0vi3t" path="res://Ingame/gun.gd" id="1_kw0bs"]
-[ext_resource type="Texture2D" uid="uid://cobqpd4rddtf5" path="res://Weapons/bumm2.png" id="2_2iahy"]
+[ext_resource type="Texture2D" uid="uid://cobqpd4rddtf5" path="res://Weapons/Gun/bumm2.png" id="2_2iahy"]
 [ext_resource type="PackedScene" uid="uid://bgjsvk5n8qh8w" path="res://addons/assets/models/shotgun_1.glb" id="2_8iju2"]
 [ext_resource type="Texture2D" uid="uid://b3hamyjysait7" path="res://addons/kenney_particle_pack/star_06.png" id="3_7vd5q"]
+
 
 [sub_resource type="Gradient" id="Gradient_cfnn0"]
 offsets = PackedFloat32Array(0, 0.141221, 1)
