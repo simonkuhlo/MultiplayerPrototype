@@ -91,7 +91,7 @@ func play_reload_effects():
 	_animation_player.restart()
 	_animation_player.emitting = true
 
-@rpc()
+@rpc("call_local")
 func play_shoot_effects():
 	_animation_player.stop()
 	_animation_player.play("shoot")
