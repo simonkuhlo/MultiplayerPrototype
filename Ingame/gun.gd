@@ -63,8 +63,9 @@ func shoot():
 	play_shoot_effects.rpc()
 	if _raycast.is_colliding():
 		var hit_player = _raycast.get_collider()
-		hit_player.receive_damage.rpc_id(hit_player.get_multiplayer_authority(), damage)
-		hit_something.emit()
+		if hit_player is PlayerCharacter:
+			hit_player.receive_damage.rpc_id(hit_player.get_multiplayer_authority(), damage)
+			hit_something.emit()
 	_cooldown_timer.start(fire_rate)
 	
 
