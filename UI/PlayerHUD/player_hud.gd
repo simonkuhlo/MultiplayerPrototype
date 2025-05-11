@@ -21,7 +21,7 @@ var current_weapon:WeaponInstance:
 		current_weapon.current_ammo_changed.connect(_on_current_weapon_ammo_changed)
 		current_weapon.max_ammo_changed.connect(_on_current_weapon_max_ammo_changed)
 		weapon_icon.texture = current_weapon.weapon_icon
-		current_ammo_label.text = str(current_weapon.current_ammo)
+		_on_current_weapon_ammo_changed(current_weapon.current_ammo)
 		max_ammo_label.text = str(current_weapon.max_ammo)
 		_name_label.text = current_weapon.name
 		_reload_progress_bar.timer = current_weapon._reload_timer
@@ -59,6 +59,10 @@ func _on_weapon_switched(new_weapon:WeaponInstance):
 
 func _on_current_weapon_ammo_changed(new_amount:int):
 	current_ammo_label.text = str(new_amount)
+	if new_amount <= (current_weapon.max_ammo / 3):
+		current_ammo_label.add_theme_color_override("font_color", Color(1, 1, 0, 1))
+	else:
+		current_ammo_label.add_theme_color_override("font_color", Color(1, 1, 1, 1))
 
 func _on_current_weapon_max_ammo_changed(new_amount:int):
 	max_ammo_label.text = str(new_amount)
