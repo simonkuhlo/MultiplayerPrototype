@@ -9,10 +9,12 @@
 [ext_resource type="PackedScene" uid="uid://xwxpghrgaj7t" path="res://Levels/_res/killzone.tscn" id="7_yeilg"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_vuuyl"]
-sky_top_color = Color(0.499839, 0.608359, 0.885465, 1)
-sky_horizon_color = Color(0.700543, 0.612651, 0.911011, 1)
+sky_top_color = Color(0.898039, 0.313726, 0.67451, 1)
+sky_horizon_color = Color(0.552941, 0.505882, 0.733333, 1)
+sky_curve = 1.42705
 ground_bottom_color = Color(0.196485, 0.156939, 0.220417, 1)
-ground_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+ground_horizon_color = Color(0.552941, 0.505882, 0.733333, 1)
+ground_curve = 0.0400001
 
 [sub_resource type="Sky" id="Sky_yeilg"]
 sky_material = SubResource("ProceduralSkyMaterial_vuuyl")
@@ -87,9 +89,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 1, -1)
 script = ExtResource("6_m61q3")
 metadata/_custom_type_script = "uid://ii34ukenfmwe"
 
-[node name="Killzone" parent="." instance=ExtResource("7_yeilg")]
-
-[node name="Killzone2" parent="." instance=ExtResource("7_yeilg")]
+[node name="Killzone1" parent="." instance=ExtResource("7_yeilg")]
 
 [node name="metal_barrel_fps_12" parent="." instance=ExtResource("4_02yma")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.47747, 0.02, -4.57603)
