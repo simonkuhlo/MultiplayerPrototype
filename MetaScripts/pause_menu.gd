@@ -25,6 +25,7 @@ func pause():
 
 func resume():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	Env.ui._settings.hide()
 	Env.ingame.controlled_player.ingame_hud_scene.show()
 	ui.hide()
 	paused = false
