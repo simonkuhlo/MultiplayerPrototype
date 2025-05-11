@@ -36,6 +36,7 @@ var _queued_state:WeaponState
 @export var _animation_player:AnimationPlayer
 @export var _raycast:RayCast3D
 @export var _muzzle_flash:GPUParticles3D
+@export var _audio_player:AudioStreamPlayer3D
 
 func _unhandled_input(event: InputEvent) -> void:
 	if !is_multiplayer_authority():
@@ -90,9 +91,10 @@ func play_reload_effects():
 	_animation_player.restart()
 	_animation_player.emitting = true
 
-@rpc("call_local")
+@rpc()
 func play_shoot_effects():
 	_animation_player.stop()
 	_animation_player.play("shoot")
 	_muzzle_flash.restart()
 	_muzzle_flash.emitting = true
+	_audio_player.play()
