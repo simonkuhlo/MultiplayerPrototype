@@ -136,7 +136,7 @@ collision_layer = 2
 script = ExtResource("1_2v3wm")
 visual_mesh = NodePath("MeshInstance3D")
 gun = NodePath("Camera3D/HeldItem/Gun")
-audio_listener = NodePath("AudioListener3D")
+audio_listener = NodePath("Camera3D/AudioListener3D")
 
 [node name="NameLabel" type="Label3D" parent="." node_paths=PackedStringArray("player")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.4, 0)
@@ -152,14 +152,15 @@ mesh = SubResource("CapsuleMesh_xk8km")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 shape = SubResource("CapsuleShape3D_67y6s")
 
-[node name="AudioListener3D" type="AudioListener3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
-
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.51306, 0)
+
+[node name="AudioListener3D" type="AudioListener3D" parent="Camera3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.01306, 0)
+current = true
 
 [node name="HeldItem" type="Node3D" parent="Camera3D"]
 

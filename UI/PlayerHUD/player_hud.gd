@@ -37,7 +37,7 @@ var current_weapon:WeaponInstance:
 @export var _name_label:Label
 @export var _reload_progress_bar:TimedProgressBar
 @export var _shoot_progress_bar:TimedProgressBar
-@export var _audio_player:HudSounds
+@export var _hit_sound:AudioStreamPlayer
 
 func _ready() -> void:
 	hide()
@@ -70,4 +70,4 @@ func _on_current_weapon_max_ammo_changed(new_amount:int):
 	max_ammo_label.text = str(new_amount)
 
 func _on_player_hit():
-	_audio_player.play_hit()
+	_hit_sound.play()

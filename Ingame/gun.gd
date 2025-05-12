@@ -38,6 +38,10 @@ var _queued_state:WeaponState
 @export var _muzzle_flash:GPUParticles3D
 @export var _audio_player:AudioStreamPlayer3D
 
+func _ready() -> void:
+	if !is_multiplayer_authority():
+		return
+
 func _unhandled_input(event: InputEvent) -> void:
 	if !is_multiplayer_authority():
 		return
