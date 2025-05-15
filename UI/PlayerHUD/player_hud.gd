@@ -3,7 +3,6 @@ class_name PlayerHUD
 
 var controlled_player:PlayerCharacter:
 	set(new):
-		print(new)
 		if controlled_player:
 			_disconnect_entity()
 		controlled_player = new

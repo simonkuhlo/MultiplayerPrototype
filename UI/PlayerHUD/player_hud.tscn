@@ -19,6 +19,7 @@ _hit_sound = NodePath("HitSound")
 
 [node name="HitSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_qo518")
+bus = &"HUD"
 
 [node name="ProgressBar" type="ProgressBar" parent="."]
 anchors_preset = 7

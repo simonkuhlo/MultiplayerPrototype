@@ -1,10 +1,10 @@
 [gd_scene load_steps=15 format=3 uid="uid://p0hiu3viqfu0"]
 
 [ext_resource type="Script" uid="uid://punagjc0vi3t" path="res://Ingame/gun.gd" id="1_kw0bs"]
-[ext_resource type="Texture2D" uid="uid://cobqpd4rddtf5" path="res://Weapons/Gun/bumm2.png" id="2_2iahy"]
-[ext_resource type="PackedScene" uid="uid://bgjsvk5n8qh8w" path="res://addons/assets/models/shotgun_1.glb" id="2_8iju2"]
-[ext_resource type="Texture2D" uid="uid://683btc04dc3a" path="res://addons/kenney_particle_pack/star_06.png" id="3_7vd5q"]
-[ext_resource type="AudioStream" uid="uid://b7v3gpdnehkx7" path="res://Weapons/Gun/10 Guage Shotgun-SoundBible.com-74120584.wav" id="5_syl58"]
+[ext_resource type="Texture2D" uid="uid://4ahtto427jlq" path="res://Weapons/Gun/bumm2.png" id="2_2iahy"]
+[ext_resource type="PackedScene" uid="uid://ugaby2xt7fo1" path="res://addons/assets/models/shotgun_1.glb" id="2_8iju2"]
+[ext_resource type="Texture2D" uid="uid://vwob30tkwej4" path="res://addons/kenney_particle_pack/star_06.png" id="3_7vd5q"]
+[ext_resource type="AudioStream" uid="uid://678t272q1skh" path="res://Weapons/Gun/10 Guage Shotgun-SoundBible.com-74120584.wav" id="5_syl58"]
 
 [sub_resource type="Gradient" id="Gradient_cfnn0"]
 offsets = PackedFloat32Array(0, 0.141221, 1)
@@ -106,6 +106,7 @@ draw_pass_1 = SubResource("PlaneMesh_b2g4i")
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="VisualMesh/shotgun_12"]
 transform = Transform3D(0.0775717, 7.07917e-08, -0.996987, 0.963016, -0.258819, 0.0749285, -0.258039, -0.965926, -0.0200771, 0.00425367, 0.0269253, -0.110742)
 stream = ExtResource("5_syl58")
+bus = &"Game"
 
 [node name="ReloadTimer" type="Timer" parent="."]
 one_shot = true
