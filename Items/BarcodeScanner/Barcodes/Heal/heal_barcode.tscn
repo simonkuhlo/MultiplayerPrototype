@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://dylsq5i1mosrc"]
+
+[ext_resource type="PackedScene" uid="uid://m1yncchg7kl7" path="res://Items/BarcodeScanner/Barcodes/barcode_object.tscn" id="1_k0sdw"]
+[ext_resource type="Script" uid="uid://dif8hxf2cc6ek" path="res://Items/BarcodeScanner/Barcodes/Heal/heal_barcode.gd" id="2_c5tsc"]
+
+[node name="BarcodeObject" instance=ExtResource("1_k0sdw")]
+script = ExtResource("2_c5tsc")
+heal_amount = 0
+short_code = &"HEAL"

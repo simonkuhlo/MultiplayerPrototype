@@ -12,5 +12,6 @@ func play_scan_effects():
 	audio_player.play()
 
 func _on_code_read(code:BarcodeObject):
+	code.on_scan(parent_player)
 	print("Code Read!")
 	play_scan_effects()

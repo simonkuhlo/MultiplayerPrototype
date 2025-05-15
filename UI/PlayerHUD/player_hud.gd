@@ -67,3 +67,15 @@ func _on_item_equipped(new_item:GameItem):
 
 func _on_player_hit():
 	_hit_sound.play()
+
+func _input(event: InputEvent) -> void:
+	if event.is_action_released("select_item_1"):
+		controlled_player.current_item = controlled_player.inventory.items[0]
+	if event.is_action_released("select_item_2"):
+		controlled_player.current_item = controlled_player.inventory.items[1]
+	if event.is_action_released("select_item_3"):
+		controlled_player.current_item = controlled_player.inventory.items[2]
+	if event.is_action_released("select_item_4"):
+		controlled_player.current_item = controlled_player.inventory.items[3]
+	if event.is_action_released("select_item_5"):
+		controlled_player.current_item = controlled_player.inventory.items[4]

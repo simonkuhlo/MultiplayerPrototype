@@ -9,4 +9,11 @@ var item_to_visualize:GameItem:
 				return
 			texture_rect.texture = item_to_visualize.icon
 
+var hotkey:String:
+	set(new):
+		hotkey = new
+		if hotkey:
+			hotkey_label.text = hotkey
+
 @export var texture_rect:TextureRect
+@export var hotkey_label:Label
