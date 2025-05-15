@@ -1,8 +1,10 @@
-[gd_scene load_steps=13 format=3 uid="uid://xcjrjq5cbn7y"]
+[gd_scene load_steps=15 format=3 uid="uid://xcjrjq5cbn7y"]
 
 [ext_resource type="Script" uid="uid://dpnj1nmdn8vbs" path="res://Player/Player.gd" id="1_2v3wm"]
+[ext_resource type="Script" uid="uid://djxmls2vaay7r" path="res://Player/player_inventory.gd" id="2_gwnis"]
 [ext_resource type="Script" uid="uid://b2odcgmin1krn" path="res://Ingame/name_label.gd" id="2_sweqy"]
-[ext_resource type="PackedScene" uid="uid://c40tmy6kpwyvo" path="res://Items/BarcodeScanner/barcode_scanner.tscn" id="3_btcbx"]
+[ext_resource type="Script" uid="uid://dfgsi8n6jn2dw" path="res://Player/item_holder.gd" id="5_fhl08"]
+[ext_resource type="Resource" uid="uid://ccv3ynmrpt0f0" path="res://Items/BarcodeScanner/barcode_scanner.tres" id="5_vtle1"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sweqy"]
 
@@ -141,6 +143,11 @@ visual_mesh = NodePath("MeshInstance3D")
 item_slot = NodePath("Marker3D/Camera3D/HeldItem")
 audio_listener = NodePath("Marker3D/Camera3D/AudioListener3D")
 
+[node name="PlayerInventory" type="Node" parent="." node_paths=PackedStringArray("parent_player")]
+script = ExtResource("2_gwnis")
+parent_player = NodePath("..")
+metadata/_custom_type_script = "uid://djxmls2vaay7r"
+
 [node name="NameLabel" type="Label3D" parent="." node_paths=PackedStringArray("player")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.4, 0)
 text = "Hallo"
@@ -170,10 +177,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.2, -0.6)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.01306, 0)
 current = true
 
-[node name="HeldItem" type="Node3D" parent="Marker3D/Camera3D"]
-
-[node name="BarcodeScanner" parent="Marker3D/Camera3D/HeldItem" node_paths=PackedStringArray("parent_player") instance=ExtResource("3_btcbx")]
-parent_player = NodePath("../../../..")
+[node name="HeldItem" type="Node3D" parent="Marker3D/Camera3D" node_paths=PackedStringArray("parent_player")]
+script = ExtResource("5_fhl08")
+parent_player = NodePath("../../..")
+current_item = ExtResource("5_vtle1")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

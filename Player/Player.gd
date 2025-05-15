@@ -5,7 +5,12 @@ signal health_changed(health_value)
 signal item_equipped(item:GameItemInstance)
 var controlling_peer:int
 
-
+@export var inventory:PlayerInventory:
+	set(new):
+		if inventory:
+			inventory.parent_player = null
+		inventory = new
+		inventory.parent_player = self
 
 @export_group("Stats")
 @export var max_health = 5
@@ -27,7 +32,11 @@ var gravity = 20.0
 @onready var anim_player = $AnimationPlayer
 @export var raycast:RayCast3D
 @export var visual_mesh:MeshInstance3D
-@export var item_slot:Node3D
+@export var item_slot:ItemHolder:
+	set(new):
+		item_slot = new
+		if item_slot:
+			item_slot.parent_player = self
 @export var audio_listener:AudioListener3D
 
 func _enter_tree():

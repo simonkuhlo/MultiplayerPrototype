@@ -2,7 +2,9 @@ extends Node3D
 class_name GameItemInstance
 
 var parent_resource:GameItem
-@export var parent_player:PlayerCharacter
+var parent_player:PlayerCharacter
+
+@export var aimable:bool = true
 
 var _aiming:bool = false
 
@@ -16,10 +18,14 @@ func _listen_for_input() -> void:
 		_action_three()
 
 func _listen_for_aiming() -> void:
-	if Input.is_action_pressed("aim"):
-		self.global_transform.origin = parent_player.aim_marker.global_transform.origin
+	if aimable:
+		if Input.is_action_pressed("aim"):
+			self.global_transform.origin = parent_player.aim_marker.global_transform.origin
+		else:
+			self.position = Vector3.ZERO
 	else:
-		self.position = Vector3.ZERO
+		if Input.is_action_just_pressed("aim"):
+			_action_two()
 
 func _action_one() -> void:
 	pass
