@@ -17,7 +17,7 @@ func _listen_for_input() -> void:
 
 func _listen_for_aiming() -> void:
 	if Input.is_action_pressed("aim"):
-		self.global_transform = parent_player.aim_marker.global_transform
+		self.global_transform.origin = parent_player.aim_marker.global_transform.origin
 	else:
 		self.position = Vector3.ZERO
 

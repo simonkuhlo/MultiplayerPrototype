@@ -131,13 +131,12 @@ properties/2/path = NodePath("Camera3D:rotation")
 properties/2/spawn = true
 properties/2/replication_mode = 1
 
-[node name="Player" type="CharacterBody3D" node_paths=PackedStringArray("camera_origin", "aim_marker", "camera", "raycast", "visual_mesh", "item_slot", "audio_listener")]
+[node name="Player" type="CharacterBody3D" node_paths=PackedStringArray("camera_origin", "aim_marker", "camera", "visual_mesh", "item_slot", "audio_listener")]
 collision_layer = 2
 script = ExtResource("1_2v3wm")
 camera_origin = NodePath("Marker3D")
 aim_marker = NodePath("Marker3D/Camera3D/AimMarker")
 camera = NodePath("Marker3D/Camera3D")
-raycast = NodePath("")
 visual_mesh = NodePath("MeshInstance3D")
 item_slot = NodePath("Marker3D/Camera3D/HeldItem")
 audio_listener = NodePath("Marker3D/Camera3D/AudioListener3D")
