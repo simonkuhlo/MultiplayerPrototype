@@ -13,6 +13,7 @@ var controlled_player:PlayerCharacter:
 @export var _item_ui_container:Container
 @export var _item_ui_fallback_scene:PackedScene
 @export var _hit_sound:AudioStreamPlayer
+@export var _inventory_visualizer:InventoryVisualizer
 
 var current_item:GameItem:
 	set(new):
@@ -30,6 +31,7 @@ var current_item:GameItem:
 			_item_ui_container.add_child(current_item.hud_scene_instance)
 		else:
 			var fallback_instance:GameItemHUD = _item_ui_fallback_scene.instantiate()
+			fallback_instance.parent_resource = current_item
 			_item_ui_container.add_child(fallback_instance)
 		if current_item.overlay_scene:
 			add_child(current_item.overlay_scene_instance)
@@ -47,6 +49,7 @@ func _on_visibility_changed():
 		current_item.overlay_scene_instance.visible = visible
 
 func _connect_entity() -> void:
+	_inventory_visualizer.inventory = controlled_player.inventory
 	controlled_player.health_changed.connect(_update_hp_bar)
 	controlled_player.item_equipped.connect(_on_item_equipped)
 	hp_bar.max_value = controlled_player.max_health

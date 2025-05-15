@@ -1,9 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://xcjrjq5cbn7y"]
+[gd_scene load_steps=11 format=3 uid="uid://xcjrjq5cbn7y"]
 
 [ext_resource type="Script" uid="uid://cxk7q7jt4jjuk" path="res://Player/Player.gd" id="1_2v3wm"]
 [ext_resource type="Script" uid="uid://bnne867ycfxr8" path="res://Player/player_inventory.gd" id="2_gwnis"]
 [ext_resource type="Script" uid="uid://b2odcgmin1krn" path="res://Ingame/name_label.gd" id="2_sweqy"]
 [ext_resource type="Script" uid="uid://coehmx8fvixdj" path="res://Items/game_item.gd" id="4_k53q1"]
+[ext_resource type="Resource" uid="uid://dt77ouvsxur23" path="res://Items/Gun/gun.tres" id="5_fhl08"]
 [ext_resource type="Resource" uid="uid://ccv3ynmrpt0f0" path="res://Items/BarcodeScanner/barcode_scanner.tres" id="5_vtle1"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sweqy"]
@@ -38,7 +39,7 @@ audio_listener = NodePath("Marker3D/Camera3D/AudioListener3D")
 [node name="PlayerInventory" type="Node" parent="." node_paths=PackedStringArray("parent_player")]
 script = ExtResource("2_gwnis")
 parent_player = NodePath("..")
-items = Array[ExtResource("4_k53q1")]([ExtResource("5_vtle1")])
+items = Array[ExtResource("4_k53q1")]([ExtResource("5_vtle1"), ExtResource("5_fhl08")])
 
 [node name="NameLabel" type="Label3D" parent="." node_paths=PackedStringArray("player")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.4, 0)

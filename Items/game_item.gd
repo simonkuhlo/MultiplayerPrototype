@@ -27,5 +27,5 @@ var overlay_scene_instance:GameItemHUDOverlay:
 			if !overlay_scene:
 				return
 			overlay_scene_instance = overlay_scene.instantiate()
-			hud_scene_instance.parent_resource = self
+			overlay_scene_instance.parent_resource = self
 		return overlay_scene_instance

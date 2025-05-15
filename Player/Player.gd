@@ -14,7 +14,7 @@ var controlling_peer:int
 
 @export_group("Stats")
 @export var max_health = 5
-@onready var health = 3:
+@onready var health = max_health:
 	set(new):
 		health = min(new, max_health)
 		if health <= 0:
@@ -41,14 +41,13 @@ var current_item:GameItem:
 			push_error("Player has no set item holder. Item cannot be equipped.")
 			return
 		if current_item:
-			inventory.add_item(current_item)
 			current_item.instance.queue_free()
 		current_item = new
 		if current_item:
 			var instance = current_item.instance
 			item_holder.add_child(instance)
 			instance.parent_player = self
-			item_equipped.emit(current_item)
+		item_equipped.emit(current_item)
 
 func _enter_tree():
 	set_multiplayer_authority(int(name))

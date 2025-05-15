@@ -22,3 +22,15 @@ func drop_item(new_item:GameItem) -> void:
 		return
 	remove_item(new_item)
 	#TODO Actually drop the item
+
+func _input(event: InputEvent) -> void:
+	if event.is_action_released("select_item_1"):
+		parent_player.current_item = items[0]
+	if event.is_action_released("select_item_2"):
+		parent_player.current_item = items[1]
+	if event.is_action_released("select_item_3"):
+		parent_player.current_item = items[2]
+	if event.is_action_released("select_item_4"):
+		parent_player.current_item = items[3]
+	if event.is_action_released("select_item_5"):
+		parent_player.current_item = items[4]

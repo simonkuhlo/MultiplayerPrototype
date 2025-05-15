@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://dk14qvch4sylt" path="res://UI/exit_button.gd" id="1_6ttf3"]
 
-
 [node name="ExitButton" type="Button"]
 text = "Exit"
 script = ExtResource("1_6ttf3")

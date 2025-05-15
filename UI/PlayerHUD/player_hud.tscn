@@ -1,16 +1,18 @@
-[gd_scene load_steps=5 format=3 uid="uid://b6y8df2rx47kq"]
+[gd_scene load_steps=6 format=3 uid="uid://b6y8df2rx47kq"]
 
 [ext_resource type="Script" uid="uid://dgdlv1nq5erjx" path="res://UI/PlayerHUD/player_hud.gd" id="1_tvw2b"]
 [ext_resource type="Texture2D" uid="uid://bbyvyuvjypd7b" path="res://addons/kenney_particle_pack/circle_03.png" id="2_pkcmm"]
 [ext_resource type="AudioStream" uid="uid://isw3q2eo4m5o" path="res://UI/PlayerHUD/Checkout Scanner Beep-SoundBible.com-593325210.wav" id="2_qo518"]
 [ext_resource type="PackedScene" uid="uid://bpkwteay6hi6d" path="res://UI/Inventory/item_ui.tscn" id="4_qo518"]
+[ext_resource type="PackedScene" uid="uid://b05bn4n5thx4u" path="res://UI/Inventory/inventory_visualizer.tscn" id="5_yqh1v"]
 
-[node name="PlayerHUD" type="CanvasLayer" node_paths=PackedStringArray("hp_bar", "_item_ui_container", "_hit_sound")]
+[node name="PlayerHUD" type="CanvasLayer" node_paths=PackedStringArray("hp_bar", "_item_ui_container", "_hit_sound", "_inventory_visualizer")]
 script = ExtResource("1_tvw2b")
 hp_bar = NodePath("HPBar")
 _item_ui_container = NodePath("ItemUIContainer")
 _item_ui_fallback_scene = ExtResource("4_qo518")
 _hit_sound = NodePath("HitSound")
+_inventory_visualizer = NodePath("InventoryVisualizer")
 
 [node name="HitSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_qo518")
@@ -55,3 +57,12 @@ offset_left = -258.0
 offset_top = -184.0
 grow_horizontal = 0
 grow_vertical = 0
+
+[node name="InventoryVisualizer" parent="." instance=ExtResource("5_yqh1v")]
+anchors_preset = -1
+anchor_top = 0.17
+anchor_right = 0.438
+anchor_bottom = 0.472
+offset_top = -0.160004
+offset_right = 0.423981
+offset_bottom = 0.143982

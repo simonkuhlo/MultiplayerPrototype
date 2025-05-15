@@ -1,11 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://cjhgwlc4ug46m"]
+[gd_scene load_steps=6 format=3 uid="uid://cjhgwlc4ug46m"]
 
 [ext_resource type="Script" uid="uid://bcwpbtb6fyfuy" path="res://MetaScripts/pause_menu.gd" id="1_hdmo1"]
-[ext_resource type="Script" uid="uid://dt8f8f0pkm3wi" path="res://UI/item_test.gd" id="2_0b5ob"]
 [ext_resource type="Script" uid="uid://lwsvqx8bbpy4" path="res://UI/settings_button.gd" id="2_03fe5"]
 [ext_resource type="PackedScene" uid="uid://oivj5fl13nly" path="res://UI/exit_button.tscn" id="2_nwcfo"]
-[ext_resource type="Resource" uid="uid://ccv3ynmrpt0f0" path="res://Items/BarcodeScanner/barcode_scanner.tres" id="3_pqlge"]
-[ext_resource type="Resource" uid="uid://dt77ouvsxur23" path="res://Items/Gun/gun.tres" id="4_nben2"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nwcfo"]
 bg_color = Color(0.796078, 0.486275, 0.647059, 0.752941)
@@ -62,18 +59,6 @@ size_flags_horizontal = 4
 layout_mode = 2
 text = "Pause"
 horizontal_alignment = 1
-
-[node name="ItemTest" type="Button" parent="PauseMenuUI/PauseMenu/PanelContainer/MarginContainer/VBoxContainer"]
-layout_mode = 2
-text = "Equip Testitem"
-script = ExtResource("2_0b5ob")
-test_item = ExtResource("3_pqlge")
-
-[node name="ItemTest2" type="Button" parent="PauseMenuUI/PauseMenu/PanelContainer/MarginContainer/VBoxContainer"]
-layout_mode = 2
-text = "Equip Testitem2"
-script = ExtResource("2_0b5ob")
-test_item = ExtResource("4_nben2")
 
 [node name="ResumeButton" type="Button" parent="PauseMenuUI/PauseMenu/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2

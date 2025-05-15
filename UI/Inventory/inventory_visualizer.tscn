@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://b05bn4n5thx4u"]
+
+[ext_resource type="Script" uid="uid://b4puk4oru2eib" path="res://UI/Inventory/inventory_visualizer.gd" id="1_v4l66"]
+[ext_resource type="PackedScene" uid="uid://ogenvcqd7l0p" path="res://UI/Inventory/inventory_slot_visualizer.tscn" id="2_ak1hx"]
+
+[node name="InventoryVisualizer" type="Control" node_paths=PackedStringArray("container")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_v4l66")
+_inventory_slot_visualizer = ExtResource("2_ak1hx")
+container = NodePath("GridContainer")
+
+[node name="GridContainer" type="GridContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+columns = 5

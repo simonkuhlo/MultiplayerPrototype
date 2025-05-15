@@ -1,13 +1,15 @@
-[gd_scene load_steps=3 format=3 uid="uid://c40tmy6kpwyvo"]
+[gd_scene load_steps=4 format=3 uid="uid://c40tmy6kpwyvo"]
 
 [ext_resource type="Script" uid="uid://dedtqk30ryyr3" path="res://Items/BarcodeScanner/barcode_scanner.gd" id="1_82wd4"]
+[ext_resource type="AudioStream" uid="uid://1fdt4fpw2hgb" path="res://Items/BarcodeScanner/Checkout Scanner Beep-SoundBible.com-593325210.wav" id="2_8umub"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_82wd4"]
 albedo_color = Color(0.977234, 0.461936, 0.542158, 1)
 
-[node name="BarcodeScanner" type="Node3D" node_paths=PackedStringArray("ray_cast")]
+[node name="BarcodeScanner" type="Node3D" node_paths=PackedStringArray("ray_cast", "audio_player")]
 script = ExtResource("1_82wd4")
 ray_cast = NodePath("RayCast3D")
+audio_player = NodePath("AudioStreamPlayer3D")
 
 [node name="Visuals" type="Node3D" parent="."]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0, -0.493102)
@@ -28,3 +30,7 @@ material = SubResource("StandardMaterial3D_82wd4")
 [node name="RayCast3D" type="RayCast3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -1, -8.74228e-08, 0, 8.74228e-08, -1, 0, 0, -0.5)
 target_position = Vector3(0, 0, 5)
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("2_8umub")
+bus = &"Game"

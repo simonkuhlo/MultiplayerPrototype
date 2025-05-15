@@ -1,10 +1,14 @@
-[gd_resource type="Resource" script_class="GameItem" load_steps=3 format=3 uid="uid://dt77ouvsxur23"]
+[gd_resource type="Resource" script_class="GameItem" load_steps=5 format=3 uid="uid://dt77ouvsxur23"]
 
+[ext_resource type="Texture2D" uid="uid://dywdln2cqu1pm" path="res://Items/Gun/nk2d68bq.bmp" id="1_0yadk"]
 [ext_resource type="Script" uid="uid://coehmx8fvixdj" path="res://Items/game_item.gd" id="1_20peu"]
 [ext_resource type="PackedScene" uid="uid://b0wx71rjhsb1g" path="res://Items/Gun/gun.tscn" id="1_rnov2"]
+[ext_resource type="PackedScene" uid="uid://bpab70b84fvfj" path="res://Items/item_hud_overlay.tscn" id="3_v2hcr"]
 
 [resource]
 script = ExtResource("1_20peu")
+icon = ExtResource("1_0yadk")
 item_name = &"Gun"
 instance_scene = ExtResource("1_rnov2")
+overlay_scene = ExtResource("3_v2hcr")
 metadata/_custom_type_script = "uid://coehmx8fvixdj"
