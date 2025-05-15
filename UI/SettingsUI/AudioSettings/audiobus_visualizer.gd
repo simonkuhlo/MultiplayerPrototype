@@ -1,6 +1,15 @@
 extends HBoxContainer
 class_name AudioBusSettingsVisualizer
 
+signal cached_value_changed(new_value:float)
+var cached_value:float = 0:
+	set(new):
+		cached_value = new
+		cached_value_label.text = str(round(cached_value * 100)/100)
+		cached_value_changed.emit(cached_value)
+
+@export var auto_apply:bool
+
 var bus_index:int:
 	set(new):
 		bus_index = new
@@ -13,9 +22,13 @@ var bus_index:int:
 			max_value.max_value = current_volume
 			max_value.value = current_volume
 		volume_slider.value = current_volume
+		cached_value = current_volume
+		current_value_label.text = str(volume_slider.value)
 
-@export var id_label:Label
 @export var name_label:Label
+@export var current_value_label:Label
+@export var cached_value_label:Label
+
 @export var min_value:SpinBox:
 	set(new):
 		if min_value:
@@ -39,9 +52,11 @@ var bus_index:int:
 	set(new):
 		if volume_slider:
 			volume_slider.drag_ended.disconnect(_on_volume_slider_dragged)
+			volume_slider.value_changed.disconnect(_on_volume_slider_value_changed)
 		volume_slider = new
 		if volume_slider:
 			volume_slider.drag_ended.connect(_on_volume_slider_dragged)
+			volume_slider.value_changed.connect(_on_volume_slider_value_changed)
 			_on_min_value_changed(min_value.value)
 			_on_max_value_changed(max_value.value)
 
@@ -55,6 +70,15 @@ func _on_max_value_changed(new_value:float) -> void:
 		volume_slider.value = new_value
 	volume_slider.max_value = new_value
 
+func _on_volume_slider_value_changed(new_value:float) -> void:
+	cached_value = new_value
+	if auto_apply:
+		apply()
+
 func _on_volume_slider_dragged(value_changed:bool) -> void:
 	if value_changed:
-		AudioServer.set_bus_volume_db(bus_index, volume_slider.value)
+		_on_volume_slider_value_changed(volume_slider.value)
+
+func apply() -> void:
+	AudioServer.set_bus_volume_db(bus_index, cached_value)
+	current_value_label.text = str(cached_value)

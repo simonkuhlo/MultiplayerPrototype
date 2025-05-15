@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://djgau2pcb36jh"]
 
-[ext_resource type="Script" uid="uid://c5jjsqwqd60b5" path="res://UI/SettingsUI/settings.gd" id="1_h8v81"]
+[ext_resource type="Script" uid="uid://3lvls76bhgq4" path="res://UI/SettingsUI/settings.gd" id="1_h8v81"]
 [ext_resource type="PackedScene" uid="uid://bodnjtkpqttk7" path="res://UI/SettingsUI/AudioSettings/audio_settings.tscn" id="2_kbhtl"]
 
 [node name="Settings" type="Window"]
@@ -150,6 +150,7 @@ layout_mode = 2
 text = "No exposed network settings."
 
 [node name="Audio" parent="VBoxContainer/TabContainer" instance=ExtResource("2_kbhtl")]
+visible = false
 layout_mode = 2
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]

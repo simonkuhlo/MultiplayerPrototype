@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://b6y8df2rx47kq"]
 
 [ext_resource type="Script" uid="uid://dgdlv1nq5erjx" path="res://UI/PlayerHUD/player_hud.gd" id="1_tvw2b"]
-[ext_resource type="Texture2D" uid="uid://bbyvyuvjypd7b" path="res://addons/kenney_particle_pack/circle_03.png" id="2_pkcmm"]
-[ext_resource type="AudioStream" uid="uid://isw3q2eo4m5o" path="res://UI/PlayerHUD/Checkout Scanner Beep-SoundBible.com-593325210.wav" id="2_qo518"]
+[ext_resource type="Texture2D" uid="uid://ds06440lhiews" path="res://addons/kenney_particle_pack/circle_03.png" id="2_pkcmm"]
+[ext_resource type="AudioStream" uid="uid://bm2d1jvxupmwb" path="res://UI/PlayerHUD/Checkout Scanner Beep-SoundBible.com-593325210.wav" id="2_qo518"]
 [ext_resource type="Script" uid="uid://da5ajw5nrf61g" path="res://UI/PlayerHUD/timed_progress_bar.gd" id="3_70xbo"]
 
 [node name="PlayerHUD" type="CanvasLayer" node_paths=PackedStringArray("hp_bar", "current_ammo_label", "max_ammo_label", "weapon_icon", "_name_label", "_reload_progress_bar", "_shoot_progress_bar")]

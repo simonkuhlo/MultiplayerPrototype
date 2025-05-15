@@ -1,10 +1,9 @@
 [gd_scene load_steps=3 format=3 uid="uid://bodnjtkpqttk7"]
 
-[ext_resource type="Script" uid="uid://bxnyd8wocd2o" path="res://UI/SettingsUI/AudioSettings/audio_settings.gd" id="1_wnwjp"]
+[ext_resource type="Script" uid="uid://tkwpxabdn82f" path="res://UI/SettingsUI/AudioSettings/audio_settings.gd" id="1_wnwjp"]
 [ext_resource type="PackedScene" uid="uid://c5x6slxbfi0ei" path="res://UI/SettingsUI/AudioSettings/audiobus_visualizer.tscn" id="2_ef328"]
 
-[node name="Audio" type="Control"]
-visible = false
+[node name="Audio" type="Control" node_paths=PackedStringArray("_instance_holder")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -13,12 +12,26 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_wnwjp")
 _bus_visualizer = ExtResource("2_ef328")
+_instance_holder = NodePath("MarginContainer/VBoxContainer2/Buses")
 metadata/_tab_index = 5
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Buses" type="VBoxContainer" parent="MarginContainer/VBoxContainer2"]
+layout_mode = 2
+
+[node name="ApplyButton" type="Button" parent="MarginContainer/VBoxContainer2"]
+layout_mode = 2
+text = "Apply"
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer2/ApplyButton" to="." method="apply"]
