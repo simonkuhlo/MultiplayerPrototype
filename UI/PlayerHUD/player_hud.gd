@@ -19,6 +19,8 @@ var current_item:GameItem:
 		if current_item == new:
 			return
 		if current_item:
+			for child in _item_ui_container.get_children():
+				child.queue_free()
 			if current_item.hud_scene_instance:
 				current_item.hud_scene_instance.queue_free()
 			if current_item.overlay_scene_instance:

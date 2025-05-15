@@ -6,8 +6,36 @@
 script = ExtResource("1_ocrdn")
 metadata/_custom_type_script = "uid://brus2fh8ojdbl"
 
-[node name="CSGCylinder3D" type="CSGCylinder3D" parent="."]
-transform = Transform3D(1.91069e-15, 4.37114e-08, 1, 1, -4.37114e-08, 0, 4.37114e-08, 1, -4.37114e-08, 0, 0, -0.86477)
+[node name="Visuals" type="Node3D" parent="."]
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="Visuals"]
+transform = Transform3D(1.91069e-15, 4.37114e-08, 1, 1, -4.37114e-08, 0, 4.37114e-08, 1, -4.37114e-08, 0, -0.171078, -0.86477)
 radius = 0.2
 height = 1.385
 sides = 30
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Visuals"]
+transform = Transform3D(1, 0, 0, 0, 0.590014, 0.807393, 0, -0.807393, 0.590014, 0, -0.346788, -0.0493849)
+size = Vector3(0.267578, 0.746094, 0.252747)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Visuals"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.46789)
+size = Vector3(0.0361328, 0.0947266, 0.101318)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Visuals"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.05, 0, -0.34)
+size = Vector3(0.0361328, 0.0947266, 0.101318)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="Visuals"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.05, 0, -0.34)
+size = Vector3(0.0361328, 0.0947266, 0.101318)
+
+[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="Visuals"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, -0.165335, -1.61408)
+radius = 0.12
+height = 0.153
+sides = 12
+
+[node name="RayCast3D" type="RayCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -1, -8.74228e-08, 0, 8.74228e-08, -1, 0, -0.16, -1.68485)
+target_position = Vector3(0, 0, 20)
