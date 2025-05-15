@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://c40tmy6kpwyvo"]
+
+[ext_resource type="Script" uid="uid://dvji5vvg1784o" path="res://Items/game_item_logic.gd" id="1_82wd4"]
+
+[node name="BarcodeScanner" type="Node3D"]
+script = ExtResource("1_82wd4")
+metadata/_custom_type_script = "uid://dvji5vvg1784o"

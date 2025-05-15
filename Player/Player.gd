@@ -21,9 +21,10 @@ var controlling_peer:int
 var gravity = 20.0
 
 @export_group("Setup")
-@onready var camera = $Camera3D
+@export var camera_origin:Marker3D
+@export var camera:Camera3D
 @onready var anim_player = $AnimationPlayer
-@onready var raycast = $Camera3D/RayCast3D
+@export var raycast:RayCast3D
 @export var visual_mesh:MeshInstance3D
 @export var gun:WeaponInstance
 @export var audio_listener:AudioListener3D

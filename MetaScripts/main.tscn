@@ -14,7 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://yxfdwopi515r" path="res://Lobby/Player Manager/player_manager.tscn" id="11_c0ic4"]
 [ext_resource type="Script" uid="uid://c5ymhdoisq3th" path="res://Ingame/game_logic.gd" id="11_dg77c"]
 [ext_resource type="Script" uid="uid://ciqobvwy82nue" path="res://Ingame/ingame.gd" id="11_ycdy4"]
-[ext_resource type="PackedScene" uid="uid://xcjrjq5cbn7y" path="res://Ingame/player.tscn" id="13_w48qg"]
+[ext_resource type="PackedScene" uid="uid://xcjrjq5cbn7y" path="res://Player/player.tscn" id="13_w48qg"]
 [ext_resource type="Script" uid="uid://d3nwu6l1sdcle" path="res://Ingame/ingame_player_manager.gd" id="15_2cqfq"]
 [ext_resource type="PackedScene" uid="uid://b6y8df2rx47kq" path="res://UI/PlayerHUD/player_hud.tscn" id="17_yaehf"]
 [ext_resource type="PackedScene" uid="uid://cjhgwlc4ug46m" path="res://UI/pause_menu.tscn" id="18_y6bep"]
