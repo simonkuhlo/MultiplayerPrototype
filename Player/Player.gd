@@ -2,7 +2,7 @@ extends CharacterBody3D
 class_name PlayerCharacter
 
 signal health_changed(health_value)
-signal weapon_switched(new_weapon:WeaponInstance)
+signal item_equipped(item:GameItemInstance)
 var controlling_peer:int
 
 
@@ -22,11 +22,12 @@ var gravity = 20.0
 
 @export_group("Setup")
 @export var camera_origin:Marker3D
+@export var aim_marker:Marker3D
 @export var camera:Camera3D
 @onready var anim_player = $AnimationPlayer
 @export var raycast:RayCast3D
 @export var visual_mesh:MeshInstance3D
-@export var gun:WeaponInstance
+@export var item_slot:Node3D
 @export var audio_listener:AudioListener3D
 
 func _enter_tree():
@@ -35,7 +36,7 @@ func _enter_tree():
 func _ready():
 	if not is_multiplayer_authority(): 
 		return
-	weapon_switched.emit(gun)
+	item_equipped.emit(item_slot)
 	camera.current = true
 	audio_listener.current = true
 
