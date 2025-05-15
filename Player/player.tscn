@@ -164,7 +164,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
 [node name="Camera3D" type="Camera3D" parent="Marker3D"]
 
 [node name="AimMarker" type="Marker3D" parent="Marker3D/Camera3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1, -0.6)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.2, -0.6)
 
 [node name="AudioListener3D" type="AudioListener3D" parent="Marker3D/Camera3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.01306, 0)
@@ -186,5 +186,3 @@ playback_default_blend_time = 0.05
 replication_config = SubResource("SceneReplicationConfig_hn37q")
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
-
-[editable path="Marker3D/Camera3D/HeldItem/BarcodeScanner"]
