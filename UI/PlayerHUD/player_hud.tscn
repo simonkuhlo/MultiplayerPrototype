@@ -5,7 +5,7 @@
 [ext_resource type="AudioStream" uid="uid://bm2d1jvxupmwb" path="res://UI/PlayerHUD/Checkout Scanner Beep-SoundBible.com-593325210.wav" id="2_qo518"]
 [ext_resource type="Script" uid="uid://da5ajw5nrf61g" path="res://UI/PlayerHUD/timed_progress_bar.gd" id="3_70xbo"]
 
-[node name="PlayerHUD" type="CanvasLayer" node_paths=PackedStringArray("hp_bar", "current_ammo_label", "max_ammo_label", "weapon_icon", "_name_label", "_reload_progress_bar", "_shoot_progress_bar")]
+[node name="PlayerHUD" type="CanvasLayer" node_paths=PackedStringArray("hp_bar", "current_ammo_label", "max_ammo_label", "weapon_icon", "_name_label", "_reload_progress_bar", "_shoot_progress_bar", "_hit_sound")]
 visible = false
 script = ExtResource("1_tvw2b")
 hp_bar = NodePath("ProgressBar")
@@ -15,6 +15,7 @@ weapon_icon = NodePath("PanelContainer/VBoxContainer/TextureRect")
 _name_label = NodePath("PanelContainer/VBoxContainer/NameLabel")
 _reload_progress_bar = NodePath("PanelContainer/VBoxContainer/HBoxContainer/ReloadProgressBar")
 _shoot_progress_bar = NodePath("PanelContainer/VBoxContainer/HBoxContainer/CooldownProgressBar")
+_hit_sound = NodePath("HitSound")
 
 [node name="HitSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_qo518")
