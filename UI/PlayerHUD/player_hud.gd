@@ -3,7 +3,6 @@ class_name PlayerHUD
 
 var controlled_player:PlayerCharacter:
 	set(new):
-		print(new)
 		if controlled_player:
 			_disconnect_entity()
 		controlled_player = new
@@ -20,6 +19,7 @@ var current_weapon:WeaponInstance:
 			return
 		current_weapon.current_ammo_changed.connect(_on_current_weapon_ammo_changed)
 		current_weapon.max_ammo_changed.connect(_on_current_weapon_max_ammo_changed)
+		current_weapon.hit_something.connect(_on_player_hit)
 		weapon_icon.texture = current_weapon.weapon_icon
 		_on_current_weapon_ammo_changed(current_weapon.current_ammo)
 		max_ammo_label.text = str(current_weapon.max_ammo)
@@ -36,6 +36,7 @@ var current_weapon:WeaponInstance:
 @export var _name_label:Label
 @export var _reload_progress_bar:TimedProgressBar
 @export var _shoot_progress_bar:TimedProgressBar
+@export var _hit_sound:AudioStreamPlayer
 
 func _ready() -> void:
 	hide()
@@ -66,3 +67,6 @@ func _on_current_weapon_ammo_changed(new_amount:int):
 
 func _on_current_weapon_max_ammo_changed(new_amount:int):
 	max_ammo_label.text = str(new_amount)
+
+func _on_player_hit():
+	_hit_sound.play()

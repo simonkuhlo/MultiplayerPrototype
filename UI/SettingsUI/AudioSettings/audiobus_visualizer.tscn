@@ -1,0 +1,61 @@
+[gd_scene load_steps=3 format=3 uid="uid://c5x6slxbfi0ei"]
+
+[ext_resource type="Script" uid="uid://c7t5qayo3s7t" path="res://UI/SettingsUI/AudioSettings/audiobus_visualizer.gd" id="1_swejh"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_swejh"]
+font_size = 10
+
+[node name="Control" type="HBoxContainer" node_paths=PackedStringArray("name_label", "current_value_label", "cached_value_label", "min_value", "max_value", "volume_slider")]
+offset_right = 588.0
+offset_bottom = 31.0
+script = ExtResource("1_swejh")
+name_label = NodePath("Name")
+current_value_label = NodePath("CurrentValue")
+cached_value_label = NodePath("VBoxContainer/CachedValue")
+min_value = NodePath("MinValue")
+max_value = NodePath("MaxValue")
+volume_slider = NodePath("VBoxContainer/VolumeSlider")
+
+[node name="Name" type="Label" parent="."]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+text = "BUS NAME"
+
+[node name="VSeparator2" type="VSeparator" parent="."]
+layout_mode = 2
+
+[node name="MinValue" type="SpinBox" parent="."]
+layout_mode = 2
+min_value = -100.0
+max_value = 0.0
+value = -30.0
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+
+[node name="VolumeSlider" type="HSlider" parent="VBoxContainer"]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+step = 0.01
+
+[node name="CachedValue" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "CACHED_VALUE"
+label_settings = SubResource("LabelSettings_swejh")
+horizontal_alignment = 1
+
+[node name="MaxValue" type="SpinBox" parent="."]
+layout_mode = 2
+value = 30.0
+alignment = 1
+
+[node name="VSeparator" type="VSeparator" parent="."]
+layout_mode = 2
+
+[node name="CurrentValue" type="Label" parent="."]
+layout_mode = 2
+text = "CURRENT_VALUE"

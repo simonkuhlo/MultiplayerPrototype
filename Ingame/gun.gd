@@ -36,6 +36,11 @@ var _queued_state:WeaponState
 @export var _animation_player:AnimationPlayer
 @export var _raycast:RayCast3D
 @export var _muzzle_flash:GPUParticles3D
+@export var _audio_player:AudioStreamPlayer3D
+
+func _ready() -> void:
+	if !is_multiplayer_authority():
+		return
 
 func _unhandled_input(event: InputEvent) -> void:
 	if !is_multiplayer_authority():
@@ -62,8 +67,9 @@ func shoot():
 	play_shoot_effects.rpc()
 	if _raycast.is_colliding():
 		var hit_player = _raycast.get_collider()
-		hit_player.receive_damage.rpc_id(hit_player.get_multiplayer_authority(), damage)
-		hit_something.emit()
+		if hit_player is PlayerCharacter:
+			hit_player.receive_damage.rpc_id(hit_player.get_multiplayer_authority(), damage)
+			hit_something.emit()
 	_cooldown_timer.start(fire_rate)
 	
 
@@ -96,3 +102,4 @@ func play_shoot_effects():
 	_animation_player.play("shoot")
 	_muzzle_flash.restart()
 	_muzzle_flash.emitting = true
+	_audio_player.play()

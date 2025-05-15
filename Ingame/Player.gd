@@ -26,6 +26,7 @@ var gravity = 20.0
 @onready var raycast = $Camera3D/RayCast3D
 @export var visual_mesh:MeshInstance3D
 @export var gun:WeaponInstance
+@export var audio_listener:AudioListener3D
 
 func _enter_tree():
 	set_multiplayer_authority(int(name))
@@ -35,6 +36,7 @@ func _ready():
 		return
 	weapon_switched.emit(gun)
 	camera.current = true
+	audio_listener.current = true
 
 func _unhandled_input(event):
 	if not is_multiplayer_authority(): 
