@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://m1yncchg7kl7"]
 
-[ext_resource type="Script" uid="uid://c6ghh88roedr3" path="res://Items/BarcodeScanner/barcode_object.gd" id="1_uyifl"]
+[ext_resource type="Script" uid="uid://ddy418tsubvvr" path="res://Items/BarcodeScanner/barcode_object.gd" id="1_uyifl"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_qujp6"]
 size = Vector3(1.3, 0.5, 0.2)

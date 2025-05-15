@@ -9,66 +9,56 @@ var controlled_player:PlayerCharacter:
 		if controlled_player:
 			_connect_entity()
 
-#var current_weapon:WeaponInstance:
-	#set(new):
-		#if current_weapon:
-			#current_weapon.current_ammo_changed.disconnect(_on_current_weapon_ammo_changed)
-			#current_weapon.max_ammo_changed.disconnect(_on_current_weapon_max_ammo_changed)
-		#current_weapon = new
-		#if !current_weapon:
-			#return
-		#current_weapon.current_ammo_changed.connect(_on_current_weapon_ammo_changed)
-		#current_weapon.max_ammo_changed.connect(_on_current_weapon_max_ammo_changed)
-		#current_weapon.hit_something.connect(_on_player_hit)
-		#weapon_icon.texture = current_weapon.weapon_icon
-		#_on_current_weapon_ammo_changed(current_weapon.current_ammo)
-		#max_ammo_label.text = str(current_weapon.max_ammo)
-		#_name_label.text = current_weapon.name
-		#_reload_progress_bar.timer = current_weapon._reload_timer
-		#_reload_progress_bar.max_value = current_weapon.reload_time
-		#_shoot_progress_bar.timer = current_weapon._cooldown_timer
-		#_shoot_progress_bar.max_value = current_weapon.fire_rate
-
 @export var hp_bar:ProgressBar
-@export var current_ammo_label:Label
-@export var max_ammo_label:Label
-@export var weapon_icon:TextureRect
-@export var _name_label:Label
-@export var _reload_progress_bar:TimedProgressBar
-@export var _shoot_progress_bar:TimedProgressBar
+@export var _item_ui_container:Container
+@export var _item_ui_fallback_scene:PackedScene
 @export var _hit_sound:AudioStreamPlayer
 
+var current_item:GameItem:
+	set(new):
+		if current_item == new:
+			return
+		if current_item:
+			if current_item.hud_scene_instance:
+				current_item.hud_scene_instance.queue_free()
+			if current_item.overlay_scene_instance:
+				current_item.overlay_scene_instance.queue_free()
+		current_item = new
+		if current_item.hud_scene:
+			_item_ui_container.add_child(current_item.hud_scene_instance)
+		else:
+			var fallback_instance:GameItemHUD = _item_ui_fallback_scene.instantiate()
+			_item_ui_container.add_child(fallback_instance)
+		if current_item.overlay_scene:
+			add_child(current_item.overlay_scene_instance)
+
+var current_item_overlay:GameItemHUDOverlay
+
 func _ready() -> void:
+	visibility_changed.connect(_on_visibility_changed)
 	hide()
+
+func _on_visibility_changed():
+	if !current_item:
+		return
+	if current_item.overlay_scene_instance:
+		current_item.overlay_scene_instance.visible = visible
 
 func _connect_entity() -> void:
 	controlled_player.health_changed.connect(_update_hp_bar)
-	controlled_player.item_equipped.connect(_on_weapon_switched)
-	#if controlled_player.gun:
-		#_on_weapon_switched(controlled_player.gun)
+	controlled_player.item_equipped.connect(_on_item_equipped)
 	hp_bar.max_value = controlled_player.max_health
 	_update_hp_bar(0)
 
 func _disconnect_entity() -> void:
 	controlled_player.health_changed.disconnect(_update_hp_bar)
+	controlled_player.item_equipped.disconnect(_on_item_equipped)
 
 func _update_hp_bar(_health:int) -> void:
 	hp_bar.value = controlled_player.health
 
-func _on_weapon_switched(new_weapon:WeaponInstance):
-	#current_weapon = new_weapon
-	pass
-
-func _on_current_weapon_ammo_changed(new_amount:int):
-	#current_ammo_label.text = str(new_amount)
-	#if new_amount <= (current_weapon.max_ammo / 3):
-		#current_ammo_label.add_theme_color_override("font_color", Color(1, 1, 0, 1))
-	#else:
-		#current_ammo_label.add_theme_color_override("font_color", Color(1, 1, 1, 1))
-	pass
-
-func _on_current_weapon_max_ammo_changed(new_amount:int):
-	max_ammo_label.text = str(new_amount)
+func _on_item_equipped(new_item:GameItem):
+	current_item = new_item
 
 func _on_player_hit():
 	_hit_sound.play()

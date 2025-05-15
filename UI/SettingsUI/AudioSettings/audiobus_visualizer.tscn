@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://c5x6slxbfi0ei"]
 
-[ext_resource type="Script" uid="uid://c7t5qayo3s7t" path="res://UI/SettingsUI/AudioSettings/audiobus_visualizer.gd" id="1_swejh"]
+[ext_resource type="Script" uid="uid://ddn2v5u42pxdp" path="res://UI/SettingsUI/AudioSettings/audiobus_visualizer.gd" id="1_swejh"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_swejh"]
 font_size = 10

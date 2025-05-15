@@ -1,0 +1,33 @@
+[gd_scene load_steps=2 format=3 uid="uid://bpkwteay6hi6d"]
+
+[ext_resource type="Script" uid="uid://cp5xgke178inh" path="res://Items/game_item_hud.gd" id="1_eggrw"]
+
+[node name="ItemUI" type="Control" node_paths=PackedStringArray("texture", "name_label")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_eggrw")
+texture = NodePath("VBoxContainer/TextureRect")
+name_label = NodePath("VBoxContainer/Label")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "Item Name"
+horizontal_alignment = 1

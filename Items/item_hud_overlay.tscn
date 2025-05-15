@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://bpab70b84fvfj"]
+
+[ext_resource type="Script" uid="uid://m8m6jb6qoidx" path="res://Items/game_item_hud_overlay.gd" id="1_gcxyn"]
+[ext_resource type="Texture2D" uid="uid://bbyvyuvjypd7b" path="res://addons/kenney_particle_pack/circle_03.png" id="1_w0osb"]
+
+[node name="ItemUi" type="CanvasLayer"]
+script = ExtResource("1_gcxyn")
+
+[node name="Crosshair" type="TextureRect" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -15.5
+offset_top = -15.5
+offset_right = 15.5
+offset_bottom = 15.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_w0osb")
+expand_mode = 2
+stretch_mode = 4

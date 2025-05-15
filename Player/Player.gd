@@ -2,7 +2,7 @@ extends CharacterBody3D
 class_name PlayerCharacter
 
 signal health_changed(health_value)
-signal item_equipped(item:GameItemInstance)
+signal item_equipped(item:GameItem)
 var controlling_peer:int
 
 @export var inventory:PlayerInventory:
@@ -29,15 +29,26 @@ var gravity = 20.0
 @export var camera_origin:Marker3D
 @export var aim_marker:Marker3D
 @export var camera:Camera3D
-@onready var anim_player = $AnimationPlayer
-@export var raycast:RayCast3D
 @export var visual_mesh:MeshInstance3D
-@export var item_slot:ItemHolder:
-	set(new):
-		item_slot = new
-		if item_slot:
-			item_slot.parent_player = self
+@export var item_holder:Node3D
 @export var audio_listener:AudioListener3D
+
+var current_item:GameItem:
+	set(new):
+		if current_item == new:
+			return
+		if !item_holder:
+			push_error("Player has no set item holder. Item cannot be equipped.")
+			return
+		if current_item:
+			inventory.add_item(current_item)
+			current_item.instance.queue_free()
+		current_item = new
+		if current_item:
+			var instance = current_item.instance
+			item_holder.add_child(instance)
+			instance.parent_player = self
+			item_equipped.emit(current_item)
 
 func _enter_tree():
 	set_multiplayer_authority(int(name))
@@ -45,7 +56,7 @@ func _enter_tree():
 func _ready():
 	if not is_multiplayer_authority(): 
 		return
-	item_equipped.emit(item_slot)
+	item_equipped.emit(current_item)
 	camera.current = true
 	audio_listener.current = true
 
@@ -75,12 +86,12 @@ func _physics_process(delta):
 		velocity.x = move_toward(velocity.x, 0, speed)
 		velocity.z = move_toward(velocity.z, 0, speed)
 
-	if anim_player.current_animation == "shoot":
-		pass
-	elif input_dir != Vector2.ZERO and is_on_floor():
-		anim_player.play("move")
-	else:
-		anim_player.play("idle")
+	#if anim_player.current_animation == "shoot":
+		#pass
+	#elif input_dir != Vector2.ZERO and is_on_floor():
+		#anim_player.play("move")
+	#else:
+		#anim_player.play("idle")
 	move_and_slide()
 
 func _on_hp_empty():
@@ -95,5 +106,6 @@ func receive_damage(damage:int):
 	health -= damage
 
 func _on_animation_player_animation_finished(anim_name):
-	if anim_name == "shoot":
-		anim_player.play("idle")
+	pass
+	#if anim_name == "shoot":
+		#anim_player.play("idle")

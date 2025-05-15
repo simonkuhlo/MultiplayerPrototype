@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://bodnjtkpqttk7"]
 
-[ext_resource type="Script" uid="uid://tkwpxabdn82f" path="res://UI/SettingsUI/AudioSettings/audio_settings.gd" id="1_wnwjp"]
+[ext_resource type="Script" uid="uid://bxnyd8wocd2o" path="res://UI/SettingsUI/AudioSettings/audio_settings.gd" id="1_wnwjp"]
 [ext_resource type="PackedScene" uid="uid://c5x6slxbfi0ei" path="res://UI/SettingsUI/AudioSettings/audiobus_visualizer.tscn" id="2_ef328"]
 
 [node name="Audio" type="Control" node_paths=PackedStringArray("_instance_holder")]
