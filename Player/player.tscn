@@ -22,7 +22,7 @@ properties/2/path = NodePath("Camera3D:rotation")
 properties/2/spawn = true
 properties/2/replication_mode = 1
 
-[node name="Player" type="CharacterBody3D" node_paths=PackedStringArray("inventory", "camera_origin", "aim_marker", "camera", "visual_mesh", "item_holder", "audio_listener")]
+[node name="Player" type="CharacterBody3D" node_paths=PackedStringArray("inventory", "camera_origin", "aim_marker", "camera", "visual_mesh", "item_holder", "audio_listener", "camrea_ray")]
 collision_layer = 2
 script = ExtResource("1_2v3wm")
 inventory = NodePath("PlayerInventory")
@@ -33,9 +33,9 @@ camera = NodePath("Marker3D/Camera3D")
 visual_mesh = NodePath("MeshInstance3D")
 item_holder = NodePath("Marker3D/Camera3D/ItemHolder")
 audio_listener = NodePath("Marker3D/Camera3D/AudioListener3D")
+camrea_ray = NodePath("Marker3D/Camera3D/RayCast3D")
 
-[node name="PlayerInventory" parent="." node_paths=PackedStringArray("parent_player") instance=ExtResource("2_btcbx")]
-parent_player = NodePath("..")
+[node name="PlayerInventory" parent="." instance=ExtResource("2_btcbx")]
 
 [node name="NameLabel" type="Label3D" parent="." node_paths=PackedStringArray("player")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.4, 0)
@@ -58,6 +58,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
 
 [node name="Camera3D" type="Camera3D" parent="Marker3D"]
+
+[node name="RayCast3D" type="RayCast3D" parent="Marker3D/Camera3D"]
+target_position = Vector3(0, 0, -3)
+collision_mask = 7
 
 [node name="AimMarker" type="Marker3D" parent="Marker3D/Camera3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.2, -0.6)

@@ -32,6 +32,7 @@ var gravity = 20.0
 @export var visual_mesh:MeshInstance3D
 @export var item_holder:Node3D
 @export var audio_listener:AudioListener3D
+@export var camrea_ray:RayCast3D
 
 var current_item:GameItem:
 	set(new):
