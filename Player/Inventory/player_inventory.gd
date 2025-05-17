@@ -62,6 +62,7 @@ func add_item(new_item: GameItem) -> void:
 		pickup_instance.held_item = new_item
 		pickup_instance.global_transform = parent_player.aim_marker.global_transform
 		get_tree().root.add_child(pickup_instance)
+		return
 	slot.held_item = new_item
 	item_added.emit(new_item)
 

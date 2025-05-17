@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://cujrjd7l0yxi8"]
+[gd_scene load_steps=16 format=3 uid="uid://cujrjd7l0yxi8"]
 
 [ext_resource type="Script" uid="uid://br16lpotthoq" path="res://Levels/_res/game_level.gd" id="1_rnh63"]
 [ext_resource type="MeshLibrary" uid="uid://bqp2wgxt5w7kg" path="res://Levels/_res/atlas2.meshlib" id="2_vuuyl"]
@@ -9,6 +9,9 @@
 [ext_resource type="PackedScene" uid="uid://xwxpghrgaj7t" path="res://Levels/_res/killzone.tscn" id="7_yeilg"]
 [ext_resource type="PackedScene" uid="uid://m1yncchg7kl7" path="res://Items/BarcodeScanner/Barcodes/barcode_object.tscn" id="8_jp25r"]
 [ext_resource type="PackedScene" uid="uid://dylsq5i1mosrc" path="res://Items/BarcodeScanner/Barcodes/Heal/heal_barcode.tscn" id="9_21al1"]
+[ext_resource type="PackedScene" uid="uid://bytc6je6ctcin" path="res://Items/game_item_pickup.tscn" id="10_bek1v"]
+[ext_resource type="Resource" uid="uid://dt77ouvsxur23" path="res://Items/Gun/gun.tres" id="11_3e3c5"]
+[ext_resource type="Resource" uid="uid://ccv3ynmrpt0f0" path="res://Items/BarcodeScanner/barcode_scanner.tres" id="12_ljsme"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_vuuyl"]
 sky_top_color = Color(0.898039, 0.313726, 0.67451, 1)
@@ -107,3 +110,15 @@ heal_amount = 3
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 5.7399, 1.77939, -6.06533)
 heal_amount = -3
 short_code = &"DAMAGE"
+
+[node name="GameItemPickup" parent="." instance=ExtResource("10_bek1v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.871179, 1.45015, -9.97271)
+held_item = ExtResource("11_3e3c5")
+
+[node name="GameItemPickup2" parent="." instance=ExtResource("10_bek1v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.17193, 4.63538, -3.10155)
+held_item = ExtResource("12_ljsme")
+
+[node name="GameItemPickup3" parent="." instance=ExtResource("10_bek1v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.3552, 2.00843, -6.14428)
+held_item = ExtResource("12_ljsme")
