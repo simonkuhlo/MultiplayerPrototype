@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://bpkwteay6hi6d" path="res://UI/Inventory/item_ui.tscn" id="1_110ju"]
 [ext_resource type="PackedScene" uid="uid://c40tmy6kpwyvo" path="res://Items/BarcodeScanner/barcode_scanner.tscn" id="1_a3qf4"]
 [ext_resource type="Script" uid="uid://coehmx8fvixdj" path="res://Items/game_item.gd" id="1_s6wkr"]
-[ext_resource type="Texture2D" uid="uid://bieb4daivp5xa" path="res://Items/BarcodeScanner/kk1trphi.bmp" id="2_1uohh"]
+[ext_resource type="Texture2D" uid="uid://bieb4daivp5xa" path="res://Items/BarcodeScanner/Assets/kk1trphi.bmp" id="2_1uohh"]
 [ext_resource type="PackedScene" uid="uid://bpab70b84fvfj" path="res://Items/item_hud_overlay.tscn" id="2_vhs43"]
 
 [resource]

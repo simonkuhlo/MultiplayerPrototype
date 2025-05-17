@@ -46,7 +46,6 @@ var current_item:GameItem:
 		if current_item:
 			var instance = current_item.instance
 			item_holder.add_child(instance)
-			instance.parent_player = self
 		item_equipped.emit(current_item)
 
 func _enter_tree():

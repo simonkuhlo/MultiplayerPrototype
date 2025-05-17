@@ -8,7 +8,7 @@ var instance:GameItemInstance:
 	get():
 		if !instance:
 			instance = instance_scene.instantiate()
-			instance.parent_resource = self
+			instance.resource = self
 		return instance
 
 @export var hud_scene:PackedScene
@@ -18,7 +18,7 @@ var hud_scene_instance:GameItemHUD:
 			if !hud_scene:
 				return
 			hud_scene_instance = hud_scene.instantiate()
-			hud_scene_instance.parent_resource = self
+			hud_scene_instance.resource = self
 		return hud_scene_instance
 @export var overlay_scene:PackedScene
 var overlay_scene_instance:GameItemHUDOverlay:
@@ -27,5 +27,13 @@ var overlay_scene_instance:GameItemHUDOverlay:
 			if !overlay_scene:
 				return
 			overlay_scene_instance = overlay_scene.instantiate()
-			overlay_scene_instance.parent_resource = self
+			overlay_scene_instance.resource = self
 		return overlay_scene_instance
+
+var owning_player:PlayerCharacter:
+	set(new):
+		if owning_player:
+			pass
+		owning_player = new
+		if owning_player:
+			pass

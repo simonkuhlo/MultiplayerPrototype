@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://cwoispwkbwgj0"]
+
+[ext_resource type="Script" uid="uid://brus2fh8ojdbl" path="res://Items/game_item_instance.gd" id="1_xhg5l"]
+
+[node name="Grabber" type="Node3D"]
+script = ExtResource("1_xhg5l")
+metadata/_custom_type_script = "uid://brus2fh8ojdbl"

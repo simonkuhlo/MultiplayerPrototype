@@ -27,14 +27,15 @@ var current_item:GameItem:
 			if current_item.overlay_scene_instance:
 				current_item.overlay_scene_instance.queue_free()
 		current_item = new
-		if current_item.hud_scene:
-			_item_ui_container.add_child(current_item.hud_scene_instance)
-		else:
-			var fallback_instance:GameItemHUD = _item_ui_fallback_scene.instantiate()
-			fallback_instance.parent_resource = current_item
-			_item_ui_container.add_child(fallback_instance)
-		if current_item.overlay_scene:
-			add_child(current_item.overlay_scene_instance)
+		if current_item:
+			if current_item.hud_scene:
+				_item_ui_container.add_child(current_item.hud_scene_instance)
+			else:
+				var fallback_instance:GameItemHUD = _item_ui_fallback_scene.instantiate()
+				fallback_instance.resource = current_item
+				_item_ui_container.add_child(fallback_instance)
+			if current_item.overlay_scene:
+				add_child(current_item.overlay_scene_instance)
 
 var current_item_overlay:GameItemHUDOverlay
 
@@ -49,7 +50,7 @@ func _on_visibility_changed():
 		current_item.overlay_scene_instance.visible = visible
 
 func _connect_entity() -> void:
-	_inventory_visualizer.inventory = controlled_player.inventory
+	_inventory_visualizer._inventory = controlled_player.inventory
 	controlled_player.health_changed.connect(_update_hp_bar)
 	controlled_player.item_equipped.connect(_on_item_equipped)
 	hp_bar.max_value = controlled_player.max_health
@@ -67,15 +68,3 @@ func _on_item_equipped(new_item:GameItem):
 
 func _on_player_hit():
 	_hit_sound.play()
-
-func _input(event: InputEvent) -> void:
-	if event.is_action_released("select_item_1"):
-		controlled_player.current_item = controlled_player.inventory.items[0]
-	if event.is_action_released("select_item_2"):
-		controlled_player.current_item = controlled_player.inventory.items[1]
-	if event.is_action_released("select_item_3"):
-		controlled_player.current_item = controlled_player.inventory.items[2]
-	if event.is_action_released("select_item_4"):
-		controlled_player.current_item = controlled_player.inventory.items[3]
-	if event.is_action_released("select_item_5"):
-		controlled_player.current_item = controlled_player.inventory.items[4]

@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://bj4pco2hhnncc"]
+
+[ext_resource type="Script" uid="uid://comienoe2gtp1" path="res://Player/Inventory/player_inventory_slot.gd" id="1_4xdm6"]
+[ext_resource type="PackedScene" uid="uid://bytc6je6ctcin" path="res://Items/game_item_pickup.tscn" id="2_vuhxs"]
+
+[node name="PlayerInventorySlot" type="Node"]
+script = ExtResource("1_4xdm6")
+game_item_pickup_scene = ExtResource("2_vuhxs")
+metadata/_custom_type_script = "uid://comienoe2gtp1"

@@ -1,4 +1,4 @@
 extends CanvasLayer
 class_name GameItemHUDOverlay
 
-var parent_resource:GameItem
+var resource:GameItem

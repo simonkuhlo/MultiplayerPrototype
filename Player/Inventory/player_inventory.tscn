@@ -1,0 +1,41 @@
+[gd_scene load_steps=8 format=3 uid="uid://clydka4hhv2ww"]
+
+[ext_resource type="Script" uid="uid://bnne867ycfxr8" path="res://Player/Inventory/player_inventory.gd" id="1_lk0ao"]
+[ext_resource type="PackedScene" uid="uid://bytc6je6ctcin" path="res://Items/game_item_pickup.tscn" id="2_kwpuf"]
+[ext_resource type="Script" uid="uid://csxc2i66512ar" path="res://Player/Inventory/selected_slot_manager.gd" id="3_62k1e"]
+[ext_resource type="PackedScene" uid="uid://bj4pco2hhnncc" path="res://Player/Inventory/player_inventory_slot.tscn" id="3_akoc3"]
+[ext_resource type="Resource" uid="uid://baa5ojjjagsqn" path="res://Items/Grabber/grabber.tres" id="4_7ubkb"]
+[ext_resource type="Resource" uid="uid://ccv3ynmrpt0f0" path="res://Items/BarcodeScanner/barcode_scanner.tres" id="6_62k1e"]
+[ext_resource type="Resource" uid="uid://dt77ouvsxur23" path="res://Items/Gun/gun.tres" id="7_wb0po"]
+
+[node name="PlayerInventory" type="Node" node_paths=PackedStringArray("_slots_parent_node", "selected_slot")]
+script = ExtResource("1_lk0ao")
+game_item_pickup_scene = ExtResource("2_kwpuf")
+_slots_parent_node = NodePath("Slots")
+selected_slot = NodePath("SelectedSlotManager")
+metadata/_custom_type_script = "uid://bnne867ycfxr8"
+
+[node name="SelectedSlotManager" type="Node" parent="."]
+script = ExtResource("3_62k1e")
+
+[node name="Slots" type="Node" parent="."]
+
+[node name="Slot 1" parent="Slots" instance=ExtResource("3_akoc3")]
+held_item = ExtResource("4_7ubkb")
+hotkey = &"select_item_1"
+is_locked = true
+
+[node name="Slot 2" parent="Slots" instance=ExtResource("3_akoc3")]
+held_item = ExtResource("6_62k1e")
+hotkey = &"select_item_2"
+is_locked = true
+
+[node name="Slot 3" parent="Slots" instance=ExtResource("3_akoc3")]
+held_item = ExtResource("7_wb0po")
+hotkey = &"select_item_3"
+
+[node name="Slot 4" parent="Slots" instance=ExtResource("3_akoc3")]
+hotkey = &"select_item_4"
+
+[node name="Slot 5" parent="Slots" instance=ExtResource("3_akoc3")]
+hotkey = &"select_item_5"
