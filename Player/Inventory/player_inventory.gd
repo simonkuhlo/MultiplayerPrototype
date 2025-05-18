@@ -20,7 +20,14 @@ func drop_item(item:GameItem):
 	pass
 
 func _connect_slot(slot:InventorySlot):
+	slot.slot_selected.connect(_on_slot_selected)
 	slots.append(slot)
 
 func _disconnect_slot(slot:InventorySlot):
+	slot.slot_selected.disconnect(_on_slot_selected)
 	slots.erase(slot)
+
+func _on_slot_selected(slot:InventorySlot):
+	if slot not in slots:
+		return
+	selected_slot = slot
