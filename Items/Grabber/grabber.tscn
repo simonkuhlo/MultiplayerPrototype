@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://b0f56am566lej"]
+
+[ext_resource type="Script" uid="uid://cwcig7u780et3" path="res://Items/Grabber/grabber.gd" id="1_xhg5l"]
+[ext_resource type="Texture2D" uid="uid://cjnsjjdncq41" path="res://Items/Grabber/colin-raff-grotesque.gif" id="2_uyti3"]
+
+[node name="Grabber" type="Node3D"]
+script = ExtResource("1_xhg5l")
+item_name = &"Hand"
+icon_texture = ExtResource("2_uyti3")
