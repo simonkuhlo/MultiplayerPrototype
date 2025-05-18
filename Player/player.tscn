@@ -1,6 +1,6 @@
 [gd_scene load_steps=13 format=3 uid="uid://xcjrjq5cbn7y"]
 
-[ext_resource type="Script" uid="uid://dpnj1nmdn8vbs" path="res://Ingame/Player.gd" id="1_2v3wm"]
+[ext_resource type="Script" uid="uid://dpnj1nmdn8vbs" path="res://Player/Player.gd" id="1_2v3wm"]
 [ext_resource type="Script" uid="uid://b2odcgmin1krn" path="res://Ingame/name_label.gd" id="2_sweqy"]
 [ext_resource type="PackedScene" uid="uid://p0hiu3viqfu0" path="res://Weapons/Gun/gun.tscn" id="3_xmnc5"]
 

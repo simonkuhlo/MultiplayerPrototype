@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=3 uid="uid://dys8wayu0e5dm"]
+
+[ext_resource type="Script" uid="uid://bnne867ycfxr8" path="res://Player/Inventory/player_inventory.gd" id="1_5s430"]
+[ext_resource type="Script" uid="uid://b4bo4s03wgreb" path="res://Player/Inventory/inventory_slot.gd" id="2_u4o2x"]
+
+[node name="PlayerInventory" type="Node"]
+script = ExtResource("1_5s430")
+metadata/_custom_type_script = "uid://bnne867ycfxr8"
+
+[node name="Dynamic 1" type="Node" parent="."]
+script = ExtResource("2_u4o2x")
+metadata/_custom_type_script = "uid://b4bo4s03wgreb"
+
+[node name="Dynamic 2" type="Node" parent="."]
+script = ExtResource("2_u4o2x")
+metadata/_custom_type_script = "uid://b4bo4s03wgreb"
+
+[node name="Dynamic 3" type="Node" parent="."]
+script = ExtResource("2_u4o2x")
+metadata/_custom_type_script = "uid://b4bo4s03wgreb"
+
+[node name="Dynamic 4" type="Node" parent="."]
+script = ExtResource("2_u4o2x")
+metadata/_custom_type_script = "uid://b4bo4s03wgreb"
+
+[node name="Dynamic 5" type="Node" parent="."]
+script = ExtResource("2_u4o2x")
+metadata/_custom_type_script = "uid://b4bo4s03wgreb"
