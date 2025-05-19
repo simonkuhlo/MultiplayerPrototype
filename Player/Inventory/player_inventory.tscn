@@ -1,11 +1,22 @@
-[gd_scene load_steps=3 format=3 uid="uid://dys8wayu0e5dm"]
+[gd_scene load_steps=5 format=3 uid="uid://dys8wayu0e5dm"]
 
 [ext_resource type="Script" uid="uid://bnne867ycfxr8" path="res://Player/Inventory/player_inventory.gd" id="1_5s430"]
+[ext_resource type="Script" uid="uid://c4sch4tw3ivr7" path="res://Player/Inventory/locked_inventory_slot.gd" id="2_edfxn"]
 [ext_resource type="Script" uid="uid://b4bo4s03wgreb" path="res://Player/Inventory/inventory_slot.gd" id="2_u4o2x"]
+[ext_resource type="PackedScene" uid="uid://b0f56am566lej" path="res://Items/Grabber/grabber.tscn" id="3_akoc3"]
 
 [node name="PlayerInventory" type="Node"]
 script = ExtResource("1_5s430")
 metadata/_custom_type_script = "uid://bnne867ycfxr8"
+
+[node name="Locked 1" type="Node" parent="."]
+script = ExtResource("2_edfxn")
+item_scene = ExtResource("3_akoc3")
+metadata/_custom_type_script = "uid://c4sch4tw3ivr7"
+
+[node name="Locked 2" type="Node" parent="."]
+script = ExtResource("2_edfxn")
+metadata/_custom_type_script = "uid://c4sch4tw3ivr7"
 
 [node name="Dynamic 1" type="Node" parent="."]
 script = ExtResource("2_u4o2x")
@@ -16,13 +27,5 @@ script = ExtResource("2_u4o2x")
 metadata/_custom_type_script = "uid://b4bo4s03wgreb"
 
 [node name="Dynamic 3" type="Node" parent="."]
-script = ExtResource("2_u4o2x")
-metadata/_custom_type_script = "uid://b4bo4s03wgreb"
-
-[node name="Dynamic 4" type="Node" parent="."]
-script = ExtResource("2_u4o2x")
-metadata/_custom_type_script = "uid://b4bo4s03wgreb"
-
-[node name="Dynamic 5" type="Node" parent="."]
 script = ExtResource("2_u4o2x")
 metadata/_custom_type_script = "uid://b4bo4s03wgreb"

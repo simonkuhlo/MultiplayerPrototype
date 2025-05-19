@@ -12,13 +12,7 @@ var held_item:GameItem:
 			pass
 @export var hotkey:StringName
 
-var _parent_inventory:PlayerInventory:
-	set(new):
-		if _parent_inventory:
-			pass
-		_parent_inventory = new
-		if _parent_inventory:
-			pass
+var _parent_inventory:PlayerInventory
 
 func drop_item() -> void:
 	if held_item:
